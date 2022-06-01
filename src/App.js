@@ -13,6 +13,8 @@ import './app.scss'
 import Confirm from "./pages/Auth/Confirm/Confirm";
 import Register from "./pages/Auth/Register/Register";
 import Login from "./pages/Auth/Login/Login";
+import Service from "./pages/Service/Service";
+import Phones from "./pages/Phones/Phones";
 
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
        <Route path='/' element={<Layout/>}>
          <Route path='' element={<Home/>}/>
          <Route path='shops' element={<Shops/>}/>
+         <Route path='phone' element={<Phones/>}/>
          <Route path='charity' element={<Charity/>}/>
+         <Route path='service' element={<Service/>}/>
        </Route>
        <Route path='/auth' element={<Auth/>}/>
        <Route path='/confirm' element={<Confirm/>}/>

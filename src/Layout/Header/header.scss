@@ -6,7 +6,7 @@
   &__nav {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    //padding: 15px 0;
     align-items: center;
     &-select {
       border: none;
@@ -22,7 +22,7 @@
     }
     &-list {
       display: flex;
-      column-gap: 40px;
+      //column-gap: 40px;
       align-items: center;
     }
     &-item {
@@ -33,6 +33,12 @@
       display: flex;
       align-items: center;
       color: #363A45;
+      height: 62px;
+      padding: 20px;
+      &-active{
+        background-color: rgba(0, 198, 94, .3);
+        border-bottom: 2px solid rgba(0, 198, 94, 1);
+      }
     }
     &-right {
       display: flex;
@@ -65,9 +71,12 @@
     padding: 16px 0;
     background: #F7F7F7;
     &__content {
+      max-height: 62px;
+      height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
     &__select {
       width: 120px;
@@ -106,6 +115,8 @@
       border-radius: 18px;
       outline: none;
       border: none;
+      margin-left: auto;
+      justify-self: flex-end;
     }
     &__btn {
       position: absolute;
@@ -113,7 +124,7 @@
       top: 50%;
       transform: translateY(-50%);
       background: #DADCDC;
-      border-radius: 0 5px 5px 0;
+      border-radius: 0 18px 18px 0;
       border: none;
       height: 28px;
       width: 89px;
@@ -123,7 +134,7 @@
       color: #363A45;
     }
     &__add {
-      width: 213px;
+      padding: 7px 25px;
       height: 30px;
       background: #00C65E;
       border-radius: 18px;
@@ -136,6 +147,13 @@
       column-gap: 16px;
       color: #FFFFFF;
       justify-content: center;
+      span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }
+@import "src/pages/Service/ServiceTopBar/serviceTopBar";
+@import "src/pages/Home/HomeTopBar/homeTopBar";

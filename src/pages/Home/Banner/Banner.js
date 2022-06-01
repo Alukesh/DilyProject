@@ -12,11 +12,10 @@ import img7 from "./5.svg";
 const Banner = () => {
     return (
         <section className='banner'>
-            <div className="container">
                 <Swiper
-                    slidesPerView={1.8}
+                    slidesPerView={2.3}
                     spaceBetween={30}
-                    centeredSlides={true}
+                    centeredSlides={false}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
@@ -36,7 +35,6 @@ const Banner = () => {
                     <SwiperSlide><div className='banner__content'><div><img src={img6} alt="img"/></div></div></SwiperSlide>
                     <SwiperSlide><div className='banner__content'><div><img src={img7} alt="img"/></div></div></SwiperSlide>
                 </Swiper>
-            </div>
         </section>
     );
 };
