@@ -1,0 +1,148 @@
+.phones{
+  &__{
+
+    &wrapper{
+      display: flex;
+      column-gap: 30px;
+    }
+    &aside{
+      max-width: 270px;
+      width: 30%;
+      padding: 25px 30px;
+      display: flex;
+      height: fit-content;
+      flex-direction: column;
+      &-stopPrice{
+        margin: 15px 0 ;
+        display: flex;
+        column-gap: 30px;
+        input{
+          cursor: pointer;
+          width: 80px;
+          height: 30px;
+          background: #FFFFFF;
+          border: 1px solid #DADCDC;
+          border-radius: 5px;
+          padding: 10px;
+        }
+      }
+      &-priceSlider{
+        position: relative;
+        //margin-bottom: 30px;
+        width: 144px;
+        height: 2px;
+        align-self: center;
+        background: #DADCDC;
+      }
+      &-priceProgress{
+        cursor: pointer;
+        position: absolute;
+        height: 2px;
+        width: 70%;
+        background: #00C65E;
+        &:before{
+          content: '';
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          background: #00C65E;
+          position: absolute;
+          left: 0;
+          transform: translateY(-50%);
+        }
+         &:after{
+          content: '';
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          background: #00C65E;
+          position: absolute;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      &-form-title{
+        cursor: pointer;
+        margin-top: 30px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 152%;
+        color: #363A45;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+      &-form{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        &-block{
+          cursor: pointer;
+          display: flex;
+          column-gap: 15px;
+          transition: all .2s;
+          &:hover{
+            color: #00C65E;
+          }
+        }
+        &-text{
+          cursor: pointer;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          color: #363A45;
+        }
+      }
+
+    }
+
+
+
+    &main{
+      padding: 20px 30px;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      &-links{
+        display: flex;
+        margin-bottom: 20px;
+        column-gap: 10px;
+        cursor: pointer;
+      }
+      &-link{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #DADCDC;
+        &_active{
+          color: #363A45;
+        }
+      }
+      &-title{
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        color: #363A45;
+        margin-bottom: 20px;
+      }
+      &-subtitle{
+        text-align: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0.5px;
+        color: #363A45;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+}
