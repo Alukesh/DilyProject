@@ -14,7 +14,14 @@
   margin: 0 auto;
   padding: 0 15px;
 }
-
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  //background-color: grey;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .icon {
   color: #00C65E;
 }
@@ -32,3 +39,5 @@
 @import "pages/Home/Slider/slider";
 @import "pages/Home/Compilation/compilation";
 @import "pages/Phones/phones";
+@import "pages/Service/service";
+@import "pages/Advertisement/advertisement";

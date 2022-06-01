@@ -17,7 +17,7 @@ const Header = () => {
             <div className='container'>
                 <nav className='header__nav'>
                     <div className='header__nav-left'>
-                        <Link to={'/'} className='header__nav-title'>
+                        <Link to={'/'} onClick={() => setSection(1)} className='header__nav-title'>
                             <svg width="72" height="31" viewBox="0 0 72 31" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path

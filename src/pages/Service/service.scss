@@ -1,0 +1,9 @@
+.serviceBanner{
+  padding: 50px 0 100px;
+  &__slide{
+    background: url("./gradient.png") right/contain no-repeat;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

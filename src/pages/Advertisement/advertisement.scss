@@ -1,0 +1,97 @@
+.advertisement{
+  padding: 50px 0 100px;
+  &__{
+
+    &wrapper{
+      display: flex;
+    }
+    &main{
+      width: 85%;
+    }
+    &title{
+      display: flex;
+      column-gap: 30px;
+      margin-bottom: 30px;
+    }
+    &form{
+      padding: 35px 30px ;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      &-row{
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+      }
+      &-title{
+        min-width: 140px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 152%;
+        color: #363A45;
+        &.important:after{
+          content: ' *';
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 150%;
+          color: #00C65E;
+        }
+      }
+      &-input{
+        width: 100%;
+        outline: none;
+        display: inline-block;
+        background: #ffffff;
+        border: 1px solid #DADCDC;
+        border-radius: 10px;
+        padding: 12px 15px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #363A45;
+      }
+      &-select{
+        width: calc(50% - 100px);
+      }
+      &-prompt{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        margin-top: 10px;
+        color: darkgray;
+        opacity: .7;
+        display: flex;
+        justify-content: space-between;
+      }
+      &-textarea{
+        resize: none;
+        height: 100px;
+      }
+      &-addPhoto{
+        width: fit-content;
+        margin: 10px 0;
+        padding: 35px 45px;
+        &_row{
+          display: flex;
+          justify-content: space-between;
+        }
+        &_top, &_bot{
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          color: #363A45;
+        }
+        &_link{
+          text-decoration: underline;
+          color: #00C65E;
+        }
+      }
+    }
+
+  }
+}
