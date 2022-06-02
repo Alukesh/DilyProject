@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom'
 import addPh from './addPhoto.png'
+import Map from "./Map/Map";
 
 const Advertisement = () => {
     const [textLength, setTextLength] = useState(0);
@@ -10,9 +12,9 @@ const Advertisement = () => {
 
                     <div className={'advertisement__main'}>
                         <h2 className={'advertisement__title'}>
-                            <span>
+                            <Link to={'/'} >
                                 <svg width="15" height="25" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M0.54887 13.8281L11.1704 24.45C11.9037 25.1833 13.0927 25.1833 13.826 24.45C14.5594 23.7167 14.5593 22.5277 13.826 21.7944L4.53213 12.5005L13.827 3.20565C14.5603 2.47231 14.5603 1.28333 13.8269 0.550007C13.0936 -0.183317 11.9046 -0.183346 11.1713 0.549984L0.592018 11.1293C0.577161 11.1432 0.563356 11.1579 0.548848 11.1724C-0.0918764 11.8141 -0.172665 12.8051 0.308288 13.5336C0.377088 13.6377 0.457176 13.7364 0.54887 13.8281Z" fill="#DADCDC"/></svg>
-                            </span> Новое объявление
+                            </Link> Новое объявление
                         </h2>
 
 
@@ -113,6 +115,15 @@ const Advertisement = () => {
                                         </div>
                                     </div>
                                     <p className={'advertisement__form-addPhoto_bot'}>Вы можете загрузить не более 10 фотографий</p>
+                                </div>
+                            </div>
+
+                            <div className={'advertisement__form-row'}>
+                                <h3 className={'advertisement__form-title important'} style={{marginBottom:'25px'}}>Местоположение</h3>
+                                <div style={{width:'100%'}}>
+                                    <input className={'advertisement__form-input'} placeholder={'Москва'} type="text"/>
+                                    <Map/>
+                                    <p className={'advertisement__form-prompt'}>Не более 3000 символов <span>{textLength}/ 3000</span></p>
                                 </div>
                             </div>
 
