@@ -13,7 +13,7 @@ const ServiceBanner = () => {
                         </div>
                     </div>
 
-                    <img src={bg} alt=""/>
+                    {/*<img src={bg} alt=""/>*/}
                 </div>
             </div>
         </div>

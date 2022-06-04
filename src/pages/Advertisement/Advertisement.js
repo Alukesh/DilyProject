@@ -5,6 +5,7 @@ import Map from "./Map/Map";
 
 const Advertisement = () => {
     const [textLength, setTextLength] = useState(0);
+    const [date, setDate] = useState(false);
     return (
         <div className={'advertisement'}>
             <div className="container">
@@ -94,7 +95,7 @@ const Advertisement = () => {
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'} style={{marginBottom:'25px'}}>Фотографии</h3>
                                 <div style={{width:'100%'}}>
-                                    <p className={'advertisement__form-addPhoto_top'}>Перетащите фото или <label for={'file'} className={'advertisement__form-addPhoto_link'} >выберите их на своем компьютере</label></p>
+                                    <p className={'advertisement__form-addPhoto_top'}>Перетащите фото или <label htmlFor={'file'} className={'advertisement__form-addPhoto_link'} >выберите их на своем компьютере</label></p>
                                     <input style={{display:'none'}} type="file" id={'file'}/>
                                     <div className={'advertisement__form-addPhoto_row'}>
                                         <div className={'shadow-box advertisement__form-addPhoto'}>
@@ -119,13 +120,105 @@ const Advertisement = () => {
                             </div>
 
                             <div className={'advertisement__form-row'}>
-                                <h3 className={'advertisement__form-title important'} style={{marginBottom:'25px'}}>Местоположение</h3>
+                                <h3 className={'advertisement__form-title important'} >Местоположение</h3>
                                 <div style={{width:'100%'}}>
                                     <input className={'advertisement__form-input'} placeholder={'Москва'} type="text"/>
-                                    <Map/>
-                                    <p className={'advertisement__form-prompt'}>Не более 3000 символов <span>{textLength}/ 3000</span></p>
+                                    {/*<Map/>*/}
+                                    <div className="advertisement__map-block" >
+                                        <iframe className={'advertisement__map'}
+                                                src="https://yandex.ru/map-widget/v1/?um=constructor%3A2a7db89ad20c176deff8474ee3a110c428fa53be89670cd16695fdc0ad761a5f&amp;source=constructor"
+                                                width="1070" height="480" frameBorder="0"> </iframe>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div className={'advertisement__form-row'}>
+                                <h3 className={'advertisement__form-title important'}>Тип размещения</h3>
+                                <select className={'advertisement__form-input advertisement__form-select'} name="select">
+                                    <option style={{display:'none'}} value="value2">Не выбрано</option>
+                                    <option value="value3">Аукцион</option>
+                                    <option value="value9">Фиксированная цена</option>
+                                </select>
+                            </div>
+
+                            <div className={'advertisement__form-row'}>
+                                <h3 className={'advertisement__form-title important'}>Срок размещения</h3>
+                                <div style={{width:'100%'}}>
+                                    <select className={'advertisement__form-input advertisement__form-select'}
+                                            style={{marginBottom:'30px'}} name="select"
+                                    >
+                                        <option style={{display:'none'}} value="value2">Не выбрано</option>
+                                        <option value="value3">3 дня</option>
+                                        <option value="value9">5 дней</option>
+                                        <option value="value9">7 дней</option>
+                                        <option value="value9">10 дней</option>
+                                    </select>
+                                    <div style={{marginBottom:'20px'}} className={'phones__aside-form-block'}>
+                                        <input  onClick={(e) => setDate(false)} type="radio" id='format1' defaultChecked={true} name='format'/>
+                                        <label className={'phones__aside-form-text'} htmlFor='format1'>Разместить сразу</label>
+                                    </div>
+                                    <div style={{marginBottom:'10px'}} className={'phones__aside-form-block'}>
+                                        <input  onClick={(e) => setDate(true)} type="radio" id='format2' name='format'/>
+                                        <label className={'phones__aside-form-text'} htmlFor='format2'>Настроить расписание размещения</label>
+                                    </div>
+                                    <div>
+                                        <select disabled={!date} className={'advertisement__form-input advertisement__form-selectDate'}
+                                                style={{marginBottom:'30px'}} name="select">
+                                            <option style={{display:'none'}} value="value2">Не выбрано</option>
+                                            <option value="value3">13 августа</option>
+                                            <option value="value3">14 августа</option>
+                                            <option value="value3">15 августа</option>
+                                            <option value="value3">16 августа</option>
+                                            <option value="value3">17 августа</option>
+                                            <option value="value3">18 августа</option>
+                                            <option value="value3">19 августа</option>
+                                            <option value="value3">20 августа</option>
+                                            <option value="value3">21 августа</option>
+                                            <option value="value3">22 августа</option>
+                                        </select>
+                                         <select disabled={!date} className={'advertisement__form-input advertisement__form-selectTime'}
+                                                style={{marginBottom:'30px'}} name="select">
+                                            <option style={{display:'none'}} value="value2">12</option>
+                                            <option value="value3">01</option>
+                                            <option value="value3">02</option>
+                                            <option value="value3">03</option>
+                                            <option value="value3">04</option>
+                                            <option value="value3">05</option>
+                                            <option value="value3">06</option>
+                                            <option value="value3">07</option>
+                                            <option value="value3">08</option>
+                                            <option value="value3">09</option>
+                                            <option value="value3">10</option>
+                                        </select>
+                                         <select disabled={!date} className={'advertisement__form-input advertisement__form-selectTime'}
+                                                style={{marginBottom:'30px'}} name="select">
+                                            <option style={{display:'none'}} value="value2">00</option>
+                                             <option value="value3">05</option>
+                                             <option value="value3">10</option>
+                                             <option value="value3">15</option>
+                                             <option value="value3">20</option>
+                                             <option value="value3">25</option>
+                                             <option value="value3">30</option>
+                                             <option value="value3">35</option>
+                                             <option value="value3">40</option>
+                                             <option value="value3">45</option>
+                                            <option value="value3">50</option>
+                                        </select>
+                                         <select disabled={!date} className={'advertisement__form-input advertisement__form-selectTime'}
+                                                style={{marginBottom:'30px'}} name="select">
+                                            <option style={{display:'none'}} value="value2">AM</option>
+                                            <option value="value3">AM</option>
+                                            <option value="value3">PM</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={'advertisement__form-row'}>
+
+                            </div>
+
 
 
 

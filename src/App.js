@@ -16,6 +16,7 @@ import Login from "./pages/Auth/Login/Login";
 import Service from "./pages/Service/Service";
 import Phones from "./pages/Phones/Phones";
 import Advertisement from "./pages/Advertisement/Advertisement";
+import Buying from "./pages/Buying/Buying";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
          <Route path='charity' element={<Charity/>}/>
          <Route path='advertisement' element={<Advertisement/>}/>
          <Route path='service' element={<Service/>}/>
+         <Route path='buying' element={<Buying/>}/>
        </Route>
        <Route path='/auth' element={<Auth/>}/>
        <Route path='/confirm' element={<Confirm/>}/>
