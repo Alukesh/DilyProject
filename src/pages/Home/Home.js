@@ -1,15 +1,17 @@
 import React from 'react';
-import Banner from "./Banner/Banner";
+import Banner from "./Announcement/Banner/Banner";
 import Slider from "./Slider/Slider";
 import Compilation from "./Compilation/Compilation";
+import TradeSteps from "../Buying/TradeSteps/TradeSteps";
 
 const Home = () => {
     return (
-        <main>
+        <div>
             <Banner/>
             <Slider/>
             <Compilation/>
-        </main>
+            <TradeSteps shadow={'shadow-box'}/>
+        </div>
     );
 };
 

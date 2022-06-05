@@ -2,8 +2,15 @@
   a{
     color: inherit;
   }
+  &__item.active{
+    color: #00C65E;
+  }
+
   &__menu{
     padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     z-index: 20;
     position: absolute;
     bottom: -15px;

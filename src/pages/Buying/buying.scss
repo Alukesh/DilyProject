@@ -39,7 +39,11 @@
 
 
     &row{
-      padding: 120px 0 140px;
+      margin: 120px 0 140px;
+      &-shadow{
+        padding: 20px 30px ;
+        margin: 80px 0 100px;
+      }
       &-title{
         margin-bottom: 7px;
         font-style: normal;

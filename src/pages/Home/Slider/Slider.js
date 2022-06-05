@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
+import {Link, useNavigate} from 'react-router-dom'
 import img1 from './img/1.svg'
 import img2 from './img/2.svg'
 import img3 from './img/3.svg'
@@ -18,10 +19,13 @@ import img15 from './img/16.svg'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+// import {withRouter } from 'react-router-dom'
 
 import {Navigation, Pagination, Mousewheel, Keyboard, Autoplay} from "swiper";
 
 const Slider = () => {
+    const navigate = useNavigate();
+    // const history = withRouter();
 
     return (
         <div className='slider'>
@@ -43,7 +47,7 @@ const Slider = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide><div><img src={img1} alt="img"/><p className='slider__category'>Личные вещи</p></div></SwiperSlide>
-                    <SwiperSlide><div><img src={img2} alt="img"/><p className='slider__category'>Телефоны и аксессуары</p></div></SwiperSlide>
+                    <SwiperSlide><div onClick={() => {navigate('../phone')}}><img src={img2} alt="img"/><p className='slider__category'>Телефоны и аксессуары</p></div></SwiperSlide>
                     <SwiperSlide><div><img src={img3} alt="img"/><p className='slider__category'>Электроника</p></div></SwiperSlide>
                     <SwiperSlide><div><img src={img4} alt="img"/><p className='slider__category'>Бытовая техника</p></div></SwiperSlide>
                     <SwiperSlide><div><img src={img5} alt="img"/><p className='slider__category'>Дом и сад</p></div></SwiperSlide>

@@ -5,8 +5,8 @@ import {getAllProducts} from "./redux/reducers/products";
 import {useDispatch, useSelector} from "react-redux";
 import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home/Home";
-import Shops from "./pages/Shops/Shops";
-import Charity from "./pages/Charity/Charity";
+import Shops from "./pages/Home/Shops/Shops";
+import Charity from "./pages/Home/Charity/Charity";
 import Layout from "./Layout/Layout";
 import Auth from "./pages/Auth/Auth";
 import './app.scss'
@@ -18,6 +18,7 @@ import Phones from "./pages/Phones/Phones";
 import Advertisement from "./pages/Advertisement/Advertisement";
 import Buying from "./pages/Buying/Buying";
 import {findUser} from "./redux/reducers/user";
+import NotFound from "./pages/NotFound/NotFound";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
        <Route path='/confirm' element={<Confirm/>}/>
        <Route path='/register' element={<Register/>}/>
        <Route path='/login' element={<Login/>}/>
+       <Route path='/*' element={<NotFound/>}/>
      </Routes>
     </div>
   );

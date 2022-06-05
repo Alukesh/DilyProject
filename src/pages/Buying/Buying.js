@@ -9,6 +9,7 @@ import advise4 from './images/advice4.png'
 import advise5 from './images/advice5.png'
 import star from './images/star.png'
 import Sell from "./Sell/Sell";
+import TradeSteps from "./TradeSteps/TradeSteps";
 
 const Buying = () => {
     const [overlay, setOverlay] = useState(false);
@@ -30,7 +31,7 @@ const Buying = () => {
 
             {overlay &&
                 <>
-                    <section className={'buying__overlay'} onClick={() => setOverlay(!overlay)}> </section>
+                    <div className={'buying__overlay'} onClick={() => setOverlay(!overlay)}> </div>
                     <div className="buying__popup">
                         <div className={'buying__popup-close'} onClick={() => setOverlay(!overlay)}>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,30 +46,7 @@ const Buying = () => {
             }
 
 
-            <section className={'buying__row'}>
-                <div className="container">
-                    <h2 className={'buying__row-title'}>Продайте нам на раз - два - три</h2>
-                    <div className={'buying__row-wrapper'}>
-                        <div className={'buying__row-card'}>
-                            <p className={'buying__row-num'}>1</p>
-                            <p className={'buying__row-text'}>Бесплатная онлайн-оценка</p>
-                            <img className={'buying__row-img'} src={card1} alt="icon"/>
-                        </div>
-                         <div className={'buying__row-card'}>
-                            <p className={'buying__row-num'}>2</p>
-                            <p className={'buying__row-text'}>Привозите нам или вызовите специалиста</p>
-                            <img className={'buying__row-img'} src={card2} alt="icon"/>
-                        </div>
-                         <div className={'buying__row-card'}>
-                            <p className={'buying__row-num'}>3</p>
-                            <p className={'buying__row-text'}>Подпишите договор и получите деньги</p>
-                            <img className={'buying__row-img'} src={card3} alt="icon"/>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
+            <TradeSteps/>
 
 
             <section className={'buying__advices'}>

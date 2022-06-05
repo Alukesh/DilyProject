@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import {AiOutlineSearch} from 'react-icons/ai'
 
 
@@ -203,7 +203,7 @@ const HomeTopBar = () => {
                             </span>
                     }
                 </li>
-                <li className='header-under__item'>
+                <NavLink to={''} className='header-under__item'>
                                 <span>
                                     <svg width="14" height="18" viewBox="0 0 14 18"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -218,9 +218,9 @@ const HomeTopBar = () => {
                                     <rect x="2.55908" y="13.8057" width="2.52137" height="1.06952" rx="0.534759" fill="#00C65E"/>
                                     </svg>
                                     </span>Объявления
-                </li>
+                </NavLink>
 
-                <li className='header-under__item'>
+                <NavLink to={'shops'} className='header-under__item'>
                                 <span>
                                     <svg width="17" height="18" viewBox="0 0 17 18"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -248,8 +248,8 @@ const HomeTopBar = () => {
                                     <path d="M5.04297 2.66064H4.32053L3.5981 6.82826H4.32053L5.04297 2.66064Z" fill="#363A45"/>
                                     </svg>
                                     </span>Магазины
-                </li>
-                <li className='header-under__item'>
+                </NavLink>
+                <NavLink to={'charity'} className='header-under__item'>
                                 <span>
                                     <svg width="25" height="18" viewBox="0 0 25 18"
                                          fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -263,7 +263,7 @@ const HomeTopBar = () => {
                                     d="M12.5502 15.4937C12.3863 15.5916 12.2505 15.6716 12.1514 15.7296C12.0487 15.6659 11.9061 15.5769 11.7336 15.4681C11.366 15.236 10.8631 14.9139 10.3221 14.5534C9.22922 13.8252 8.01619 12.9636 7.42593 12.3723C7.4183 12.3646 7.4103 12.3573 7.40198 12.3504C7.00264 12.0185 6.67871 11.6077 6.45094 11.1441C6.22441 10.6831 6.09793 10.18 6.07959 9.66671C6.09207 8.99664 6.31034 8.34415 6.70603 7.79522C7.10337 7.24399 7.66067 6.82346 8.30388 6.58936C8.94706 6.35527 9.64561 6.31868 10.3069 6.48409C10.9681 6.6495 11.561 7.00911 12.0071 7.51519C12.0731 7.59016 12.1688 7.63361 12.2698 7.63454C12.3708 7.63547 12.4675 7.5938 12.5354 7.52007C12.9965 7.01932 13.6002 6.66727 14.2663 6.51041C14.9324 6.35356 15.6294 6.39931 16.2649 6.64125C16.9005 6.88318 17.4448 7.30995 17.8259 7.86504C18.2051 8.41737 18.405 9.07101 18.3992 9.74026C18.3613 10.253 18.218 10.7538 17.9779 11.2122C17.7361 11.6736 17.4014 12.0821 16.9942 12.4127C16.9872 12.4184 16.9805 12.4243 16.974 12.4305C16.2726 13.0949 15.0313 13.9426 13.9438 14.6348C13.4043 14.9782 12.9098 15.2788 12.5502 15.4937Z"
                                     fill="#00C65E" stroke="white"/></svg>
                                 </span>Благотворительность
-                </li>
+                </NavLink>
             </ul>
             <div className='header-under__cont'>
                 <span className='header-under__icon'><AiOutlineSearch/></span>
