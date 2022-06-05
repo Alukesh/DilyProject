@@ -10,8 +10,14 @@ const userReducer = createSlice({
     reducers: {
         findUser: (state, action) => {
             state.user = action.payload.user
+        },
+
+        logOutUser: (state) => {
+            state.user = {
+                email: ''
+            }
         }
     }
 });
 export default userReducer.reducer
-export const {findUser} = userReducer.actions;
+export const {findUser, logOutUser} = userReducer.actions;

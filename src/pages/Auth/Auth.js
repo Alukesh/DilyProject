@@ -3,6 +3,7 @@ import {AiFillGoogleCircle} from 'react-icons/ai'
 import {FiMail} from 'react-icons/fi'
 import {FaGithub} from 'react-icons/fa'
 import {Link} from "react-router-dom";
+import Google from "./AuthOrLoginFromSocials/Google/Google";
 
 const Auth = () => {
     return (
@@ -100,7 +101,7 @@ const Auth = () => {
 
                 <p className='auth__text'>или продолжить через соцсети</p>
                 <div className='auth__icons'>
-                    <p className='auth__icon'><AiFillGoogleCircle/></p>
+                    <Google/>
                     <p className='auth__icon'><FiMail/></p>
                     <p className='auth__icon'><FaGithub/></p>
                 </div>

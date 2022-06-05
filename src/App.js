@@ -17,6 +17,7 @@ import Service from "./pages/Service/Service";
 import Phones from "./pages/Phones/Phones";
 import Advertisement from "./pages/Advertisement/Advertisement";
 import Buying from "./pages/Buying/Buying";
+import {findUser} from "./redux/reducers/user";
 
 
 function App() {
@@ -27,7 +28,11 @@ function App() {
   useEffect(() => {
     getDocs(collection(db, 'products'))
         .then((res) => dispatch(getAllProducts({arr: res.docs.map(el => ({...el.data(), id:el.id}))})))
+
+   localStorage.getItem('user') ?
+    dispatch(findUser({user: JSON.parse(localStorage.getItem('user')) })) : console.log('empty local')
   }, []);
+
 
   return (
     <div className="App">
