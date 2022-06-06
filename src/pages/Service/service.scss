@@ -1,11 +1,63 @@
+.service{
+  &__{
+
+    &advantage{
+      margin-bottom: 90px;
+      &-row{
+        justify-content: space-between;
+        display: flex;
+      }
+      &-card{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+    }
+
+  }
+}
+
+
 .serviceBanner{
   padding: 50px 0 100px;
-  margin-top: 50px;
+  margin: 50px 0 100px;
   background: url("./1slide.png") center/cover no-repeat;
   &__slide{
     //background: url("./gradient.png") right/contain no-repeat;
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
+    &-title{
+      margin-bottom: 45px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+      color: #363A45;
+    }
+    &-text{
+      margin-bottom: 135px;
+      max-width: 493px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+      color: #363A45;
+    }
+    &-btn{
+      padding: 12px 36px;
+      &s{
+        display: flex;
+        column-gap: 30px;
+      }
+    }
+    &-whiteBtn{
+      background: #ffffff;
+      border: none;
+      color: #00C65E;
+    }
   }
 }
+

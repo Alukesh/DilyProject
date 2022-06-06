@@ -29,6 +29,22 @@
   box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
   border-radius: 8.00611px;
 }
+.greenBtn{
+  background: #00C65E;
+  color: white;
+  transition: all .3s;
+  border-radius: 10px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  cursor: pointer;
+  &:hover{
+    background: white;
+    color: #00C65E;
+  }
+}
 
 
 @import "./Layout/Header/header";

@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {db, storage} from "./firebase/firebase";
-import {collection, getDocs, addDoc, doc, updateDoc, deleteDoc} from "@firebase/firestore";
+import {collection, getDocs} from "@firebase/firestore";
 import {getAllProducts} from "./redux/reducers/products";
 import {useDispatch, useSelector} from "react-redux";
 import {Routes, Route} from "react-router-dom"
@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     getDocs(collection(db, 'products'))
-        .then((res) => dispatch(getAllProducts({arr: res.docs.map(el => ({...el.data(), id:el.id}))})))
+        .then((res) => dispatch(getAllProducts({arr: res.docs.map(el => ({...el.data(), id:el.id}))})));
 
    localStorage.getItem('user') ?
     dispatch(findUser({user: JSON.parse(localStorage.getItem('user')) })) : console.log('empty local')
