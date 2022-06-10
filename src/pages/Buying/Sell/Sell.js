@@ -2,20 +2,26 @@ import React, {useState} from 'react';
 import addPh from "../../Advertisement/addPhoto.png";
 import {useForm} from "react-hook-form";
 import {createProduct} from "../../../firebase/firebaseFunction";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getAllProducts} from "../../../redux/reducers/products";
+import {collection, getDocs} from "@firebase/firestore";
+import {db} from "../../../firebase/firebase";
 
 
 const Sell = () => {
+    const user = useSelector(s => s.user.user);
+
     const {register, handleSubmit, reset} = useForm();
     const dispatch = useDispatch();
     const [progress, setProgress] = useState(0);
 
-    const addProductHandler = (data) =>{
-        console.log(data.image[0]);
-        createProduct(data.image[0], setProgress, data, dispatch)
+    const addProductHandler = async (data) =>{
+       await createProduct(data.image[0], setProgress, {...data, creator : user.email === 'admin123@mail.ru' ? 1 : user.uid}, dispatch, user);
+
+        await reset()
     };
 
+    console.log(user);
 
     return (
         <div>
@@ -29,11 +35,11 @@ const Sell = () => {
                 <div className={'sell__form-row sell__form-row_double'}>
                     <div>
                         <h3 className={'sell__form-title important'}>Состояние</h3>
-                        <select {...register("state")} className={'sell__form-input sell__form-input_half'} name="select">
-                            <option style={{display: 'none'}} value="value2">Не выбрано</option>
-                            <option value="value1">Новое</option>
-                            <option value="value1">Хорошее</option>
-                            <option value="value1">По хуже</option>
+                        <select {...register("state")} className={'sell__form-input sell__form-input_half'} >
+                            <option style={{display: 'none'}} value="">Не выбрано</option>
+                            <option value="Новое">Новое</option>
+                            <option value="Хорошее">Хорошее</option>
+                            <option value="По хуже">По хуже</option>
                         </select>
                     </div>
                     <div>
@@ -61,12 +67,12 @@ const Sell = () => {
 
                 <div className={'sell__form-row'}>
                     <h3 className={'sell__form-title'}>Выберите ваш город</h3>
-                    <select className={'sell__form-input'} name="select">
-                        <option style={{display: 'none'}} value="value2">Не выбрано</option>
-                        <option value="value1">Бишкек</option>
-                        <option value="value1">Москва</option>
-                        <option value="value1">Тула</option>
-                        <option value="value1">Стамбул</option>
+                    <select {...register("city")} className={'sell__form-input'} >
+                        <option style={{display: 'none'}} value="">Не выбрано</option>
+                        <option value="Бишкек">Бишкек</option>
+                        <option value="Москва">Москва</option>
+                        <option value="Тула">Тула</option>
+                        <option value="Стамбул">Стамбул</option>
                     </select>
                 </div>
 
@@ -79,6 +85,7 @@ const Sell = () => {
 
                     </div>
                 </div>
+
 
                 <div className={'sell__form-row'}>
                     <div className={'sell__form-bottom'}>

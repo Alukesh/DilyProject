@@ -5,17 +5,18 @@ import {useForm} from "react-hook-form";
 import {FiMail} from 'react-icons/fi'
 import {FaGithub} from 'react-icons/fa'
 import {  createUserWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../../../firebase/firebase";
+import {auth, db} from "../../../firebase/firebase";
 import {useDispatch} from "react-redux";
 import {findUser} from "../../../redux/reducers/user";
 import Google from "../AuthOrLoginFromSocials/Google/Google";
+import {addDoc, collection} from "@firebase/firestore";
 
 
 const Register = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-
+    const userCollectionRef = collection(db,'users');
     const {
         register,
         handleSubmit,
@@ -36,19 +37,14 @@ const Register = () => {
 
     const createUsers = (data) =>{
         createUserWithEmailAndPassword(auth, data.email, data.password)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
                 // Signed in
                 const user = userCredential.user;
-                // ...
-
-                user.phoneNumber = data.phone;
-                user.displayName = data.login;
-
-                console.log(userCredential);
-                dispatch(findUser( {user} ));
-                localStorage.setItem('user', JSON.stringify(user));
-                reset();
-                navigate('/')
+                await addDoc(userCollectionRef, {email: user.email, orders: [], phone: data.phone, gitl: [], login: data.login, id: user.uid});
+                await dispatch(findUser( {...user, email: user.email, orders: [], phone: data.phone, gitl: [], login: data.login,} ));
+               await localStorage.setItem('user', JSON.stringify(user));
+               await reset();
+               await navigate('/');
 
             })
             .catch((error) => {
