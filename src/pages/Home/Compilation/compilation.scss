@@ -16,6 +16,7 @@
     }
     &row{
       margin-top: 30px;
+      margin-bottom: 80px;
       display: flex;
       flex-wrap: wrap;
       column-gap: 22px;
@@ -31,7 +32,7 @@
       flex-direction: column;
       cursor: pointer;
       transition: all .9s;
-      &:hover img{
+      &:hover .compilation__card-image{
         transition: all .9s;
         transform: scale(1.1);
       }
@@ -45,7 +46,10 @@
       }
       &-image{
         align-self: center;
-        margin-bottom: 10px;
+        max-height: 160px;
+        //margin-bottom: 10px;
+        max-width: 100%;
+        margin-bottom: auto;
       }
       &-like{
         position: absolute;

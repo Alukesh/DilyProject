@@ -1,8 +1,9 @@
 import React from 'react';
-import Banner from "./Announcement/Banner/Banner";
-import Slider from "./Slider/Slider";
+import Banner from "../Board/Banner/Banner";
+import Slider from "../Board/Slider/Slider";
 import Compilation from "./Compilation/Compilation";
 import TradeSteps from "../Buying/TradeSteps/TradeSteps";
+import TopShops from "./Shops/TopShops/TopShops";
 
 const Home = () => {
     return (
@@ -10,6 +11,12 @@ const Home = () => {
             <Banner/>
             <Slider/>
             <Compilation/>
+            <TopShops/>
+
+
+
+
+
             <TradeSteps shadow={'shadow-box'}/>
         </div>
     );
