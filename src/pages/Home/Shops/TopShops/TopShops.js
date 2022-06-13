@@ -1,10 +1,11 @@
 import React from 'react';
 import ShopCard from "./ShopCard";
-import shop1 from '../shopМ-ВИДЕО.png'
-import shop2 from '../shopКОТОБОРМОТ.png'
-import shop3 from '../shopXIAOMI.png'
-import shop4 from '../shopДИВАНЫ ТУТ.png'
-import shop5 from '../shopДЕТСКИЙ.png'
+import {Link} from 'react-router-dom'
+import shop1 from '../AllShops/shopМ-ВИДЕО.png'
+import shop2 from '../AllShops/shopКОТОБОРМОТ.png'
+import shop3 from '../AllShops/shopXIAOMI.png'
+import shop4 from '../AllShops/shopДИВАНЫ ТУТ.png'
+import shop5 from '../AllShops/shopДЕТСКИЙ.png'
 
 const TopShops = () => {
     return (
@@ -15,11 +16,23 @@ const TopShops = () => {
             </div>
 
             <div className="shops__top-row">
-                <ShopCard img={shop1} name={'М-ВИДЕО'} color={'#F5253A'}/>
-                <ShopCard img={shop2} name={'КОТ-ОБОРМОТ'} color={'#FC9024'}/>
-                <ShopCard img={shop3} name={'XIAOMI'} color={'#00C65E'}/>
-                <ShopCard img={shop4} name={'ДИВАНЫ ТУТ'} color={'#1EAE8B'}/>
-                <ShopCard img={shop5} name={'ДЕТСКИЙ МИР'} color={'#01C1FB'}/>
+
+                <Link className={'shops__top-card'} to={'/shop/par'} style={{backgroundColor: '#F5253A'}}>
+                    <ShopCard img={shop1} name={'М-ВИДЕО'}/>
+                </Link>
+                <Link className={'shops__top-card'} to={'/shop/par'} style={{backgroundColor: '#FC9024'}}>
+                    <ShopCard img={shop2} name={'КОТ-ОБОРМОТ'} />
+                </Link>
+                <Link className={'shops__top-card'} to={'/shop/3'} style={{backgroundColor: '#00C65E'}}>
+                    <ShopCard img={shop3} name={'XIAOMI'} />
+                </Link>
+                <Link className={'shops__top-card'} to={'/shop/4'} style={{backgroundColor: '#1EAE8B'}}>
+                    <ShopCard img={shop4} name={'ДИВАНЫ ТУТ'} />
+                </Link>
+                <Link className={'shops__top-card'} to={'/shop/par'} style={{backgroundColor: '#01C1FB'}}>
+                    <ShopCard img={shop5} name={'ДЕТСКИЙ МИР'} />
+                </Link>
+
             </div>
 
         </div>

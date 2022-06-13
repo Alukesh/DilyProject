@@ -19,6 +19,7 @@ import Advertisement from "./pages/Advertisement/Advertisement";
 import Buying from "./pages/Buying/Buying";
 import {findUser} from "./redux/reducers/user";
 import NotFound from "./pages/NotFound/NotFound";
+import Shop from "./pages/Home/Shops/Shop/Shop";
 
 
 function App() {
@@ -40,7 +41,8 @@ function App() {
      <Routes>
        <Route path='/' element={<Layout/>}>
          <Route path='' element={<Home/>}/>
-         <Route path='shops' element={<Shops/>}/>
+         <Route path='shops/' element={<Shops/>}/>
+         <Route path='shop/:id' element={<Shop/>}/>
          <Route path='phone' element={<Phones/>}/>
          <Route path='charity' element={<Charity/>}/>
          <Route path='advertisement' element={<Advertisement/>}/>

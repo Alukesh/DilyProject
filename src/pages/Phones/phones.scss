@@ -8,10 +8,44 @@
     &aside{
       max-width: 270px;
       width: 30%;
-      padding: 25px 30px;
       display: flex;
       height: fit-content;
       flex-direction: column;
+      &-change{
+        padding: 25px 30px;
+
+      }
+      &-category{
+        cursor: pointer;
+        font-family: 'TT Norms',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 152%;
+        color: #363A45;
+        transition: all .2s;
+        &:hover{
+          color: #00C65E;
+        }
+        &-list{
+          display: flex;
+          flex-direction: column;
+          padding: 25px 30px;
+          row-gap: 10px;
+          margin-bottom: 25px;
+          border-bottom: 1px solid #DADCDC;
+        }
+        &-title{
+          cursor: pointer;
+          font-family: 'TT Norms',sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 150%;
+          letter-spacing: 0.5px;
+          color: #363A45;
+        }
+      }
       &-stopPrice{
         margin: 15px 0 ;
         display: flex;

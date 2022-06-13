@@ -41,6 +41,7 @@
             justify-content: space-between;
           }
       &-btn{
+        z-index: 10;
         height: 40px;
         display: flex;
         align-items: center;
@@ -71,8 +72,49 @@
 
 
 
+  }
+}
 
+.shop{
+  &__{
+    &main{
+      display: flex;
 
+    }
+
+    &banner{
+      margin: 50px 0 20px;
+      background-color: #00C65E;
+      border-radius: 10px;
+      color: white;
+      padding: 30px;
+      display: flex;
+      &-left{
+        display: flex;
+        column-gap: 30px;
+        align-items: center;
+      }
+      &-descr{
+        display: flex;
+        row-gap: 20px;
+        flex-direction: column;
+      }
+      &-title{
+        font-family: 'TT Norms',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 150%;
+        letter-spacing: 0.5px;
+      }
+      &-subtitle{
+        font-family: 'TT Norms',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
 
   }
 }

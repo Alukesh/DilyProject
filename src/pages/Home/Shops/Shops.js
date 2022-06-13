@@ -3,9 +3,13 @@ import Slider from "../../Board/Slider/Slider";
 import img1 from "../../Board/Banner/banner shops shops.svg";
 import img2 from "../../Board/Banner/banner shops tarif.png";
 import TopShops from "./TopShops/TopShops";
+import{useParams} from 'react-router-dom'
 
 
 const Shops = () => {
+    const params = useParams();
+    console.log(params.id);
+
     return (
         <div className={'shops'}>
             <Slider/>
@@ -16,8 +20,7 @@ const Shops = () => {
                     <img src={img2} alt=""/>
                 </div>
             </div>
-
-
+            
             <TopShops/>
 
 

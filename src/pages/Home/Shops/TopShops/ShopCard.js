@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ShopCard = ({img, name, color}) => {
+const ShopCard = ({img, name}) => {
     return (
-        <div className={'shops__top-card'} style={{backgroundColor: color}}>
+        <div className={''}>
             <div className={'shops__top-card-icon'}>
                 <img src={img} alt={name}/>
                 <p>{name}</p>
