@@ -30,7 +30,7 @@ const Slider = () => {
     return (
         <div className='slider'>
             <div className="container">
-                <h2 className='slider__title'>Вы ищете:</h2>
+                <h2 className='slider__title'>Вы ищете: </h2>
                 <Swiper
                     slidesPerView={8}
                     spaceBetween={30}
