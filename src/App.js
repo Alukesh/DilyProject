@@ -22,7 +22,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import Shop from "./pages/Home/Shops/Shop/Shop";
 
 
-function App1() {
+function App() {
   const dispatch = useDispatch();
 
   const products = useSelector((s) => s.products.products);
