@@ -1,0 +1,98 @@
+.footer{
+  background: #EFEFEF;
+  &__navbar{
+    padding: 14px 0 108px;
+    &-content{
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 13px;
+      border-bottom: 1px solid #DADCDC;
+    }
+    &-left{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 58px;
+    }
+    &-city {
+      display: flex;
+      column-gap: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      align-items: center;
+      color: #363A45;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    &-select{
+      border: none;
+      background: #EFEFEF;
+    }
+    &-right{
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+    &-subtitle{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+    }
+    &-icons{
+      display: flex;
+      column-gap: 10px;
+    }
+    &-descr{
+      display: flex;
+      column-gap: 85px;
+      padding-top: 28px;
+    }
+    &-header{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+    }
+    &-item{
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+      padding-top: 8px;
+    }
+  }
+  &-bottom{
+    background: white;
+    padding: 9px 0;
+    &__navbar{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__list{
+      display: flex;
+      column-gap: 48px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      text-align: right;
+      color: #363A45;
+    }
+    &__text{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+    }
+  }
+}
