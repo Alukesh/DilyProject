@@ -38,8 +38,8 @@ const Shop = () => {
                         </div>
 
 
-                        <CompilationRow products={products} compilationCount={4} countInRow={4}/>
-                        <CompilationRow products={products} compilationCount={34} countInRow={4}/>
+                        {/*<CompilationRow products={products} compilationCount={4} countInRow={4}/>*/}
+                        <CompilationRow products={products} compilationCount={34} creator={'Диваны тут'} countInRow={4}/>
                     </div>
 
                 </div>

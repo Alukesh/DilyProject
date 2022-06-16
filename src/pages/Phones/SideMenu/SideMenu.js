@@ -14,6 +14,7 @@ const SideMenu = () => {
                     {
                         slide &&
                             <>
+                            <li className={'phones__aside-category'} onClick={() =>{ setSlide(false); setCategory('Все категории')}}>Все категории</li>
                             <li className={'phones__aside-category'} onClick={() =>{ setSlide(false); setCategory('Смартфоны')}}>Смартфоны</li>
                             <li className={'phones__aside-category'} onClick={() =>{ setSlide(false); setCategory('Мобильные телефоны')}}>Мобильные телефоны</li>
                             <li className={'phones__aside-category'} onClick={() =>{ setSlide(false); setCategory('Кнопочные телефоны')}}>Кнопочные телефоны</li>

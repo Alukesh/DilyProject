@@ -15,11 +15,17 @@ const Sell = () => {
     const dispatch = useDispatch();
     const [progress, setProgress] = useState(0);
 
-    const addProductHandler = async (data) =>{
-       await createProduct(data.image[0], setProgress, {...data, creator : user.email === 'admin123@mail.ru' ? 1 : user.uid}, dispatch, user);
+    // const addProductHandler = async (data) =>{
+    //    await createProduct(data.image[0], setProgress, {...data, creator : user.email === 'admin123@mail.ru' ? 1 : user.uid}, dispatch, user);
+    //
+    //     await reset()
+    // };
+     const addProductHandler = async (data) =>{
+       await createProduct(data.image[0], setProgress, {...data, creator : data.creator}, dispatch, user);
 
         await reset()
     };
+
 
     console.log(user);
 
@@ -75,6 +81,19 @@ const Sell = () => {
                         <option value="Стамбул">Стамбул</option>
                     </select>
                 </div>
+
+                  <div className={'sell__form-row'}>
+                    <h3 className={'sell__form-title'}>creator</h3>
+                    <select {...register("creator")} className={'sell__form-input'} >
+                        <option style={{display: 'none'}} value="">Не выбрано</option>
+                        <option value="Диваны тут">Диваны тут</option>
+                        <option value="Xiaomi">Xiaomi</option>
+                        <option value="М-ВИДЕО">М-ВИДЕО</option>
+                        <option value="ДЕТСКИЙ МИР">ДЕТСКИЙ МИР</option>
+                    </select>
+                </div>
+
+
 
                 <div className={'sell__form-row'}>
                     <h3 className={'sell__form-title'} >Фото/ видео</h3>
