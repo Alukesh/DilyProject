@@ -1,0 +1,26 @@
+.price{
+  padding: 50px 0 50px;
+  &__content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    color: #00C65E;
+  }
+  &__subtitle{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #363A45;
+    padding: 15px 0 30px;
+  }
+  &__btn{
+    padding: 12px 103px;
+  }
+}

@@ -43,6 +43,7 @@
   &:hover{
     background: white;
     color: #00C65E;
+    border: 1px solid #00C65E;
   }
 }
 
@@ -58,3 +59,6 @@
 @import "pages/Advertisement/advertisement";
 @import "pages/Buying/buying";
 @import "pages/Online/online";
+@import "pages/Service/Faults/faults";
+@import "pages/Service/Price/price";
+@import "pages/Service/Jobs/jobs";
