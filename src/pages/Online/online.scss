@@ -1,0 +1,85 @@
+.online{
+  display: flex;
+  flex-direction: column;
+  row-gap: 80px;
+  margin-bottom: 100px;
+
+  &__banner{
+    margin-top: 50px;
+
+    .swiper{
+      padding: 0;
+    }
+    &-slide{
+      width: 100vw;
+      &1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: url("./OnlineBanner/bg.png") center/cover no-repeat;
+
+
+        &-title{
+          display: flex;
+          column-gap: 17px;
+          justify-content: center;
+          margin-bottom: 20px;
+          font-family: 'TT Norms',sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 150%;
+          letter-spacing: 0.5px;
+          color: #FFB762;
+        }
+        &-text{
+          font-family: 'TT Norms',sans-serif;
+          transform: translateX(30%);
+          margin-bottom: 40px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 150%;
+          letter-spacing: 0.5px;
+          color: #FFB762;
+        }
+        &-btn{
+          padding: 12px 55px;
+        }
+      }
+
+    }
+
+  }
+
+  &__cashBack{
+    display: flex;
+    column-gap: 30px;
+    justify-content: space-between;
+    &-img{
+      transition: all .4s;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__brands{
+    margin-top: 30px;
+    display: flex;
+    gap: 24px;
+    &-card{
+      cursor: pointer;
+      width: calc(17% - 20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+
+    }
+  }
+
+
+
+}

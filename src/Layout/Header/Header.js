@@ -6,6 +6,7 @@ import ServiceTopBar from "../../pages/Service/ServiceTopBar/ServiceTopBar";
 import {useDispatch, useSelector} from "react-redux";
 import {logOutUser} from "../../redux/reducers/user";
 import {findUser} from "../../redux/reducers/user";
+import OnlineTopbar from "../../pages/Online/OnlineTopbar/OnlineTopbar";
 
 const Header = () => {
     const [section, setSection] = useState(1);
@@ -41,9 +42,9 @@ const Header = () => {
                             <Link to={'/service'}
                                   className={`header__nav-item ${section === 2 && 'header__nav-item-active'}`}
                                   onClick={() => setSection(2)}>Сервисный центр</Link>
-                            <li className={`header__nav-item ${section === 3 && 'header__nav-item-active'}`}
+                            <Link to={'/online'} className={`header__nav-item ${section === 3 && 'header__nav-item-active'}`}
                                 onClick={() => setSection(3)}>Интернет-магазин Dily.ru
-                            </li>
+                            </Link>
                             <Link to={'/buying'}
                                   className={`header__nav-item ${section === 4 && 'header__nav-item-active'}`}
                                   onClick={() => setSection(4)}>Скупка</Link>
@@ -114,6 +115,9 @@ const Header = () => {
                                 <HomeTopBar/> :
                                 section === 2 ?
                                     <ServiceTopBar/>
+                                    :
+                                    section === 3 ?
+                                     <OnlineTopbar/>
                                     : ''
 
                         }

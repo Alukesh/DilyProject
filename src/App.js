@@ -20,6 +20,7 @@ import Buying from "./pages/Buying/Buying";
 import {findUser} from "./redux/reducers/user";
 import NotFound from "./pages/NotFound/NotFound";
 import Shop from "./pages/Home/Shops/Shop/Shop";
+import Online from "./pages/Online/Online";
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
          <Route path='advertisement' element={<Advertisement/>}/>
          <Route path='service' element={<Service/>}/>
          <Route path='buying' element={<Buying/>}/>
+         <Route path='online' element={<Online/>}/>
        </Route>
        <Route path='/auth' element={<Auth/>}/>
        <Route path='/confirm' element={<Confirm/>}/>
