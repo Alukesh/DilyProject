@@ -1,0 +1,36 @@
+.faults{
+  padding: 100px 0 50px;
+  &__content{
+    box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+    padding: 30px 0 47px;
+  }
+  &__lists{
+    display: flex;
+    column-gap: 114px;
+    padding-bottom: 42px;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+   padding-bottom: 14px;
+  }
+  &__btn{
+    margin-bottom: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
