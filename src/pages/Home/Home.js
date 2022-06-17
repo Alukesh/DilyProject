@@ -13,10 +13,6 @@ const Home = () => {
             <Compilation/>
             <TopShops/>
 
-
-
-
-
             <TradeSteps shadow={'shadow-box'}/>
         </div>
     );

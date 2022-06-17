@@ -4,6 +4,8 @@ import Advantage from "./Advantage/Advantage";
 import Faults from "./Faults/Faults";
 import Price from "./Price/Price";
 import Jobs from "./Jobs/Jobs";
+import Confidence from "./Confidence/Сonfidence"
+import Question from "./ Question/Question";
 
 const Service = () => {
     return (
@@ -13,6 +15,8 @@ const Service = () => {
             <Faults/>
             <Price/>
             <Jobs/>
+            <Confidence/>
+            <Question/>
         </div>
     );
 };
