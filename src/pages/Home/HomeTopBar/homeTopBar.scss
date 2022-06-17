@@ -29,3 +29,16 @@
     }
   }
 }
+.online-topBar{
+  &__left{
+    display: flex;
+    column-gap: 30px;
+  }
+  &__btn{
+    cursor: pointer;
+    &s{
+      display: flex;
+      column-gap: 20px;
+    }
+  }
+}

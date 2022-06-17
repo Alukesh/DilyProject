@@ -4,12 +4,10 @@
   row-gap: 80px;
   margin-bottom: 100px;
 
+
   &__banner{
     margin-top: 50px;
 
-    .swiper{
-      padding: 0;
-    }
     &-slide{
       width: 100vw;
       &1{
@@ -76,10 +74,63 @@
       justify-content: center;
       align-items: center;
       padding: 15px 0;
-
+    }
+    &-img{
+      transition: all .1s;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   }
 
+  .swiper{
+    padding: 0!important;
+  }
 
+  &__slide{
+    width: 100%;
+    margin: 15px 13px;
+
+    &1{
+      background: url("");
+      display: flex;
+      justify-content: space-between;
+    }
+    &-info{
+      padding: 30px 70px;
+      text-align: left;
+    }
+    &-title{
+      font-family: 'TT Norms',sans-serif;
+      margin-bottom: 13px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+      color: #00C65E;
+    }
+    &-subtitle{
+      font-family: 'TT Norms',sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+    }
+    &-text{
+      font-family: 'TT Norms',sans-serif;
+      margin-bottom: 30px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+    }
+    &-btn{
+      padding: 12px 55px;
+
+    }
+    &-img{}
+  }
 
 }
