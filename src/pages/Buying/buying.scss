@@ -225,8 +225,60 @@
       }
     }
 
-
-
+  &things{
+    margin-bottom: 100px;
+      &-content{
+        display: flex;
+        column-gap: 80px;
+      }
+    &-title{
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+    }
+    &-subtitle{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 152%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+    }
+      &-btn{
+        padding: 12px 56px;
+      }
+    }
+    &request{
+      margin-bottom: 100px;
+      background: linear-gradient(88.12deg, rgba(255, 183, 98, 0.14) -4.76%, rgba(255, 255, 255, 0.26) 63.39%, #F89358 111.84%), #FFFFFF;
+      &-content{
+        display: flex;
+      }
+      &-left{
+        text-align: center;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      &-title{
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #00C65E;
+        padding-bottom: 50px;
+      }
+      &-btn{
+        padding: 12px 91px;
+      }
+    }
   }
 }
 

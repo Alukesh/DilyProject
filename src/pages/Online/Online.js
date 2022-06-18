@@ -141,6 +141,7 @@ const Online = () => {
                     <span className={'compilation__show_all'}>Смотреть все</span>
                 </div>
                 <CompilationRow sell={true} products={products} />
+
             </div>
 
 
