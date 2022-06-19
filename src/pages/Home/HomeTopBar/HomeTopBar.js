@@ -191,8 +191,8 @@ const HomeTopBar = () => {
                     </>
             }
 
-            <ul className='header-under__list'>
-                <li className='header-under__item' style={{cursor:'pointer', padding:'5px'}} onClick={() => setMenu(!menu)}>
+            <div className='header-under__list'>
+                <div className='header-under__item' style={{cursor:'pointer', padding:'5px'}} onClick={() => setMenu(!menu)}>
                     {
                         !menu ? <span>
                         <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -204,7 +204,7 @@ const HomeTopBar = () => {
                                 </svg>
                             </span>
                     }
-                </li>
+                </div>
                 <NavLink to={''} className='header-under__item'>
                                 <span>
                                     <svg width="14" height="18" viewBox="0 0 14 18"
@@ -266,7 +266,7 @@ const HomeTopBar = () => {
                                     fill="#00C65E" stroke="white"/></svg>
                                 </span>Благотворительность
                 </NavLink>
-            </ul>
+            </div>
             <div className='header-under__cont'>
                 <span className='header-under__icon'><AiOutlineSearch/></span>
                 <input className='header-under__search' placeholder='Я хочу купить' type="text"/>

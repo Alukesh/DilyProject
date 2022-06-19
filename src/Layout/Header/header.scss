@@ -67,9 +67,25 @@
       cursor: pointer;
     }
   }
-  &-under {
+  &-under{
     padding: 16px 0;
     background: #F7F7F7;
+    &__menu{
+      &1{
+        left: 230px;
+      }
+      &-link{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+      }
+      &-text{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+      }
+    }
     &__content {
       max-height: 62px;
       height: 100%;
@@ -88,11 +104,13 @@
       align-items: center;
     }
     &__item {
+      cursor: pointer;
       font-weight: 400;
       font-size: 14px;
       line-height: 120%;
       display: flex;
       align-items: center;
+
       column-gap: 10px;
       color: #363A45;
     }
@@ -118,6 +136,7 @@
       margin-left: auto;
       justify-self: flex-end;
     }
+
     &__btn {
       position: absolute;
       right: 0;
