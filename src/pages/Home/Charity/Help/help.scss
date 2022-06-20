@@ -1,0 +1,26 @@
+.help{
+ padding: 100px 0;
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    color: #363A45;
+  }
+  &__content{
+    display: flex;
+    justify-content: center;
+    column-gap: 190px;
+  padding-top: 40px;
+  }
+ &__text{
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 150%;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   color: #363A45;
+   padding-top: 22px;
+ }
+}

@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home/Home";
 import Shops from "./pages/Home/Shops/Shops";
-import Charity from "./pages/Home/Charity/Charity";
+import Orphanage from "./pages/Home/Orphanage/Orphanage";
 import Layout from "./Layout/Layout";
 import Auth from "./pages/Auth/Auth";
 import './app.scss'
@@ -21,6 +21,7 @@ import {findUser} from "./redux/reducers/user";
 import NotFound from "./pages/NotFound/NotFound";
 import Shop from "./pages/Home/Shops/Shop/Shop";
 import Online from "./pages/Online/Online";
+import Charity from "./pages/Home/Charity/Charity";
 
 
 function App() {

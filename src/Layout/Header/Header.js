@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {logOutUser} from "../../redux/reducers/user";
 import {findUser} from "../../redux/reducers/user";
 import OnlineTopbar from "../../pages/Online/OnlineTopbar/OnlineTopbar";
+import {FaUserAlt} from "react-icons/fa";
 
 const Header = () => {
     const [section, setSection] = useState(1);
@@ -61,11 +62,10 @@ const Header = () => {
                                     <option>Не россия</option>
                                 </select>
                             </div>
-
-
                         </div>
+
                         {
-                            user.email.length
+                            user.email?.length || user.phoneNumber?.length
                                 ?
                                 <span style={{display:'flex', columnGap:'10px'}}>
                                     <Link to='user' className='header__nav-auth'>
@@ -75,7 +75,7 @@ const Header = () => {
                                     d="M1.95703 12.0908C1.95703 12.0908 0.957031 12.0908 0.957031 11.0908C0.957031 10.0908 1.95703 7.09082 6.95703 7.09082C11.957 7.09082 12.957 10.0908 12.957 11.0908C12.957 12.0908 11.957 12.0908 11.957 12.0908H1.95703ZM6.95703 6.09082C7.75268 6.09082 8.51574 5.77475 9.07835 5.21214C9.64096 4.64953 9.95703 3.88647 9.95703 3.09082C9.95703 2.29517 9.64096 1.53211 9.07835 0.9695C8.51574 0.406891 7.75268 0.0908203 6.95703 0.0908203C6.16138 0.0908203 5.39832 0.406891 4.83571 0.9695C4.2731 1.53211 3.95703 2.29517 3.95703 3.09082C3.95703 3.88647 4.2731 4.64953 4.83571 5.21214C5.39832 5.77475 6.16138 6.09082 6.95703 6.09082Z"
                                     fill="#00C65E"/>
                         </svg>
-                        </span> {user.email}</Link> / <span className='header__nav-auth' onClick={() => {
+                        </span> {user.email || user.phoneNumber}</Link> / <span className='header__nav-auth' onClick={() => {
                                     if (window.confirm('log out?')) {
                                         dispatch(logOutUser());
                                         localStorage.removeItem('user');
@@ -83,7 +83,6 @@ const Header = () => {
                                     } return
                                 }}> Выйти</span>
                                 </span>
-
                                 :
                                 <span style={{display:'flex', columnGap:'10px'}}>
                                     <Link to='login' className='header__nav-auth'>
@@ -98,7 +97,6 @@ const Header = () => {
                                 </span>
 
                         }
-
 
                     </div>
                 </nav>

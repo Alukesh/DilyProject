@@ -173,7 +173,7 @@ const Register = () => {
                 </div>
 
                 <button className='register__btn'>Зарегестрироваться</button>
-                <p className='register__quest'>уже есть аккаунт? <Link className='register__link' to='/login'>Войти</Link> </p>
+                <p className='register__quest'>уже есть аккаунт? <Link className='register__link' to='/login'>Войти</Link></p>
                 <Link to='/' className='home'>Вернуться на главную страницу</Link>
 
             </form>
