@@ -1,0 +1,65 @@
+.organization{
+  padding-bottom: 100px;
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #363A45;
+  }
+  &__subtitle{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #363A45;
+    padding: 30px 0;
+  }
+  &__content{
+    display: flex;
+    column-gap: 50px;
+    justify-content: center;
+  }
+  &__img{
+    margin-bottom: -60px;
+  }
+  &__card{
+    box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #363A45;
+    justify-content: center;
+    margin-bottom: auto;
+  }
+  &__btn{
+    padding: 12px 79px;
+    margin: 8px 0 26px;
+  }
+  &__button{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+    background: transparent;
+    border: none;
+    padding-top: 30px;
+   margin: 0 auto;
+    column-gap: 10px;
+  }
+}

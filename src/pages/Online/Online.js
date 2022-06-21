@@ -88,7 +88,7 @@ const Online = () => {
                         <SwiperSlide>
                             <div className={'shadow-box online__slide online__slide1'}>
                                 <div className={'online__slide-info'}>
-                                    <p className={'online__slide-title'}>Новый IPhon 12</p>
+                                    <p className={'online__slide-title'}>Новый IPhone 12</p>
                                     <p className={'online__slide-subtitle'}>Теперь в новых цветах</p>
                                     <p className={'online__slide-text'}>Уже в продаже</p>
                                     <button className={'online__slide-btn greenBtn'}>Купить</button>
@@ -141,6 +141,7 @@ const Online = () => {
                     <span className={'compilation__show_all'}>Смотреть все</span>
                 </div>
                 <CompilationRow sell={true} products={products} />
+
             </div>
 
 

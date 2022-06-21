@@ -7,6 +7,7 @@ import advise2 from './images/advice2.png'
 import advise3 from './images/advice3.png'
 import advise4 from './images/advice4.png'
 import advise5 from './images/advice5.png'
+import img from './images/bg2.png'
 import star from './images/star.png'
 import Sell from "./Sell/Sell";
 import TradeSteps from "./TradeSteps/TradeSteps";
@@ -17,7 +18,7 @@ const Buying = () => {
     const [overlay, setOverlay] = useState(false);
     const user = useSelector(s => s.user.user);
     const navigate = useNavigate();
-    console.log(user)
+    console.log(user);
 
     return (
         <div className={'buying'}>
@@ -49,9 +50,7 @@ const Buying = () => {
 
             }
 
-
             <TradeSteps/>
-
 
             <section className={'buying__advices'}>
                 <div className="container">
@@ -96,6 +95,36 @@ const Buying = () => {
                             </div>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+
+            <section className="buying__things">
+                <div className="container">
+                    <div className="buying__things-content">
+                        <div className="buying__things-text">
+                            <h2 className="buying__things-title">У вас есть вещи,которыми вы не пользуетесь?</h2>
+                            <p className="buying__things-subtitle">Сообщите нам и мы купим по самой выгодной цене!</p>
+                        </div>
+                        <button className="buying__things-btn greenBtn">Узнать примерную стоимость</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section className="buying__request">
+                <div className="container">
+                    <div className="buying__request-content">
+                        <div className="buying__request-left">
+                            <h2 className="buying__request-title">
+                                Оставьте заявку для оценки <br/>
+                                вашего устройства
+                            </h2>
+                            <button className="buying__request-btn greenBtn">Узнать цену</button>
+                        </div>
+                        <div className="buying__request-right">
+                            <img src={img} alt="" className="buying__request-img"/>
+                        </div>
                     </div>
                 </div>
             </section>

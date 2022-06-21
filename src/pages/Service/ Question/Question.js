@@ -9,7 +9,7 @@ const Question = () => {
                 <p className="question__text">Оставьте заявку и нам менеджер свяжется с вами</p>
                 <div className="question__content">
                     <p className="question__descr">Телефон</p>
-                    <input type="number" className="question__input" placeholder="+ 7 (123)-456-78-90"/>
+                    <input type="text" className="question__input" placeholder="+ 7 (123)-456-78-90"/>
                     <button className="question__btn greenBtn">Заказать звонок</button>
                     <div className="question__call">
                         <p className="question__connect">Или позвоните сами</p>
