@@ -21,6 +21,8 @@ import {findUser} from "./redux/reducers/user";
 import NotFound from "./pages/NotFound/NotFound";
 import Shop from "./pages/Home/Shops/Shop/Shop";
 import Online from "./pages/Online/Online";
+import Favourites from "./pages/Online/Favourites/Favourites";
+import Cart from "./pages/Online/Cart/Cart";
 
 
 function App() {
@@ -48,7 +50,10 @@ function App() {
          <Route path='charity' element={<Charity/>}/>
          <Route path='advertisement' element={<Advertisement/>}/>
          <Route path='service' element={<Service/>}/>
+         <Route path='service/:category' element={<Service/>}/>
          <Route path='buying' element={<Buying/>}/>
+         <Route path='favourites' element={<Favourites/>}/>
+         <Route path='cart' element={<Cart/>}/>
          <Route path='online' element={<Online/>}/>
        </Route>
        <Route path='/auth' element={<Auth/>}/>

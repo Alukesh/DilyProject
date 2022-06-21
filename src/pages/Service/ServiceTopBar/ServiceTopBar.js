@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {AiOutlineSearch} from 'react-icons/ai'
 import {Link} from "react-router-dom";
 import ServiceMenu1 from "./ServiceMenu/ServiceMenu1";
+import ServiceMenu3 from "./ServiceMenu/ServiceMenu3";
 
 
 const ServiceTopBar = () => {
@@ -17,8 +18,10 @@ const ServiceTopBar = () => {
                         subMenu === 'subMenu1' ?
                         <ServiceMenu1/> :
                         subMenu === 'subMenu2' ?
-                        'lj' :
-                        ''
+                        <ServiceMenu3/>  :
+                        subMenu === 'subMenu3' ?
+                        <ServiceMenu3/> :
+                                ''
                     }
                     <ul className={'shadow-box header-under__menu'}>
                         <li>
@@ -210,7 +213,7 @@ const ServiceTopBar = () => {
 
 
                     </ul>
-                    <div className={'overlay'} onClick={() => setMenu(false)}> </div>
+                    <div className={'overlay'} onMouseEnter={() => setSubmenu(false)} onClick={() => setMenu(false)}> </div>
                 </>
             }
 

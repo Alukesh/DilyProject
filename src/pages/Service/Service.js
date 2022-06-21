@@ -6,11 +6,22 @@ import Price from "./Price/Price";
 import Jobs from "./Jobs/Jobs";
 import Confidence from "./Confidence/Сonfidence"
 import Question from "./ Question/Question";
+import {useParams} from "react-router-dom";
 
 const Service = () => {
+    const params = useParams();
+
+
     return (
         <div className={'service'}>
-            <ServiceBanner/>
+            {
+                params.category === 'ipad' ?
+                    <div className={'container'}>
+                        ipad kjaksjd
+                    </div> :
+                    <ServiceBanner/>
+
+            }
             <Advantage/>
             <Faults/>
             <Price/>

@@ -40,9 +40,9 @@ const Register = () => {
             .then(async (userCredential) => {
                 // Signed in
                 const user = userCredential.user;
-                await addDoc(userCollectionRef, {email: user.email, orders: [], phone: data.phone, gitl: [], login: data.login, id: user.uid});
-                await dispatch(findUser( {...user, email: user.email, orders: [], phone: data.phone, gitl: [], login: data.login,} ));
-               await localStorage.setItem('user', JSON.stringify(user));
+                await addDoc(userCollectionRef, {email: user.email, orders: [], phone: data.phone, gitl: [], cart: [], login: data.login, id: user.uid});
+                await dispatch(findUser( {...user, email: user.email, orders: [], phone: data.phone, gitl: [], cart: [], favourites: [], login: data.login,} ));
+               await localStorage.setItem('user', JSON.stringify({...user, email: user.email, orders: [], phone: data.phone, gitl: [], cart: [], favourites: [], login: data.login,} ));
                await reset();
                await navigate('/');
 

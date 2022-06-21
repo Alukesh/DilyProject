@@ -16,8 +16,13 @@ const userReducer = createSlice({
             state.user = {
                 email: ''
             }
+        },
+        addFavouriteUser: (state,action) => {
+            state.user = {
+                ...action.payload.user, favourites: {...action.payload.favourites}
+            }
         }
     }
 });
 export default userReducer.reducer
-export const {findUser, logOutUser} = userReducer.actions;
+export const {findUser, logOutUser, addFavouriteUser} = userReducer.actions;
