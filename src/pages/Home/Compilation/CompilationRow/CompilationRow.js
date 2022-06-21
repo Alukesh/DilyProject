@@ -12,7 +12,7 @@ const CompilationRow = ({products, compilationCount = 5, sell, countInRow, creat
                 creator ?
                 products.filter(item => item.creator === creator).filter((el, idx)=> idx < compilationCount ).map(item =>(
                     <>
-                        <CompilationCard id={item.id} sell={sell} countInRow={countInRow} title={item.title} price={item.price} img={item.image} city={item.city} creator={face1}/>
+                        <CompilationCard id={item.id} sell={sell} countInRow={countInRow} title={item.title} price={item.price} img={item.image} city={item.city} creatorImage={face1}/>
                     </>
                 ))
 
@@ -21,7 +21,7 @@ const CompilationRow = ({products, compilationCount = 5, sell, countInRow, creat
                     :
                     products.filter((el, idx)=> idx < compilationCount ).map(item =>(
                         <>
-                            <CompilationCard id={item.id} sell={sell} countInRow={countInRow} title={item.title} price={item.price} img={item.image} city={item.city} creator={face1}/>
+                            <CompilationCard id={item.id} sell={sell} countInRow={countInRow} title={item.title} price={item.price} img={item.image} city={item.city} creatorImage={face1}/>
                         </>
                     ))
 

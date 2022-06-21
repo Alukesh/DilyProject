@@ -7,6 +7,7 @@ import Jobs from "./Jobs/Jobs";
 import Confidence from "./Confidence/Сonfidence"
 import Question from "./ Question/Question";
 import {useParams} from "react-router-dom";
+import Options from "./Options/Options";
 
 const Service = () => {
     const params = useParams();
@@ -23,6 +24,12 @@ const Service = () => {
 
             }
             <Advantage/>
+            <div className={'container'}>
+                <div className={'service__options'}>
+                    <h2>Мы ремонтируем</h2>
+                    <Options/>
+                </div>
+            </div>
             <Faults/>
             <Price/>
             <Jobs/>

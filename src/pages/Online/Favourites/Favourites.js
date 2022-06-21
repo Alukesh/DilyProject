@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import empty from './empty.png'
 import {useSelector} from "react-redux";
+import CompilationCard from "../../Home/Compilation/CompilationCard/CompilationCard";
 
 const Favourites = () => {
     const user = useSelector(s => s.user.user );
@@ -44,7 +45,15 @@ console.log( user);
                                 <p>Добавляйте товары в избранное,чтобы просмотреть или купить их позже</p>
                                 <img src={empty} alt="empty"/>
                             </div> :
-                            'some '
+                            <>
+                                <div className={'favourites__main-items'}>
+                                    {
+                                        user.favourites.map(item => (
+                                            <CompilationCard title={item.title} img={item.image} price={item.price} id={item.id}/>
+                                        ))
+                                    }
+                                </div>
+                            </>
                     }
 
                 </div>

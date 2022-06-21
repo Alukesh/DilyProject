@@ -3,6 +3,7 @@ import {AiOutlineSearch} from 'react-icons/ai'
 import {Link} from "react-router-dom";
 import ServiceMenu1 from "./ServiceMenu/ServiceMenu1";
 import ServiceMenu3 from "./ServiceMenu/ServiceMenu3";
+import TopbarSearch from "../../Home/HomeTopBar/TopbarSearch/TopbarSearch";
 
 
 const ServiceTopBar = () => {
@@ -244,11 +245,7 @@ const ServiceTopBar = () => {
             </ul>
 
             <div className={'header-under-left'}>
-                <div className='header-under__cont'>
-                    <span className='header-under__icon'><AiOutlineSearch/></span>
-                    <input className='header-under__search' placeholder='Я хочу купить' type="text"/>
-                    <button className='header-under__btn'>Найти</button>
-                </div>
+                <TopbarSearch/>
                 <button className='header-under__add'>Заказать ремонт</button>
             </div>
         </>
