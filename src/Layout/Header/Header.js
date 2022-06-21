@@ -63,9 +63,8 @@ const Header = () => {
                                 </select>
                             </div>
                         </div>
-
                         {
-                            user.email?.length || user.phoneNumber?.length
+                            user?.email?.length || user?.phoneNumber?.length
                                 ?
                                 <span style={{display:'flex', columnGap:'10px'}}>
                                     <Link to='user' className='header__nav-auth'>
@@ -97,6 +96,7 @@ const Header = () => {
                                 </span>
 
                         }
+
 
                     </div>
                 </nav>

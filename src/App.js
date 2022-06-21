@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home/Home";
 import Shops from "./pages/Home/Shops/Shops";
-import Orphanage from "./pages/Home/Orphanage/Orphanage";
 import Layout from "./Layout/Layout";
 import Auth from "./pages/Auth/Auth";
 import './app.scss'
