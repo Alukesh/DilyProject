@@ -24,6 +24,8 @@ import Online from "./pages/Online/Online";
 import Favourites from "./pages/Online/Favourites/Favourites";
 import Cart from "./pages/Online/Cart/Cart";
 import Charity from "./pages/Home/Charity/Charity";
+import Orphanage from "./pages/Home/Orphanage/Orphanage";
+import Data from "./pages/Home/Charity/Misery/Data/Data";
 
 
 function App() {
@@ -56,7 +58,9 @@ function App() {
          <Route path='online' element={<Online/>}/>
          <Route path='favourites' element={<Favourites/>}/>
          <Route path='cart' element={<Cart/>}/>
+         <Route path='orphanage' element={<Orphanage/>}/>
        </Route>
+       <Route path='data' element={<Data/>}/>
        <Route path='/auth' element={<Auth/>}/>
        <Route path='/confirm' element={<Confirm/>}/>
        <Route path='/register' element={<Register/>}/>

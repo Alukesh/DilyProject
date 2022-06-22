@@ -17,7 +17,7 @@ const Organization = () => {
                     <div className="organization__card">
                         <img src={img} alt="" className="organization__img"/>
                         <p className="organization__text">Детские дома</p>
-                        <button className="organization__btn greenBtn">Помочь</button>
+                        <button className="organization__btn greenBtn" onClick={() => navigate('../orphanage')}>Помочь</button>
                     </div>
                     <div className="organization__card">
                         <img src={img2} alt="" className="organization__img"/>

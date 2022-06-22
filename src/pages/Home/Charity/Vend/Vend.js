@@ -16,7 +16,7 @@ const Vend = () => {
                 </p>
                 <button className="vend__btn">развернуть
                     <span><svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.918457 1.19727L6.22712 6.19727L11.5358 1.19727" stroke="#9BA0A5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.918457 1.19727L6.22712 6.19727L11.5358 1.19727" stroke="#9BA0A5"/>
 </svg>
 </span>
                 </button>

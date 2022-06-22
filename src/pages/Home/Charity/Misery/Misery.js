@@ -4,8 +4,12 @@ import image2 from "./avatar (1).png";
 import image3 from "./avatar (2).png";
 import image4 from "./avatar (3).png";
 import img from "./Frame 149.png"
+import {useNavigate} from "react-router-dom";
 
 const Misery = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="misery">
             <div className="container">
@@ -74,7 +78,7 @@ const Misery = () => {
                             <li className="misery__list-item">Какая помощь нужна?</li>
                             <li className="misery__item">Одежда, еда, книги, игрушки, <br/>
                             финансовая помощь</li>
-                            <button className="misery__btn greenBtn">Подробнее</button>
+                            <button className="misery__btn greenBtn" onClick={() => navigate("../data")}>Подробнее</button>
                         </ul>
                 </div>
             </div>
