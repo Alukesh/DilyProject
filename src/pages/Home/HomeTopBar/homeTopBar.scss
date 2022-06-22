@@ -28,6 +28,34 @@
       }
     }
   }
+
+  &__search{
+    &-block{
+      padding: 12px 12px 25px;
+      transform: translateY(100%);
+      z-index: 10;
+      background-color: #fff;
+      bottom: -30px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      position: absolute;
+    }
+    &-card{
+      gap: 20px;
+      display: flex;
+      cursor: pointer;
+    }
+    &-info{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    &-img{
+      max-width: 60px;
+      height: auto;
+    }
+  }
 }
 .online-topBar{
   &__left{

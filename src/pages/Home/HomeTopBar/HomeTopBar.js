@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {Link, NavLink} from 'react-router-dom'
-import {AiOutlineSearch} from 'react-icons/ai'
-
+import TopbarSearch from "./TopbarSearch/TopbarSearch";
 
 const HomeTopBar = () => {
     const [menu, setMenu] = useState(false);
-
     return (
         <>
             {
@@ -267,11 +265,7 @@ const HomeTopBar = () => {
                                 </span>Благотворительность
                 </NavLink>
             </div>
-            <div className='header-under__cont'>
-                <span className='header-under__icon'><AiOutlineSearch/></span>
-                <input className='header-under__search' placeholder='Я хочу купить' type="text"/>
-                <button className='header-under__btn'>Найти</button>
-            </div>
+           <TopbarSearch/>
             <Link to={'/advertisement'} style={{color:"white"}} className='header-under__add'>Подать объявление <span><svg width="19" height="19"
                                                                                viewBox="0 0 19 19" fill="none"
                                                                                xmlns="http://www.w3.org/2000/svg">

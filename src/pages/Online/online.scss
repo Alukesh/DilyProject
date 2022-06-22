@@ -92,7 +92,7 @@
     margin: 15px 13px;
 
     &1{
-      background: url("");
+      //background: url("");
       display: flex;
       justify-content: space-between;
     }
@@ -134,3 +134,4 @@
   }
 
 }
+@import "Favourites/favourites";

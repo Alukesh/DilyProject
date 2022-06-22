@@ -15,6 +15,14 @@ const Header = () => {
     const user = useSelector(s => s.user.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    useEffect(() => {
+        setSection(JSON.parse(localStorage.getItem('section')))
+    },[]);
+    useEffect(()=> {
+        localStorage.setItem('section', section);
+    },[section]);
+
+
 
 
     return (
@@ -38,17 +46,17 @@ const Header = () => {
                             </svg>
                         </Link>
                         <ul className='header__nav-list'>
-                            <Link to={'/'} className={`header__nav-item  ${section === 1 && 'header__nav-item-active'}`}
-                                  onClick={() => setSection(1)}>Доска объявлений</Link>
-                            <Link to={'/service'}
+                            <NavLink to={'/'} className={`header__nav-item  ${section === 1 && 'header__nav-item-active'}`}
+                                  onClick={() => setSection(1)}>Доска объявлений</NavLink>
+                            <NavLink to={'/service'}
                                   className={`header__nav-item ${section === 2 && 'header__nav-item-active'}`}
-                                  onClick={() => setSection(2)}>Сервисный центр</Link>
-                            <Link to={'/online'} className={`header__nav-item ${section === 3 && 'header__nav-item-active'}`}
+                                  onClick={() => setSection(2)}>Сервисный центр</NavLink>
+                            <NavLink to={'/online'} className={`header__nav-item ${section === 3 && 'header__nav-item-active'}`}
                                 onClick={() => setSection(3)}>Интернет-магазин Dily.ru
-                            </Link>
-                            <Link to={'/buying'}
+                            </NavLink>
+                            <NavLink to={'/buying'}
                                   className={`header__nav-item ${section === 4 && 'header__nav-item-active'}`}
-                                  onClick={() => setSection(4)}>Скупка</Link>
+                                  onClick={() => setSection(4)}>Скупка</NavLink>
                         </ul>
                     </div>
                     <div className='header__nav-right'>
