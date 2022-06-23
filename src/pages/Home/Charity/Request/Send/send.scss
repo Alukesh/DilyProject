@@ -1,0 +1,133 @@
+.send{
+  &__list{
+    padding: 80px 279px 108px;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #363A45;
+  }
+  &__subtitle{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #262626;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #262626;
+    column-gap: 5px;
+    padding-bottom: 5px;
+    padding-top: 15px;
+  }
+  &__input{
+    padding: 10px 457px 10px 15px;
+    border: 1px solid #DADCDC;
+    border-radius: 10px;
+    &::placeholder{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #363A45;
+
+    }
+  }
+  &__content{
+    display: flex;
+    column-gap: 100px;
+    padding: 40px 0;
+  }
+  &__inputs-input{
+    padding: 10px 100px 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #DADCDC;
+    &::placeholder{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #DADCDC;
+    }
+  }
+  &__checkbox{
+    display: flex;
+    flex-direction: column;
+  }
+  &__choice{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #363A45;
+  }
+  &__textarea{
+    border: 1px solid #DADCDC;
+    border-radius: 10px;
+    padding: 6px 15px;
+    &::placeholder{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #363A45;
+    }
+  }
+  &__descr{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #DADCDC;
+    padding-top: 10px;
+  }
+  &__images{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  &__img{
+    width: 10%;
+  }
+  &__city{
+    font-size: 16px;
+    padding-top: 30px;
+  }
+  &__photo{
+    font-size: 16px;
+  }
+  &__select{
+    width: 615px;
+    height: 41px;
+    border: 1px solid #DADCDC;
+    border-radius: 10px;
+    padding: 0 15px;
+  }
+  &__option{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #363A45;
+  }
+  &__agree{
+    display: flex;
+    column-gap: 168px;
+    padding-top: 31px;
+  }
+  &__text2{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #262626;
+  }
+  &__btn{
+    padding: 12px 36px;
+    margin-bottom: 10px;
+  }
+}

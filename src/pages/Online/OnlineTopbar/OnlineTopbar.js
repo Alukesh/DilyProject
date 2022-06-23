@@ -8,7 +8,7 @@ import {useSelector} from "react-redux";
 const OnlineTopbar = () => {
     const [menu, setMenu] = useState(false);
     const location = useLocation();
-    console.log(location)
+    console.log(location);
 
     return (
 
