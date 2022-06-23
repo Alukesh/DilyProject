@@ -2,6 +2,10 @@ import React from 'react';
 import Help from "./Help/Help";
 import Pass from "./Pass/Pass";
 import Organization from "./Organization/Organization";
+import Misery from "./Misery/Misery";
+import Broadcast from "./Broadcast/Broadcast";
+import Request from "./Request/Request";
+import Vend from "./Vend/Vend";
 
 
 const Charity = () => {
@@ -24,6 +28,10 @@ const Charity = () => {
             <Help/>
             <Pass/>
             <Organization/>
+            <Misery/>
+            <Broadcast/>
+            <Request/>
+            <Vend/>
         </div>
     );
 };
