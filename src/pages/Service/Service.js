@@ -26,7 +26,7 @@ const Service = () => {
             <Advantage/>
             <div className={'container'}>
                 <div className={'service__options'}>
-                    <h2>Мы ремонтируем</h2>
+                    <h2 className={'service__options-title'}>Мы ремонтируем</h2>
                     <Options/>
                 </div>
             </div>

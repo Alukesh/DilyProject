@@ -13,6 +13,7 @@ import Sell from "./Sell/Sell";
 import TradeSteps from "./TradeSteps/TradeSteps";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import Options from "../Service/Options/Options";
 
 const Buying = () => {
     const [overlay, setOverlay] = useState(false);
@@ -111,6 +112,13 @@ const Buying = () => {
                 </div>
 
             </section>
+
+            <div className={'container'}>
+                <div className={'service__options'}>
+                    <h2 className={'service__options-title'}>Что мы покупаем?</h2>
+                    <Options/>
+                </div>
+            </div>
 
             <section className="buying__request">
                 <div className="container">

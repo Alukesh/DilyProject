@@ -226,6 +226,7 @@
     }
 
   &things{
+
     margin-bottom: 100px;
       &-content{
         display: flex;
@@ -252,7 +253,7 @@
       }
     }
     &request{
-      margin-bottom: 100px;
+      margin: 100px 0;
       background: linear-gradient(88.12deg, rgba(255, 183, 98, 0.14) -4.76%, rgba(255, 255, 255, 0.26) 63.39%, #F89358 111.84%), #FFFFFF;
       &-content{
         display: flex;
