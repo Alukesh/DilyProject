@@ -19,11 +19,33 @@
       text-align: center;
       &-row{
         display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        row-gap: 45px;
+      }
+      &-title{
+        font-family: 'TT Norms',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        margin-bottom: 30px;
       }
       &-card{
+        font-family: 'TT Norms',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 152%;
+        padding: 14px 11px 10px;
+        max-width: 170px;
+        width: calc(17% - 25px);
         text-align: center;
         display: flex;
         flex-direction: column;
+        img{
+          margin-bottom: 15px;
+        }
       }
     }
 
