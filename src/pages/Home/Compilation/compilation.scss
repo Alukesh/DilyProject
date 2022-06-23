@@ -36,6 +36,9 @@
         transition: all .9s;
         transform: scale(1.1);
       }
+      &-link{
+        margin-bottom: auto;
+      }
       &-btn{
         background: #ffffff;
         font-family: 'TT Norms',sans-serif;
