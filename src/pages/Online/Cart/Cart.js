@@ -4,7 +4,7 @@ const Cart = () => {
     return (
         <div className="cart">
             <div className="container">
-SASDADAD
+
             </div>
         </div>
     );
