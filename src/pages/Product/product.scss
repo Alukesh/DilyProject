@@ -1,0 +1,56 @@
+.product{
+
+  &__{
+
+    &info{
+      padding: 30px 50px 100px;
+    }
+
+    &top{
+      display: flex;
+      padding: 30px 0;
+      column-gap: 40px;
+    }
+    &slider{
+      color: #c62d4e;
+      background-color: purple;
+      width: 320px;
+      height: 550px;
+    }
+
+    &characteristics{
+      width: 218px;
+      &-first{
+        margin-bottom: 30px;
+        &-title{
+          margin-bottom: 15px;
+          font-family: 'Open Sans',sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 120%;
+        }
+        &-btn{
+          height: 40px;
+          display: inline-block;
+          padding: 12px 16px;
+          color: red;
+        }
+      }
+      &-second{
+        &-btn{
+          display: inline-block;
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #000;
+        }
+      }
+      &-third{}
+    }
+
+
+
+  }
+}

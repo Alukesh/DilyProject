@@ -21,7 +21,6 @@ const Google = () => {
 
                 user.orders = [];
                 user.gitl = [];
-                // user.fa
                 user.cart = [];
                 user.favourites = [];
                 user.phone = '';

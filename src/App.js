@@ -27,6 +27,7 @@ import Charity from "./pages/Home/Charity/Charity";
 import Orphanage from "./pages/Home/Orphanage/Orphanage";
 import Data from "./pages/Home/Charity/Misery/Data/Data";
 import Send from "./pages/Home/Charity/Request/Send/Send";
+import Product from "./pages/Product/Product";
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
          <Route path='online' element={<Online/>}/>
          <Route path='favourites' element={<Favourites/>}/>
          <Route path='cart' element={<Cart/>}/>
+         <Route path='product' element={<Product/>}/>
          <Route path='orphanage' element={<Orphanage/>}/>
        </Route>
        <Route path='data' element={<Data/>}/>
