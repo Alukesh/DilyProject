@@ -77,6 +77,7 @@
     box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
     border-radius: 10px;
     padding: 25px 30px 35px;
+    margin-left: 93px;
     &-content{
       display: flex;
       flex-direction: column;
@@ -96,5 +97,39 @@
   &__sale{
     display: flex;
     column-gap: 80px;
+    padding: 20px 0 24px;
+    border-bottom: 1px solid #EFEFEF;
+    &-num{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 152%;
+      display: flex;
+      align-items: center;
+      color: #363A45;
+    }
+  }
+  &__text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+  }
+  &__result{
+    display: flex;
+    column-gap: 106px;
+    padding-top: 20px ;
+  }
+  &__only{
+    font-size: 24px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #363A45;
+  }
+  &__figuration{
+    padding: 7px 54px;
   }
 }
