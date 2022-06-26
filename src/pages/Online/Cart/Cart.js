@@ -1,7 +1,10 @@
 import React from 'react';
 import img from "./iphone11.png"
+import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
+
+    const navigate = useNavigate();
 
     return (
         <div className="cart">
@@ -20,6 +23,7 @@ const Cart = () => {
                     </div>
                     <p className="cart__sum">70 000 ₽</p>
                     <span className="cart__basket">
+
                         <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="path-1-inside-1_5828_4867" fill="white">
 <rect x="1.61035" y="4" width="12" height="13" rx="1"/>
@@ -44,7 +48,7 @@ const Cart = () => {
                        </div>
                    </div>
                 </div>
-                <button className="cart__figuration greenBtn">Перейти к оформлению</button>
+                <button className="cart__figuration greenBtn" onClick={() => navigate("../Formalize")}>Перейти к оформлению</button>
             </div>
         </div>
     );
