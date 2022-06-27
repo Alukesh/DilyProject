@@ -61,6 +61,7 @@ function App() {
          <Route path='online' element={<Online/>}/>
          <Route path='favourites' element={<Favourites/>}/>
          <Route path='cart' element={<Cart/>}/>
+         <Route path='product/:id' element={<Product/>}/>
          <Route path='product' element={<Product/>}/>
          <Route path='orphanage' element={<Orphanage/>}/>
          <Route path='formalize' element={<Formalize/>}/>

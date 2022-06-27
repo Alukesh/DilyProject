@@ -27,7 +27,7 @@ const Google = () => {
                 console.log(user);
                 await addDoc(userCollectionRef, {email: user.email, orders: [], phone: '', cart: [], favourites: [], gitl: [], login: user.displayName, id: user.uid});
                 await dispatch(findUser( {user} ));
-                await localStorage.setItem('user', JSON.stringify(user));
+                await localStorage.setItem('user', JSON.stringify({...user}));
                 await navigate('/')
             }).catch((error) => {
             console.log(error)
