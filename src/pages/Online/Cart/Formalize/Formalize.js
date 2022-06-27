@@ -56,7 +56,7 @@ const Formalize = () => {
                        </select>
                        <div className="formalize__period">
                            <div className="formalize__date">
-                               <h4 className="formalize__title-date">Дата</h4>
+                               <h4 className="formalize__date-title">Дата</h4>
                                <select className="formalize__data">
                                    <option className="formalize__option">30 июня</option>
                                    <option className="formalize__option">30 июля</option>
@@ -83,71 +83,91 @@ const Formalize = () => {
                            </div>
                            <div className="formalize__apartment">
                                <h4 className="formalize__flat">Квартира </h4>
-                               <input placeholder="35" type="text" className="formalize__number"/>
+                               <input placeholder="35" type="text" className="formalize__input"/>
                            </div>
                        </div>
+                       <h3 className="formalize__courier">Комментарий курьеру</h3>
+                       <input placeholder="Домофон" type="text" className="formalize__comment"/>
                    </div>
-                   <h3 className="formalize__courier">Комментарий курьеру</h3>
-                   <input placeholder="Домофон" type="text" className="formalize__comment"/>
                </div>
                <button className="formalize__btn-white">Далее</button>
                <div className="formalize__content">
                    <h3 className="formalize__way">Способ оплаты</h3>
-                   <div className="formalize__card">
-                       <div className="formalize__render">
-                           <input type="radio" className="formalise__checkbox"/>
-                           <h4 className="formalize__payment">Онлайн</h4>
-                           <p className="formalize__descr">Картами Visa, Mastercard, МИР</p>
+                   <div className="formalize__cards">
+                       <div className="formalize__card">
+                           <div className="formalize__render">
+                               <span><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2.5" width="12" height="12" rx="6" fill="white" stroke="#00C65E" strokeWidth="4"/>
+</svg>
+</span>
+                               <h4 className="formalize__payment">Онлайн</h4>
+                           </div>
+                               <p className="formalize__descr">Картами Visa, Mastercard, МИР</p>
                        </div>
-                   </div>
-                   <div className="formalize__card">
-                       <div className="formalize__render">
-                           <input type="radio" className="formalise__checkbox"/>
-                           <h4 className="formalize__payment">Рассрочка онлайн</h4>
-                           <p className="formalize__descr">Список банков партнеров <br/>
-                               <span className="formalize__link">Заполнить анкету на сайте</span></p>
+                       <div className="formalize__card">
+                           <div className="formalize__render">
+                                <span><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="1" width="15" height="15" rx="7.5" fill="white" stroke="#DADCDC"/>
+</svg>
+</span>
+                               <h4 className="formalize__payment">Рассрочка онлайн</h4>
+                           </div>
+                               <p className="formalize__descr">
+                                   Список банков партнеров
+                               </p>
+                           <p className="formalize__link">Заполнить анкету на сайте</p>
                        </div>
-                   </div>
-                   <div className="formalize__card">
-                       <div className="formalize__render">
-                           <input type="radio" className="formalise__checkbox"/>
-                           <h4 className="formalize__payment">При получении</h4>
-                           <p className="formalize__descr">Наличными или картой </p>
+                       <div className="formalize__card">
+                           <div className="formalize__render">
+                              <span><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="1" width="15" height="15" rx="7.5" fill="white" stroke="#DADCDC"/>
+</svg>
+</span>
+                               <h4 className="formalize__payment">При получении</h4>
+                           </div>
+                               <p className="formalize__descr">Наличными или картой </p>
                        </div>
-                   </div>
-                   <div className="formalize__card">
-                       <div className="formalize__render">
-                           <input type="radio" className="formalise__checkbox"/>
-                           <h4 className="formalize__payment">Электронными деньгами</h4>
-                           <p className="formalize__descr">ЮMoney, QIWI Wallet</p>
+                       <div className="formalize__card">
+                           <div className="formalize__render">
+                               <span><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="1" width="15" height="15" rx="7.5" fill="white" stroke="#DADCDC"/>
+</svg>
+</span>
+                               <h4 className="formalize__payment">Электронными деньгами</h4>
+                           </div>
+                               <p className="formalize__descr">ЮMoney, QIWI Wallet</p>
                        </div>
                    </div>
                </div>
                <button className="formalize__btn-white">Далее</button>
                <div className="formalize__content">
                    <h3 className="formalize__information">Данные получателя</h3>
-                   <div className="formalize__facts">
-                       <p className="formalize__name">Имя</p>
-                       <input placeholder="Петр" type="text" className="formalize__name-input"/>
+                   <div className="formalize__record">
+                       <div className="formalize__facts">
+                           <p className="formalize__name">Имя</p>
+                           <input placeholder="Петр" type="text" className="formalize__name-input"/>
+                       </div>
+                       <div className="formalize__facts">
+                           <p className="formalize__name">Фамилия</p>
+                           <input placeholder="Иванов" type="text" className="formalize__name-input"/>
+                       </div>
                    </div>
-                   <div className="formalize__facts">
-                       <p className="formalize__name">Фамилия</p>
-                       <input placeholder="Иванов" type="text" className="formalize__name-input"/>
-                   </div>
-                   <div className="formalize__facts">
-                       <p className="formalize__name">Телефон</p>
-                       <input placeholder="+ 7 (123)-456-78-90" type="text" className="formalize__name-input"/>
-                   </div>
-                   <div className="formalize__facts">
-                       <p className="formalize__name">E- mail</p>
-                       <input placeholder="name@inbox.ru" type="email" className="formalize__name-input"/>
+                   <div className="formalize__record">
+                       <div className="formalize__facts">
+                           <p className="formalize__name">Телефон</p>
+                           <input placeholder="+ 7 (123)-456-78-90" type="text" className="formalize__name-input"/>
+                       </div>
+                       <div className="formalize__facts">
+                           <p className="formalize__name">E- mail</p>
+                           <input placeholder="name@inbox.ru" type="email" className="formalize__name-input"/>
+                       </div>
                    </div>
                </div>
                <div className="formalize__bottom">
                    <button className="formalize__Btn greenBtn">Оформить заказ</button>
                    <p className="formalize__bottom-text">
                        Нажимая кнопку оформить вы подтверждаете свое <br/>
-                       согласие с <span className="formalize__link">условиями продажи в интернет-магазине Dily</span>
+                       согласие с <span className="formalize__condition">условиями продажи в интернет-магазине Dily</span>
                    </p>
                </div>
            </div>
