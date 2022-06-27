@@ -32,6 +32,8 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                                 price,
                             }]
              } ));
+        dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
+
 
         // dispatch(findUser({user: JSON.parse(localStorage.getItem('user')) }));
         // dispatch(findUser({
