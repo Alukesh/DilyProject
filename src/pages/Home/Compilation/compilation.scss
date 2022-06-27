@@ -62,6 +62,9 @@
           stroke: white;
           background: #00C65E;
         }
+        &:hover path{
+          //fill: white;
+        }
       }
       &-color{
         height: 12px;
