@@ -9,7 +9,17 @@
     color: #363A45;
     padding-bottom: 32px;
   }
+  &__img{
+    max-height: 110px;
+  }
   &__content{
+    display: flex;
+    &-column{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__card{
     display: flex;
     column-gap: 40px;
     align-items: center;
