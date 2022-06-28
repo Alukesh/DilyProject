@@ -29,6 +29,7 @@ import Data from "./pages/Home/Charity/Misery/Data/Data";
 import Send from "./pages/Home/Charity/Request/Send/Send";
 import Product from "./pages/Product/Product";
 import Formalize from "./pages/Online/Cart/Formalize/Formalize";
+import Organizations from "./pages/Home/Organizations/Organizations";
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
          <Route path='product' element={<Product/>}/>
          <Route path='orphanage' element={<Orphanage/>}/>
          <Route path='formalize' element={<Formalize/>}/>
+         <Route path='organizations' element={<Organizations/>}/>
        </Route>
        <Route path='data' element={<Data/>}/>
        <Route path='send' element={<Send/>}/>
