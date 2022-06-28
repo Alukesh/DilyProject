@@ -2,6 +2,8 @@ import React from 'react';
 import img from "../iphone11.png";
 
 const CardCart = ({image, title, price}) => {
+
+
     return (
         <div className={'cart__card'}>
             <img src={image} alt="" className="cart__img"/>
@@ -16,7 +18,6 @@ const CardCart = ({image, title, price}) => {
             </div>
             <p className="cart__sum">{price} ₽</p>
             <span className="cart__basket">
-
                         <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-inside-1_5828_4867" fill="white">
                         <rect x="1.61035" y="4" width="12" height="13" rx="1"/>

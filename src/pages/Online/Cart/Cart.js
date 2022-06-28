@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import img from "./iphone11.png"
 import {useNavigate} from "react-router-dom";
 import CardCart from "./CartCard/CardCart";
 import {useSelector} from "react-redux";
+import Sell from "../../Buying/Sell/Sell";
 
 const Cart = () => {
     const user = useSelector(s => s.user.user);
-
     const navigate = useNavigate();
 
     return (
@@ -23,9 +23,10 @@ const Cart = () => {
                                 <div key={item.id}>
                                     <CardCart image={item.image} title={item.title} price={item.price}/>
                                 </div>
-                                )) :
+                                ))
+                                    :
                                 <div>
-                                    non
+                                    <p>В корзине нет товаров,выберите что-нибудь из каталога</p>
                                 </div>
 
                         }
