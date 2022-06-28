@@ -18,12 +18,13 @@ const Cart = () => {
                     <div className={'cart__content-column'}>
 
                         {
-                                user.cart?
+                                user.cart[0]?
                                 user.cart.map(item => (
                                 <div key={item.id}>
                                     <CardCart image={item.image} title={item.title} price={item.price}/>
                                 </div>
-                                )) :
+                                ))
+                                    :
                                 <div>
                                     non
                                 </div>
