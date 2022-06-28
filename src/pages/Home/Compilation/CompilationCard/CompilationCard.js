@@ -69,7 +69,7 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                         </span>
 
 
-            <Link to={`/product/${id}`} style={{display: "flex", justifyContent: "center"}}
+            <Link to={`/product/${id}`} onClick={() => window.scrollTo('pageYOffset', 0)} style={{display: "flex", justifyContent: "center"}}
                   className={'compilation__card-link'}>
                 <img className={'compilation__card-image'} src={img} alt="phone"/>
             </Link>
@@ -84,10 +84,10 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                 {
                     sell ?
                         <div className={'compilation__card-colors'}>
-                            <p className={'compilation__card-color'} style={{backgroundColor: '#C4C4C4'}}></p>
-                            <p className={'compilation__card-color'} style={{backgroundColor: '#CCEFDB'}}></p>
-                            <p className={'compilation__card-color'} style={{backgroundColor: '#363A45'}}></p>
-                            <p className={'compilation__card-color'} style={{backgroundColor: '#FFB762'}}></p>
+                            <p className={'compilation__card-color'} style={{backgroundColor: '#C4C4C4'}}> </p>
+                            <p className={'compilation__card-color'} style={{backgroundColor: '#CCEFDB'}}> </p>
+                            <p className={'compilation__card-color'} style={{backgroundColor: '#363A45'}}> </p>
+                            <p className={'compilation__card-color'} style={{backgroundColor: '#FFB762'}}> </p>
                         </div>
                         : ''
                 }

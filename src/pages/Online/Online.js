@@ -19,6 +19,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import img2 from "../Board/Slider/img/2.svg";
 import img3 from "../Board/Slider/img/3.svg";
+import Vend from "../Home/Charity/Vend/Vend";
 
 
 
@@ -143,6 +144,8 @@ const Online = () => {
                 <CompilationRow sell={true} products={products} />
 
             </div>
+
+            <Vend/>
 
 
 

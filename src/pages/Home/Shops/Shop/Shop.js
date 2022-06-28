@@ -4,6 +4,7 @@ import SideMenu from "../../../Phones/SideMenu/SideMenu";
 import CompilationRow from "../../Compilation/CompilationRow/CompilationRow";
 import {useSelector} from "react-redux";
 import {Link} from 'react-router-dom'
+import Vend from "../../Charity/Vend/Vend";
 
 const Shop = () => {
     const products = useSelector(s => s.products.products);
@@ -44,6 +45,7 @@ const Shop = () => {
 
                 </div>
 
+                <Vend/>
             </div>
         </div>
     );

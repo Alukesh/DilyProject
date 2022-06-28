@@ -13,8 +13,8 @@ const ProductSlider = () => {
     const params = useParams();
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const product = useSelector(s => s.products.products);
-    console.log(product);
-    const [prodImg, setProdImg] = useState('');
+    // console.log(product);
+    // const [prodImg, setProdImg] = useState('');
 
 
     return (

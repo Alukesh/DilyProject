@@ -8,6 +8,7 @@ import Confidence from "./Confidence/Сonfidence"
 import Question from "./ Question/Question";
 import {useParams} from "react-router-dom";
 import Options from "./Options/Options";
+import Vend from "../Home/Charity/Vend/Vend";
 
 const Service = () => {
     const params = useParams();
@@ -35,6 +36,7 @@ const Service = () => {
             <Jobs/>
             <Confidence/>
             <Question/>
+            <Vend/>
         </div>
     );
 };

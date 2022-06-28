@@ -1,7 +1,12 @@
 import React from 'react';
 import img from "../iphone11.png";
+import {findUser} from "../../../../redux/reducers/user";
+import {useDispatch, useSelector} from "react-redux";
 
-const CardCart = ({image, title, price}) => {
+const CardCart = ({image, title, price, id}) => {
+    const user = useSelector(s => s.user.user);
+    const dispatch = useDispatch();
+
 
 
     return (
@@ -17,7 +22,13 @@ const CardCart = ({image, title, price}) => {
                 <button className="cart__amount-btn">+</button>
             </div>
             <p className="cart__sum">{price} ₽</p>
-            <span className="cart__basket">
+            <span className="cart__basket" onClick={() => {
+                localStorage.setItem('user', JSON.stringify({...user, cart:
+                        [...user.cart.filter((el) => el.id !== id)]
+                } ));
+                dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
+
+            }}>
                         <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-inside-1_5828_4867" fill="white">
                         <rect x="1.61035" y="4" width="12" height="13" rx="1"/>
