@@ -11,18 +11,38 @@
   }
   &__img{
     max-height: 110px;
+    height: 100px;
+    width: 100%;
+    max-width: 100px;
   }
   &__content{
     display: flex;
+    width: 100%;
     &-column{
+      width: 100%;
       display: flex;
       flex-direction: column;
+      margin-bottom: 60px;
     }
   }
   &__card{
+    width: 100%;
     display: flex;
     column-gap: 40px;
     align-items: center;
+  &-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 45%;
+    margin-bottom: 6px;
+  }
+    &-info{
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      width: 40%;
+    }
   }
   &__phone{
     font-weight: 500;
@@ -66,7 +86,8 @@
       line-height: 150%;
       letter-spacing: 0.04em;
       color: #262626;
-      padding: 6.73px 16px;
+      width: 45px;
+      padding: 6.73px 0;
       background: #FFFFFF;
       border: 1.5px solid #EFEFEF;
       border-radius: 5px;

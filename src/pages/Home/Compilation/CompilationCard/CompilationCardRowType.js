@@ -2,22 +2,9 @@ import React from 'react';
 import {findUser} from "../../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, useNavigate} from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
-
-const CompilationCard = ({title, img, price, city, sell, id, creatorImage, countInRow}) => {
-    const notify = () =>toast('Добавлено', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        // theme: "colored",
-        draggable: true,
-        progress: undefined,
-    });
+const CompilationCardRowType = ({title, img, price, city, sell, id, creatorImage, countInRow}) => {
     const user = useSelector(s => s.user.user);
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -40,20 +27,13 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
 
     const addCart = () => {
         localStorage.setItem('user', JSON.stringify({...user, cart:
-                user.cart.findIndex(el => el.id === id) >= 0 ?
-                    user.cart.map((el) => {
-                        if ( el.id === id){
-                            return {...el, count: +el.count + 1}
-                        } return el
-                    }) :
-                    [...user.cart, {
-                        image: img,
-                        count: 1 ,
-                        id,
-                        title,
-                        price,
-                    }]
-             } ));
+                [...user.cart, {
+                    image: img,
+                    id,
+                    title,
+                    price,
+                }]
+        } ));
         dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
 
 
@@ -73,7 +53,7 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
 
 
     return (
-        <div className={'shadow-box compilation__card '} style={{width: countInRow === 4 ? '22.8%' : ''}}>
+        <div className={'shadow-box compilation__card-rowType '} style={{width: countInRow === 4 ? '22.8%' : ''}}>
                          <span className="compilation__card-like" onClick={() => {
                              addFav()
                          }}>
@@ -144,10 +124,7 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                             !sell ?
                                 <span className={'compilation__card-city'}>{city}</span>
                                 :
-                                <button className={'compilation__card-btn shadow-box'} onClick={() => {
-                                    addCart();
-                                    notify();
-                                }}>Купить
+                                <button className={'compilation__card-btn shadow-box'} onClick={addCart}>Купить
                                     <span>
                                         <svg width="17" height="18" viewBox="0 0 17 18" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -164,10 +141,6 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                                 </button>
                         }
                     </div>
-                    <ToastContainer
-                        position="bottom-left"
-                        closeOnClick={true}
-                    />
                     {
                         sell || creatorImage &&
                         <img className={'compilation__card-creator'} src={creatorImage} alt="face"/>
@@ -178,4 +151,4 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
     );
 };
 
-export default CompilationCard;
+export default CompilationCardRowType;

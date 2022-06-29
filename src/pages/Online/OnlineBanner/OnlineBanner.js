@@ -9,7 +9,7 @@ const OnlineBanner = () => {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={0}
-                mousewheel={true}
+                mousewheel={false}
                 pagination={{
                     clickable: true,
                 }}

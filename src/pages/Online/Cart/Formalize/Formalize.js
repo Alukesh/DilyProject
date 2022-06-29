@@ -174,6 +174,8 @@ const Formalize = () => {
                        user.email.length ? localStorage.setItem('order', true ) : navigate('/auth');
                        window.scrollTo('pageYOffset', 0);
                    } }>Оформить заказ</button>
+
+
                    <p className="formalize__bottom-text">
                        Нажимая кнопку оформить вы подтверждаете свое <br/>
                        согласие с <span className="formalize__condition">условиями продажи в интернет-магазине Dily</span>

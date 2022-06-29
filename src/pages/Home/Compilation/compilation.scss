@@ -34,7 +34,14 @@
       transition: all .9s;
       &:hover .compilation__card-image{
         transition: all .9s;
-        transform: scale(1.1);
+        transform: scale(1.09);
+      }
+      &-rowType{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 5px 20px 20px;
       }
       &-link{
         margin-bottom: auto;

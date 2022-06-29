@@ -1,10 +1,11 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {findUser} from "../../../redux/reducers/user";
+import {toast, ToastContainer} from "react-toastify";
 
 
 const ProductPrice = ({img, title, id, price= 'проверяется в '}) => {
-    const user = useSelector(s => s.user.user);
+    const user = useSelector(store => store.user.user);
     const dispatch = useDispatch();
 
 
@@ -20,10 +21,28 @@ const ProductPrice = ({img, title, id, price= 'проверяется в '}) => 
                         price,
                     }]
         }));
-
         dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
     };
 
+    const addCart = () => {
+        localStorage.setItem('user', JSON.stringify({...user, cart:
+                user.cart.findIndex(el => el.id === id) >= 0 ?
+                    user.cart.map((el) => {
+                        if ( el.id === id){
+                            return {...el, count: +el.count + 1}
+                        } return el
+                    }) :
+                    [...user.cart, {
+                        image: img,
+                        count: 1 ,
+                        id,
+                        title,
+                        price,
+                    }]
+        } ));
+        dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
+
+    };
 
 
     return (
@@ -53,7 +72,19 @@ const ProductPrice = ({img, title, id, price= 'проверяется в '}) => 
                 </span>
             </div>
             <div className={'product__price-thiRow'}>
-                <span><button className={'product__price-btn greenBtn'}>Купить</button></span>
+                <span><button className={'product__price-btn greenBtn'}  onClick={() =>{
+                    addCart();
+                    toast('Добавлено', {
+                        position: "bottom-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        // theme: "colored",
+                        draggable: true,
+                        progress: undefined,
+                    });
+                }}>Купить</button></span>
                 <span className={'product__price-thiRow-delivery'}>
                     <p>
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.1215 7.70336L17.0858 2.91998C17.0338 2.79647 16.9469 2.69109 16.8359 2.61696C16.7249 2.54284 16.5947 2.50325 16.4615 2.50315H14.4258V1.13647C14.4258 0.955232 14.3543 0.781422 14.227 0.653271C14.0998 0.52512 13.9272 0.453125 13.7472 0.453125H0.854353C0.674384 0.453125 0.501787 0.52512 0.37453 0.653271C0.247273 0.781422 0.175781 0.955232 0.175781 1.13647V12.7532C0.175781 12.9345 0.247273 13.1083 0.37453 13.2364C0.501787 13.3646 0.674384 13.4366 0.854353 13.4366H2.3065C2.46276 14.0156 2.80389 14.5268 3.27726 14.8912C3.75063 15.2557 4.32993 15.4531 4.92578 15.4531C5.52164 15.4531 6.10094 15.2557 6.5743 14.8912C7.04767 14.5268 7.3888 14.0156 7.54507 13.4366H11.8065C11.9628 14.0156 12.3039 14.5268 12.7773 14.8912C13.2506 15.2557 13.8299 15.4531 14.4258 15.4531C15.0216 15.4531 15.6009 15.2557 16.0743 14.8912C16.5477 14.5268 16.8888 14.0156 17.0451 13.4366H18.4972C18.6772 13.4366 18.8498 13.3646 18.977 13.2364C19.1043 13.1083 19.1758 12.9345 19.1758 12.7532V7.96987C19.1756 7.87827 19.1571 7.78764 19.1215 7.70336ZM4.92578 14.1199C4.65736 14.1199 4.39497 14.0398 4.17179 13.8896C3.94861 13.7394 3.77466 13.526 3.67194 13.2763C3.56923 13.0265 3.54235 12.7517 3.59472 12.4866C3.64708 12.2215 3.77634 11.978 3.96614 11.7869C4.15594 11.5957 4.39776 11.4656 4.66102 11.4128C4.92428 11.3601 5.19715 11.3872 5.44514 11.4906C5.69312 11.594 5.90508 11.7692 6.0542 11.994C6.20333 12.2187 6.28292 12.4829 6.28292 12.7532C6.28292 13.1157 6.13994 13.4633 5.88543 13.7196C5.63091 13.9759 5.28572 14.1199 4.92578 14.1199ZM14.4258 14.1199C14.1574 14.1199 13.895 14.0398 13.6718 13.8896C13.4486 13.7394 13.2747 13.526 13.1719 13.2763C13.0692 13.0265 13.0423 12.7517 13.0947 12.4866C13.1471 12.2215 13.2763 11.978 13.4661 11.7869C13.6559 11.5957 13.8978 11.4656 14.161 11.4128C14.4243 11.3601 14.6972 11.3872 14.9451 11.4906C15.1931 11.594 15.4051 11.7692 15.5542 11.994C15.7033 12.2187 15.7829 12.4829 15.7829 12.7532C15.7829 13.1157 15.6399 13.4633 15.3854 13.7196C15.1309 13.9759 14.7857 14.1199 14.4258 14.1199Z" fill="#00C65E"/></svg>
@@ -62,6 +93,10 @@ const ProductPrice = ({img, title, id, price= 'проверяется в '}) => 
                     Доставка
                 </span>
             </div>
+            <ToastContainer
+                position="bottom-left"
+                closeOnClick={true}
+            />
         </div>
     );
 };

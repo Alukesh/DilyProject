@@ -55,7 +55,7 @@ const Cart = () => {
                             оформлению
                         </button>
                         :
-                        <button className="cart__figuration greenBtn" onClick={() => navigate("../online")}>Перейти hhh
+                        <button className="cart__figuration greenBtn" onClick={() => {navigate("../online"); window.scrollTo('pageYOffset', 0);}}>Перейти в каталог
                         </button>
 
                 }
