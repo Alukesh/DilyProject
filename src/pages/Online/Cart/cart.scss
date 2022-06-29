@@ -17,6 +17,7 @@
   }
   &__content{
     display: flex;
+    align-items: flex-start;
     width: 100%;
     &-column{
       width: 100%;
@@ -159,6 +160,9 @@
     align-items: center;
     text-align: center;
     color: #363A45;
+  }
+  &__basket{
+    cursor: pointer;
   }
   &__figuration{
     padding: 7px 54px;

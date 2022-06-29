@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const CompilationCard = ({title, img, price, city, sell, id, creatorImage, countInRow}) => {
+const CompilationCard = ({title, img, price, city, sell, id, creatorImage, countInRow, rowType}) => {
     const notify = () =>toast('Добавлено', {
         position: "bottom-right",
         autoClose: 5000,
@@ -73,7 +73,7 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
 
 
     return (
-        <div className={'shadow-box compilation__card '} style={{width: countInRow === 4 ? '22.8%' : ''}}>
+        <div className={`shadow-box compilation__card${rowType ? '-rowType' : ''} `} style={{width: countInRow === 4 ? '22.8%' : ''}}>
                          <span className="compilation__card-like" onClick={() => {
                              addFav()
                          }}>
@@ -116,7 +116,7 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                 <div>
                     <div className={'compilation__card-bot'}>
                         <div className={'compilation__card-rated'}>
-                            <span className={'compilation__card-price'}>{price}₽</span>
+                            <span className={`compilation__card-price`}>{price}₽</span>
                             {
                                 sell &&
                                 <p className={'compilation__card-comments'}>

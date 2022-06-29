@@ -3,6 +3,8 @@ import ProductPrice from "./ProductPrice/ProductPrice";
 import ProductSlider from "./ProductSlider/ProductSlider";
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
+import Vend from "../Home/Charity/Vend/Vend";
+import ProductTabs from "./ProductTabs/ProductTabs";
 
 const Product = () => {
     const params = useParams();
@@ -57,7 +59,12 @@ const Product = () => {
                             </button>
                         </div>
                     </div>
+
+                    <ProductTabs/>
                 </div>
+
+
+                <Vend/>
             </div>
         </div>
     );

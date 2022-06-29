@@ -4,6 +4,7 @@ import empty from './empty.png'
 import {useSelector} from "react-redux";
 import CompilationCard from "../../Home/Compilation/CompilationCard/CompilationCard";
 import CompilationCardRowType from "../../Home/Compilation/CompilationCard/CompilationCardRowType";
+import Vend from "../../Home/Charity/Vend/Vend";
 
 const Favourites = () => {
     const [cardsRow, setCardsRow] = useState('blocks');
@@ -52,9 +53,9 @@ console.log( user);
                                     {
                                         user.favourites
                                             .map(item => (
-                                                cardsRow === 'blocks' ?
-                                            <CompilationCard title={item.title} img={item.image} price={item.price} id={item.id}/> :
-                                            <CompilationCardRowType title={item.title} img={item.image} price={item.price} id={item.id}/>
+                                                cardsRow !== 'blocks' ?
+                                            <CompilationCard rowType={true} sell={true} title={item.title} img={item.image} price={item.price} id={item.id}/> :
+                                            <CompilationCardRowType rowType={false} sell={true} title={item.title} img={item.image} price={item.price} id={item.id}/>
                                         ))
                                     }
                                 </div>
@@ -62,6 +63,8 @@ console.log( user);
                     }
 
                 </div>
+
+                <Vend/>
             </div>
         </div>
     );

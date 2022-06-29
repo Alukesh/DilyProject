@@ -36,6 +36,23 @@
         transition: all .9s;
         transform: scale(1.09);
       }
+      &Fav{
+        text-align: center;
+        position: relative;
+        padding: 3px 15px 8px;
+        width: calc(20% - 19px);
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all .9s;
+        &:hover .compilation__card-image{
+          transition: all .9s;
+          transform: scale(1.09);
+        }
+        &-price{
+          margin: 12px auto 20px!important;
+        }
+      }
       &-rowType{
         width: 100%;
         display: flex;
@@ -139,6 +156,8 @@
         color: #979797;
       }
       &-price{
+        justify-self: center;
+        align-self: center;
         margin-bottom: 4px;
         font-style: normal;
         font-weight: 700;
