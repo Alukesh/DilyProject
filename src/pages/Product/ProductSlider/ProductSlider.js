@@ -24,7 +24,7 @@ const ProductSlider = () => {
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
                 }}
-                Mousewheel={false}
+                // Mousewheel={false}
                 spaceBetween={100}
                 slidesPerView={1}
 
