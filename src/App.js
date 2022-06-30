@@ -41,7 +41,7 @@ function App() {
     getDocs(collection(db, 'products'))
         .then((res) => dispatch(getAllProducts({arr: res.docs.map(el => ({...el.data(), id:el.id}))})));
 
-   localStorage.getItem('user') ?
+   localStorage.getItem('user')?
     dispatch(findUser({user: JSON.parse(localStorage.getItem('user')) })) : console.log('empty local')
   }, []);
 

@@ -1,7 +1,28 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useState} from 'react';
+import {Link, useNavigate} from "react-router-dom";
+import {findUser} from "../../../redux/reducers/user";
+import {useDispatch} from "react-redux";
 
 const Confirm = () => {
+
+    const [otp, setOtp] = useState('');
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const confirmOrLoginFromNumber = () => {
+        if (otp === 6) {
+            let confirmationResult = window.confirmationResult;
+            confirmationResult.confirm(otp).then((result) => {
+
+                const user = result.user;
+                dispatch(findUser( {...user, email: user.email, orders: [], gitl: [], cart: [], favourites: [],} ));
+                localStorage.setItem('user', JSON.stringify({...user, email: user.email, orders: [],gitl: [], cart: [], favourites: [], } ));
+                navigate('/');
+            }).catch((error) => console.log(`bad request ${error}`));
+
+        }
+    };
+
     return (
         <div className='auth'>
             <div className='auth__left'>
@@ -71,12 +92,18 @@ const Confirm = () => {
             <div className='auth__right'>
                 <h2 className='auth__register'>+ 7 (123)-456-78-90</h2>
                 <p className='auth__phone'>Мы отправили вам смс с кодом подтверждения</p>
-                <input className='auth__input' type="text" placeholder='Введите код из SMS'/>
-                <button className='auth__cont'>Продолжить</button>
+                <input value={otp} className='auth__input' onChange={(e) => {
+                    setOtp(e.target.value);
+                }} placeholder='Введите код из SMS' type="text"/>
+
+                <button className='auth__cont' onClick={confirmOrLoginFromNumber}>Продолжить</button>
                 <p className='auth__again'>Отправить код еще раз</p>
                 <Link to='/auth'>
                     <p className='auth__back'>Назад</p>
                 </Link>
+
+            </div>
+            <div id='sign-in-button'>
 
             </div>
         </div>

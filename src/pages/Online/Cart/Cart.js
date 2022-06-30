@@ -49,9 +49,19 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
-                <button className="cart__figuration greenBtn" onClick={() => navigate("../Formalize")}>Перейти к
-                    оформлению
-                </button>
+                {
+                    !user.cart?
+                        <button className="cart__figuration greenBtn" onClick={() => navigate("../Formalize")}>Перейти к
+                            оформлению
+                        </button>
+                        :
+
+                            <button className="cart__figuration greenBtn" onClick={() => navigate("../Shops")}>Перейти в
+                                каталог
+                            </button>
+
+
+                }
             </div>
         </div>
     );
