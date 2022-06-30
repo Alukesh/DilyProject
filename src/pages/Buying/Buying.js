@@ -14,6 +14,7 @@ import TradeSteps from "./TradeSteps/TradeSteps";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import Options from "../Service/Options/Options";
+import Vend from "../Home/Charity/Vend/Vend";
 
 const Buying = () => {
     const [overlay, setOverlay] = useState(false);
@@ -138,6 +139,7 @@ const Buying = () => {
             </section>
 
                     {/*<img src={bg} alt=""/>*/}
+                    <Vend/>
         </div>
     );
 };

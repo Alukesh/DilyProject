@@ -15,7 +15,7 @@
       color: #c62d4e;
       //background-color: purple;
       width: 320px;
-      height: 550px;
+      height: 400px;
       &-miniImg{
         max-width: 40px;
       }
@@ -164,5 +164,51 @@
     }
 
 
+    &tabs{
+      &-top{
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+      }
+      &-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: .2px solid rgba(54, 58, 69, 0.08);
+        border-right: .2px solid rgba(54, 58, 69, 0.08);
+        cursor: pointer;
+        padding: 11px 5px;
+        width: calc(100% / 6);
+        font-family: 'TT Norms',sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        &:last-child{
+          border-right: none;
+          border-radius: 0 10px 10px 0;
+        }
+        &:first-child{
+          border-left: none;
+          border-radius: 10px 0 0 10px;
+        }
+        &.active{
+          background: #00C65E;
+          color: white;
+        }
+      }
+
+    }
+
+
+  }
+  .swiper-slide{
+    //background-color: #000;
+    height: 100%!important;
+    &-active{
+      height: 100%!important;
+    }
+    img{
+      height: 100%;
+    }
   }
 }

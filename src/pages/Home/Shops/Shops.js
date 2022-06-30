@@ -4,6 +4,7 @@ import img1 from "../../Board/Banner/banner shops shops.svg";
 import img2 from "../../Board/Banner/banner shops tarif.png";
 import TopShops from "./TopShops/TopShops";
 import{useParams} from 'react-router-dom'
+import Vend from "../Charity/Vend/Vend";
 
 
 const Shops = () => {
@@ -23,6 +24,7 @@ const Shops = () => {
             
             <TopShops/>
 
+            <Vend/>
 
         </div>
     );

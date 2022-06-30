@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import CardCart from "./CartCard/CardCart";
 import {useSelector} from "react-redux";
 import Sell from "../../Buying/Sell/Sell";
+import Vend from "../../Home/Charity/Vend/Vend";
 
 const Cart = () => {
     const user = useSelector(s => s.user.user);
@@ -18,10 +19,10 @@ const Cart = () => {
                     <div className={'cart__content-column'}>
 
                         {
-                                user.cart[0]?
+                                user?.cart && user?.cart[0]?
                                 user.cart.map(item => (
                                 <div key={item.id}>
-                                    <CardCart image={item.image} title={item.title} price={item.price}/>
+                                    <CardCart id={item.id} image={item.image} title={item.title} price={item.price}/>
                                 </div>
                                 ))
                                     :
@@ -50,19 +51,19 @@ const Cart = () => {
                     </div>
                 </div>
                 {
-                    !user.cart?
+                    user?.cart && user?.cart[0] ?
                         <button className="cart__figuration greenBtn" onClick={() => navigate("../Formalize")}>Перейти к
                             оформлению
                         </button>
                         :
-
-                            <button className="cart__figuration greenBtn" onClick={() => navigate("../Shops")}>Перейти в
-                                каталог
-                            </button>
-
+                        <button className="cart__figuration greenBtn" onClick={() => {navigate("../online"); window.scrollTo('pageYOffset', 0);}}>Перейти в каталог
+                        </button>
 
                 }
+
+
             </div>
+
         </div>
     );
 };
