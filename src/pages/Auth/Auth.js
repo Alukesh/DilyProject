@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import {AiFillGoogleCircle} from 'react-icons/ai'
 import {FiMail} from 'react-icons/fi'
-import {FaGithub} from 'react-icons/fa'
 import {Link, useNavigate} from "react-router-dom";
 import Google from "./AuthOrLoginFromSocials/Google/Google";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import {auth} from "../../firebase/firebase";
 import {findUser} from "../../redux/reducers/user";
 import {useDispatch} from "react-redux";
+import Github from "./AuthOrLoginFromSocials/Github/Github";
 
 const Auth = () => {
 
@@ -130,7 +129,6 @@ const Auth = () => {
 </span> Помогайте нуждающимся </li>
                 </ul>
             </div>
-            <div id="sign-in-button"/>
 
             <div className='auth__right'>
                 <h2 className='auth__register'>Вход и регистрация</h2>
@@ -150,6 +148,7 @@ const Auth = () => {
 
                     }}>Потвердить</button>
                     </div>
+                <div id="sign-in-button"/>
 
 
                 <Link to='/register'>
@@ -163,7 +162,7 @@ const Auth = () => {
                 <div className='auth__icons'>
                     <Google/>
                     <p className='auth__icon'><FiMail/></p>
-                    <p className='auth__icon'><FaGithub/></p>
+                    <Github/>
                 </div>
 
                 <Link to='/' className='home'>Вернуться на главную страницу</Link>

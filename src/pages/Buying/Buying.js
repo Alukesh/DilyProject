@@ -31,7 +31,7 @@ const Buying = () => {
                             в Москве</h2>
                         <p className={'buying__start-text'}>Купим любые товары и б/у технику очень выгодно. Оставьте заявку на выкуп прямо сейчас!</p>
 
-                        <button className={'buying__start-btn'} onClick={() => { user.email.length ? setOverlay(!overlay) : navigate('/auth') } }>Узнать цену сейчас</button>
+                        <button className={'buying__start-btn'} onClick={() => { user?.email?.length || user?.phoneNumber?.length ? setOverlay(!overlay) : navigate('/auth') } }>Узнать цену сейчас</button>
                     </div>
                 </div>
             </section>
