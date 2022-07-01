@@ -1,0 +1,27 @@
+.parishes{
+  background: url("./bg.png") center/cover no-repeat;
+  padding: 50px 0 118px 201px;
+  margin: 50px 0 100px;
+  &__title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    color: #00C65E;
+  }
+  &__subtitle{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    color: #363A45;
+    padding: 29px 0 75px;
+  }
+  &__btn{
+    padding: 12px 56px;
+  }
+}

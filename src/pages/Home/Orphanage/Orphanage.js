@@ -1,5 +1,9 @@
 import React from 'react';
 import OrphanageName from "./OrphanageName";
+import Pass from "../Charity/Pass/Pass";
+import Broadcast from "../Charity/Broadcast/Broadcast";
+import Request from "../Charity/Request/Request";
+import Vend from "../Charity/Vend/Vend";
 
 const Orphanage = () => {
     return (
@@ -46,7 +50,10 @@ const Orphanage = () => {
             </section>
 
 
-
+<Pass/>
+<Broadcast/>
+<Request/>
+<Vend/>
 
         </div>
     );

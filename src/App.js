@@ -30,6 +30,8 @@ import Send from "./pages/Home/Charity/Request/Send/Send";
 import Product from "./pages/Product/Product";
 import Formalize from "./pages/Online/Cart/Formalize/Formalize";
 import Organizations from "./pages/Home/Organizations/Organizations";
+import Parishes from "./pages/Home/Parishes/Parishes";
+import ParishesCard from "./pages/Home/Parishes/ParishesCards/ParishesCard";
 
 
 function App() {
@@ -67,6 +69,7 @@ function App() {
          <Route path='orphanage' element={<Orphanage/>}/>
          <Route path='formalize' element={<Formalize/>}/>
          <Route path='organizations' element={<Organizations/>}/>
+         <Route path='parishes' element={<Parishes/>}/>
        </Route>
        <Route path='data' element={<Data/>}/>
        <Route path='send' element={<Send/>}/>
