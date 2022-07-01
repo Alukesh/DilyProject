@@ -8,6 +8,9 @@ import Vend from "../../Home/Charity/Vend/Vend";
 
 const Cart = () => {
     const user = useSelector(s => s.user.user);
+    let price = 0;
+    user?.cart?.map(item => price += +item.price * item.count);
+    console.log(price);
     const navigate = useNavigate();
 
     return (
@@ -42,11 +45,11 @@ const Cart = () => {
                         </div>
                         <div className="cart__sale">
                             <p className="cart__text">Скидки и бонусы</p>
-                            <p className="cart__sale-num">- 5400 ₽</p>
+                            <p className="cart__sale-num">- {0} ₽</p>
                         </div>
                         <div className="cart__result">
                             <p className="cart__sale-num">Всего</p>
-                            <p className="cart__only">70 000 ₽</p>
+                            <p className="cart__only">{price} ₽</p>
                         </div>
                     </div>
                 </div>

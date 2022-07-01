@@ -5,6 +5,7 @@ import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import Vend from "../Home/Charity/Vend/Vend";
 import ProductTabs from "./ProductTabs/ProductTabs";
+import CompilationRow from "../Home/Compilation/CompilationRow/CompilationRow";
 
 const Product = () => {
     const params = useParams();
@@ -60,7 +61,20 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <ProductTabs/>
+                    <ProductTabs productName={product.title}/>
+
+
+
+                    <div className="container">
+                        <div className={'compilation__chapter'}>
+                            <h2>Вместе с этим товаром покупают</h2>
+                            <span className={'compilation__show_all'}>Смотреть все</span>
+                        </div>
+                        <CompilationRow sell={true} products={products} creator={'Apple'} />
+
+                    </div>
+
+
                 </div>
 
 

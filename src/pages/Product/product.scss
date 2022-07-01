@@ -165,11 +165,62 @@
 
 
     &tabs{
+      font-family: 'TT Norms',sans-serif;
+      font-weight: 400;
+      margin-bottom: 80px;
       &-top{
         display: flex;
         justify-content: space-between;
         border-radius: 10px;
+        margin-bottom: 20px;
       }
+      &-bot{
+        padding: 40px 50px 65px;
+      }
+
+
+      &-descr{
+        max-width: 918px;
+
+        &-title{
+          margin-bottom: 10px;
+        }
+        &-subtitle{
+          margin: 30px 0;
+          font-size: 14px;
+          line-height: 150%;
+        }
+        &-text{
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+
+
+      &-info{
+        &-subtitle{
+          margin: 40px 0 20px;
+        }
+        &-title{}
+        &-row{
+          font-family: 'TT Norms',sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 150%;
+          display: flex;
+          width: 670px;
+          padding: 10px 0;
+          border-top: 1px solid #EFEFEF;
+          border-bottom: 1px solid #EFEFEF;
+        }
+        &-left{
+          display: inline-block;
+          width: 250px;
+        }
+        &-right{}
+      }
+
+
       &-btn{
         display: flex;
         align-items: center;
@@ -194,6 +245,52 @@
         &.active{
           background: #00C65E;
           color: white;
+        }
+      }
+
+
+      &-comment{
+        max-width: 75%;
+        width: 700px;
+        padding: 20px 20px 33px;
+        margin-top: 40px;
+        &-top{
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+        &-img{
+          margin-right: 15px;
+          width: 24px;
+        }
+        &-rate{
+          font-family: 'TT Norms',sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 150%;
+          color: #00C65E;
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+          span{
+            display: flex;
+            column-gap: 2.5px;
+            align-items: center;
+          }
+        }
+        &-date{
+          margin-bottom: 20px;
+          font-family: 'TT Norms',sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 120%;
+        }
+        &-text{
+          font-family: 'TT Norms',sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 152%;
         }
       }
 

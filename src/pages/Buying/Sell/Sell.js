@@ -90,6 +90,7 @@ const Sell = () => {
                         <option value="Xiaomi">Xiaomi</option>
                         <option value="М-ВИДЕО">М-ВИДЕО</option>
                         <option value="ДЕТСКИЙ МИР">ДЕТСКИЙ МИР</option>
+                        <option value="Apple">Apple</option>
                     </select>
                 </div>
 
