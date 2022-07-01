@@ -1,0 +1,43 @@
+.aboutUs{
+  margin: 50px 0 100px;
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #363A45;
+    padding: 30px 0 22px;
+  }
+  &__content{
+    display: flex;
+    column-gap: 73px;
+  }
+  &__left{
+    display: flex;
+    align-items: center;
+    padding: 0 0 28px 59px;
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    color: #363A45;
+    padding: 18px 0 30px;
+  }
+  &__descr{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 152%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+
+  }
+}

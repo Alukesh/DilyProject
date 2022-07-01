@@ -34,7 +34,7 @@ const Orphanage = () => {
                     <div className={'charity__orphanages-row'}>
                         <OrphanageName name={'Центр для мам с детьми  “Теплый Дом”'}/>
                         <OrphanageName name={'Детский дом №5 г. Москва'}/>
-                        <OrphanageName name={'Детский дом №27 г. Москва'}/>
+                        <OrphanageName name={'Детский дом №18 г. Москва'}/>
                         <OrphanageName name={'Детский дом №27 г. Москва'}/>
                         <OrphanageName name={'Центр для мам с детьми “Теплый Дом”'}/>
                         <OrphanageName name={'Детский дом №5 г. Москва'}/>
