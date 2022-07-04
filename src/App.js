@@ -32,6 +32,7 @@ import Organizations from "./pages/Home/Organizations/Organizations";
 import Parishes from "./pages/Home/Parishes/Parishes";
 import AboutUs from "./pages/Home/Orphanage/AboutUs/AboutUs";
 import Relations from "./pages/Home/Orphanage/Relations/Relations";
+import Social from "./pages/Home/Organizations/Social/Social";
 
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
          <Route path='organizations' element={<Organizations/>}/>
          <Route path='parishes' element={<Parishes/>}/>
          <Route path='aboutUs' element={<AboutUs/>}/>
+         <Route path='social' element={<Social/>}/>
        </Route>
        <Route path='data' element={<Data/>}/>
        <Route path='send' element={<Send/>}/>
