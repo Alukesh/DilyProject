@@ -1,0 +1,36 @@
+.regulations{
+  &__title{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    padding: 30px 0 35px;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  &__number{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    display: flex;
+    align-items: flex-start;
+    color: #FFFFFF;
+    padding-right: 20px;
+  }
+  &__item{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+  }
+}

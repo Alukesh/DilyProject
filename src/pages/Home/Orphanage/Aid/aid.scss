@@ -1,6 +1,6 @@
 .aid{
-  padding: 28px 65px 35px 70px;
-  background: #CCEFDB;
+  padding: 28px 65px 0 70px;
+
   &__title{
     font-weight: 700;
     font-size: 32px;
@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 40px;
+    padding: 28px 40px;
     color: #363A45;
   }
   &__content{
@@ -31,5 +31,8 @@
     font-size: 14px;
     line-height: 150%;
     color: #363A45;
+  }
+  &__img{
+    padding: 0 65px 35px 0;
   }
 }

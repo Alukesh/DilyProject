@@ -4,7 +4,7 @@ import img from "./AdobeStock_278170634 1.png"
 const Aid = () => {
     return (
         <div className="aid">
-            <div className="container">
+            <div className="container shadow-box" style={{background: "#CCEFD8"}}>
                 <h3 className="aid__title">Чем помочь?</h3>
                 <div className="aid__content">
                     <ul className="aid__list">

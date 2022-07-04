@@ -1,6 +1,10 @@
 import React from 'react';
 import img from "./illustration charity детские дома.png"
 import Aid from "../Aid/Aid";
+import Relations from "../Relations/Relations";
+import Regulations from "../Regulations/Regulations";
+import Requisites from "../Requisites/Requisites";
+import Vend from "../../Charity/Vend/Vend";
 
 const AboutUs = () => {
     return (
@@ -30,6 +34,10 @@ const AboutUs = () => {
                 </div>
             </div>
             <Aid/>
+            <Relations/>
+            <Regulations/>
+            <Requisites/>
+            <Vend/>
         </div>
     );
 };

@@ -31,6 +31,7 @@ import Formalize from "./pages/Online/Cart/Formalize/Formalize";
 import Organizations from "./pages/Home/Organizations/Organizations";
 import Parishes from "./pages/Home/Parishes/Parishes";
 import AboutUs from "./pages/Home/Orphanage/AboutUs/AboutUs";
+import Relations from "./pages/Home/Orphanage/Relations/Relations";
 
 
 function App() {
