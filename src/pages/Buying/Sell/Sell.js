@@ -3,9 +3,9 @@ import addPh from "../../Advertisement/addPhoto.png";
 import {useForm} from "react-hook-form";
 import {createProduct} from "../../../firebase/firebaseFunction";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllProducts} from "../../../redux/reducers/products";
-import {collection, getDocs} from "@firebase/firestore";
-import {db} from "../../../firebase/firebase";
+// import {getAllProducts} from "../../../redux/reducers/products";
+// import {collection, getDocs} from "@firebase/firestore";
+// import {db} from "../../../firebase/firebase";
 
 
 const Sell = () => {
@@ -21,7 +21,7 @@ const Sell = () => {
     //     await reset()
     // };
      const addProductHandler = async (data) =>{
-       await createProduct(data.image[0], setProgress, {...data, creator : data.creator}, dispatch, user);
+       await createProduct(data.image[0], setProgress, {...data, creator : data.creator, comments: ''}, dispatch, user);
 
         await reset()
     };

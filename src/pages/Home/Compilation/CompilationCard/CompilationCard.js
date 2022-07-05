@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const CompilationCard = ({title, img, price, city, sell, id, creatorImage, countInRow, rowType}) => {
+const CompilationCard = ({title, img, price, city, sell, id, comments = 2, creatorImage, countInRow, rowType}) => {
     const notify = () =>toast('Добавлено', {
         position: "bottom-right",
         autoClose: 5000,
@@ -21,6 +21,9 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
     const user = useSelector(s => s.user.user);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const products = useSelector(s => s.products.products);
+
+    // const product = products?.filter(item => item.id === params.id)[0];
 
     const addFav = () => {
         localStorage.setItem('user', JSON.stringify({
@@ -134,7 +137,8 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                                     <path
                                         d="M0.617188 4.27344C0.617188 2.06794 2.86019 0.273438 5.61719 0.273438C8.37419 0.273438 10.6172 2.06794 10.6172 4.27344C10.6172 6.43344 8.46569 8.19944 5.78719 8.27094L3.11719 10.2734V7.74044C1.56619 7.03144 0.617188 5.72744 0.617188 4.27344Z"
                                         fill="#363A45"/>
-                                </svg>  25
+                                </svg>
+                                        {comments}
                                 </span>
 
                                 </p>

@@ -250,10 +250,16 @@
 
 
       &-comment{
-        max-width: 75%;
+        max-width: 100%;
         width: 700px;
         padding: 20px 20px 33px;
-        margin-top: 40px;
+        margin-bottom: 40px;
+        &-left{
+          max-width: 70%;
+        }
+        &-title{
+          margin-bottom: 40px;
+        }
         &-top{
           display: flex;
           align-items: center;
@@ -262,6 +268,20 @@
         &-img{
           margin-right: 15px;
           width: 24px;
+        }
+        &-bot{
+          //gap: 50px;
+          justify-content: space-between;
+          display: flex;
+          align-items: flex-start;
+        }
+        &-btn{
+          padding: 12px 60px;
+          font-family: 'TT Norms',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 120%;
         }
         &-rate{
           font-family: 'TT Norms',sans-serif;
