@@ -1,0 +1,90 @@
+.relations{
+  &__title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #363A45;
+    padding: 100px 0;
+  }
+  &__content{
+    display: flex;
+    column-gap: 114px;
+    //align-items: center;
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    color: #363A45;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EFEFEF;
+  }
+  &__address{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #363A45;
+    padding: 15px 0 20px;
+  }
+  &__phone{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #363A45;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    padding-bottom: 20px;
+  }
+  &__link{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: #363A45;
+    padding-bottom: 20px;
+  }
+  &__city{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    padding-bottom: 20px;
+    color: #363A45;
+  }
+  &__date{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #363A45;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EFEFEF;
+  }
+  &__travel{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #363A45;
+    padding-top: 15px;
+  }
+  &__transit{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+    padding-bottom: 100px;
+  }
+}

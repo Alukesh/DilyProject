@@ -70,7 +70,7 @@ const Send = () => {
                             персональных данных
                     </span>
                             </div>
-                            <button className="send__btn greenBtn">Отправить заявку</button>
+                            <button className="send__btn greenBtn" onClick={() => navigate("../Charity")}>Отправить заявку</button>
                         </div>
 
                     <NavLink style={{paddingTop: "15px",  borderTop: "1px solid gray"}} to={"../Charity"} className="data__link">Вернуться</NavLink>

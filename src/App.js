@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home/Home";
 import Shops from "./pages/Home/Shops/Shops";
-// import Charity from "./pages/Home/Charity/Charity";
 import Layout from "./Layout/Layout";
 import Auth from "./pages/Auth/Auth";
 import './app.scss'
@@ -30,6 +29,10 @@ import Send from "./pages/Home/Charity/Request/Send/Send";
 import Product from "./pages/Product/Product";
 import Formalize from "./pages/Online/Cart/Formalize/Formalize";
 import Organizations from "./pages/Home/Organizations/Organizations";
+import Parishes from "./pages/Home/Parishes/Parishes";
+import AboutUs from "./pages/Home/Orphanage/AboutUs/AboutUs";
+import Relations from "./pages/Home/Orphanage/Relations/Relations";
+import Social from "./pages/Home/Organizations/Social/Social";
 
 
 function App() {
@@ -67,6 +70,9 @@ function App() {
          <Route path='orphanage' element={<Orphanage/>}/>
          <Route path='formalize' element={<Formalize/>}/>
          <Route path='organizations' element={<Organizations/>}/>
+         <Route path='parishes' element={<Parishes/>}/>
+         <Route path='aboutUs' element={<AboutUs/>}/>
+         <Route path='social' element={<Social/>}/>
        </Route>
        <Route path='data' element={<Data/>}/>
        <Route path='send' element={<Send/>}/>

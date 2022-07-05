@@ -30,7 +30,7 @@ const Organization = () => {
                     <div className="organization__card">
                         <img src={img3} alt="" className="organization__img"/>
                         <p className="organization__text">Церковные  приходы</p>
-                        <button className="organization__btn greenBtn">Помочь</button>
+                        <button className="organization__btn greenBtn" onClick={() => navigate("../parishes")}>Помочь</button>
                     </div>
                 </div>
                 <button className="organization__button blackBtn">Все организации

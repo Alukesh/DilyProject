@@ -1,4 +1,5 @@
 import React from 'react';
+import img from "../iphone11.png";
 import {findUser} from "../../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
@@ -61,7 +62,8 @@ const CardCart = ({image, title, price, id}) => {
                     onClick={decrCount}>-</button>
                     <input type="number" readOnly={true} className={'cart__amount-num'} value={
                         user.cart.filter(item => item.id === id)[0] ?
-                            user?.cart?.filter(item => item.id === id)[0].count : 1
+                            user?.cart?.filter(item => item.id === id)[0].count :
+                            1
                     }/>
                     <button className="cart__amount-btn"
                     onClick={addCount}>+</button>

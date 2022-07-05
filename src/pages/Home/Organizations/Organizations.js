@@ -1,5 +1,9 @@
 import React from 'react';
 import Fund from "./Fund/Fund";
+import Pass from "../Charity/Pass/Pass";
+import Broadcast from "../Charity/Broadcast/Broadcast";
+import Request from "../Charity/Request/Request";
+import Vend from "../Charity/Vend/Vend";
 
 const Organizations = () => {
     return (
@@ -22,7 +26,12 @@ const Organizations = () => {
                 </div>
             </div>
             <Fund/>
+            <Pass/>
+            <Broadcast/>
+            <Request/>
+            <Vend/>
         </div>
+
     );
 };
 

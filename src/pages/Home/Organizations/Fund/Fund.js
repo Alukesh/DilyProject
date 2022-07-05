@@ -1,5 +1,9 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 const Fund = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="fund">
            <div className="container">
@@ -13,7 +17,7 @@ const Fund = () => {
                    <div className="fund__card">
                        <p className="fund__text">Фонд <br/>
                        “Добрые вещи”</p>
-                       <button className="fund__card-btn greenBtn">Подробнее</button>
+                       <button className="fund__card-btn greenBtn" onClick={() => navigate("../social")}>Подробнее</button>
                    </div>
                    <div className="fund__card">
                        <p className="fund__text">Благотворительный <br/>
