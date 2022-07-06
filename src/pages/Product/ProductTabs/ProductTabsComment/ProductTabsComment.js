@@ -186,7 +186,7 @@ const ProductTabsComment = ({productName = ' Продукт'}) => {
                     </div>
 
                     {
-                        product?.comments.length &&
+                        product?.comments.length ?
                         product?.comments.map(item => (
                             <div key={item.id} className={'product__tabs-comment shadow-box'}>
                                 <div className={'product__tabs-comment-top'}>
@@ -273,7 +273,7 @@ const ProductTabsComment = ({productName = ' Продукт'}) => {
                                     {item.text}
                                 </p>
                             </div>
-                        ))
+                        )) : ''
                     }
                 </div>
                 <button className={'greenBtn product__tabs-comment-btn'} onClick={() => setOverlay(true)}>Оставить

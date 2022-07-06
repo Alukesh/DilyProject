@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   &__top {
     height: 6px;
     background: linear-gradient(90deg, #00C65E 26.28%, rgba(0, 198, 94, 0) 101.66%);
@@ -175,6 +176,24 @@
         justify-content: center;
       }
     }
+  }
+}
+.goTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #00C65E;
+  opacity: .5;
+  color: #FFFFFF;
+  padding: 15px 20px;
+  display: none;
+  z-index: 900;
+  &:hover{
+    opacity: .8;
+  }
+  &_active {
+    display: block;
+    color: #FFFFFF;
   }
 }
 @import "src/pages/Service/ServiceTopBar/serviceTopBar";

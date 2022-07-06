@@ -3,6 +3,7 @@ import addPh from "../../Advertisement/addPhoto.png";
 import {useForm} from "react-hook-form";
 import {createProduct} from "../../../firebase/firebaseFunction";
 import {useDispatch, useSelector} from "react-redux";
+import InputMask from "react-input-mask";
 // import {getAllProducts} from "../../../redux/reducers/products";
 // import {collection, getDocs} from "@firebase/firestore";
 // import {db} from "../../../firebase/firebase";
@@ -63,7 +64,7 @@ const Sell = () => {
                 <div className={'sell__form-row sell__form-row_double'}>
                     <div>
                         <h3 className={'sell__form-title important'}>Телефон</h3>
-                        <input className={'sell__form-input sell__form-input_half'} placeholder={'+ 7 (123)-456-78-90'} type="text"/>
+                        <InputMask mask={`+\\9\\96(999)99-99-99`}   className={'sell__form-input sell__form-input_half'} placeholder={'+996 (123)-456-789'} type="text"/>
                     </div>
                     <div>
                         <h3 className={'sell__form-title important'}>E- mail</h3>
@@ -72,13 +73,16 @@ const Sell = () => {
                 </div>
 
                 <div className={'sell__form-row'}>
-                    <h3 className={'sell__form-title'}>Выберите ваш город</h3>
+                    <h3 className={'sell__form-title'}>Выберите регион</h3>
                     <select {...register("city")} className={'sell__form-input'} >
                         <option style={{display: 'none'}} value="">Не выбрано</option>
                         <option value="Бишкек">Бишкек</option>
-                        <option value="Москва">Москва</option>
-                        <option value="Тула">Тула</option>
-                        <option value="Стамбул">Стамбул</option>
+                        <option value="Чуй">Чуй</option>
+                        <option value="Иссык-Куль">Иссык-Куль</option>
+                        <option value="Талас">Талас</option>
+                        <option value="Баткен">Баткен</option>
+                        <option value="Ош">Ош</option>
+                        <option value="Нарын">Нарын</option>
                     </select>
                 </div>
 

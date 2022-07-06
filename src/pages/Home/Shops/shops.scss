@@ -89,6 +89,9 @@
       color: white;
       padding: 30px;
       display: flex;
+      &-img{
+        width: 140px;
+      }
       &-left{
         display: flex;
         column-gap: 30px;

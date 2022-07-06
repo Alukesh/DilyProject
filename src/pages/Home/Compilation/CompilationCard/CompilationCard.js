@@ -1,7 +1,7 @@
 import React from 'react';
 import {findUser} from "../../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,16 +14,17 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        // theme: "colored",
         draggable: true,
         progress: undefined,
     });
-    // const star = 0;
-    stars = stars?.length && stars.map(item => item.stars );
-    let star = stars?.length && stars.reduce((acc, rec) => +acc + +rec !== undefined && +rec !== null ? +rec : 0);
+    let star = 0;
+    stars = stars?.length && stars.map(item => item.stars === undefined ? 0 : item.stars );
+    // console.log(stars)
+     star += stars?.length && stars.reduce((acc, rec) => +acc + +rec )  ;
+     star /= stars?.length;
+     star = Math.trunc(star)
     console.log(star);
     const user = useSelector(s => s.user.user);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const products = useSelector(s => s.products.products);
 

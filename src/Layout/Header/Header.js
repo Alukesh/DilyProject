@@ -8,6 +8,8 @@ import {logOutUser} from "../../redux/reducers/user";
 import {findUser} from "../../redux/reducers/user";
 import OnlineTopbar from "../../pages/Online/OnlineTopbar/OnlineTopbar";
 import {FaUserAlt} from "react-icons/fa";
+import {  ImArrowUp, } from 'react-icons/im';
+
 
 const Header = () => {
     const [section, setSection] = useState(1);
@@ -15,8 +17,21 @@ const Header = () => {
     const user = useSelector(s => s.user.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [y, setY] = useState(0);
+    const handleNavigation = (e) => {
+        const window = e.currentTarget;
+        if (200 < window.scrollY) {
+            setY(1)
+        } else {
+            setY(0)
+        }
+    };
+
     useEffect(() => {
-        setSection(JSON.parse(localStorage.getItem('section')))
+        setSection(JSON.parse(localStorage.getItem('section')));
+        setY(window.scrollY);
+        window.addEventListener("scroll", (e) => handleNavigation(e));
+
     },[]);
     useEffect(()=> {
         localStorage.setItem('section', section);
@@ -27,7 +42,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className='header__top'>
+            <div id={'header'} className='header__top'>
 
             </div>
             <div className='container'>
@@ -134,6 +149,11 @@ const Header = () => {
                         }
                     </div>
                 </div>
+            </div>
+            <div>
+                <a href="#header" className={`goTop ${y ? 'goTop_active' : ''}`}>
+                    <ImArrowUp/>
+                </a>
             </div>
         </header>
     );

@@ -12,27 +12,27 @@ const ProductTabs = ({productName}) => {
         <div className={'product__tabs'}>
             <div className={'product__tabs-top shadow-box'}>
                 <span className={`product__tabs-btn ${tab === 1 && 'active'}`}
-                onClick={() => setTab(1)}>Описание
+                onClick={() => {setTab(1); window.scrollTo('pageYOffset', 300)}}>Описание
                 </span>
 
                 <span className={`product__tabs-btn ${tab === 2 && 'active'}`}
-                onClick={() => setTab(2)}>Характеристики
+                onClick={() =>{ setTab(2); window.scrollTo('pageYOffset', 470)}}>Характеристики
                 </span>
 
                 <span className={`product__tabs-btn ${tab === 3 && 'active'}`}
-                onClick={() => setTab(3)}>Аксессуары
+                onClick={() =>{ setTab(3); window.scrollTo('pageYOffset', 440)}}>Аксессуары
                 </span>
 
                 <span className={`product__tabs-btn ${tab === 4 && 'active'}`}
-                onClick={() => setTab(4)}>Отзывы
+                onClick={() =>{ setTab(4); window.scrollTo('pageYOffset', 460)}}>Отзывы
                 </span>
 
                 <span className={`product__tabs-btn ${tab === 5 && 'active'}`}
-                onClick={() => setTab(5)}>Рассрочка и кредит
+                onClick={() =>{ setTab(5); window.scrollTo('pageYOffset', 300)}}>Рассрочка и кредит
                 </span>
 
                 <span className={`product__tabs-btn ${tab === 6 && 'active'}`}
-                onClick={() => setTab(6)}>Наличие и доставка
+                onClick={() => {setTab(6); window.scrollTo('pageYOffset', 300)}}>Наличие и доставка
                 </span>
 
             </div>

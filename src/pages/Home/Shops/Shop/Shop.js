@@ -1,6 +1,6 @@
 import React from 'react';
 import shopIcon1 from './shop.png'
-import shopIcon2 from './shop.png'
+import shopIcon2 from '../AllShops/shopДЕТСКИЙ.png'
 
 import SideMenu from "../../../Phones/SideMenu/SideMenu";
 import CompilationRow from "../../Compilation/CompilationRow/CompilationRow";
@@ -19,13 +19,13 @@ const Shop = ({back = 'grey'}) => {
             <div className="shop">
 
                 <div className="shop__banner" style={{backgroundColor:
-                        params.id === 'Диваны тут' ? '#00C65E' :
-                            params.id === 'ДЕТСКИЙ МИР' ? '#000' : back
+                        params.id === 'Диваны тут' ? '#1EAE8B' :
+                            params.id === 'ДЕТСКИЙ МИР' ? '#01C1FB' : back
                 }}>
                     <div className="shop__banner-left">
-                        <img src={
+                        <img className={'shop__banner-img'} src={
                             params.id === 'Диваны тут' ? shopIcon1 :
-                                params.id === 'ДЕТСКИЙ МИР' ? shopIcon1 : ''
+                                params.id === 'ДЕТСКИЙ МИР' ? shopIcon2 : ''
                         } alt=""/>
                         <p className={'shop__banner-descr'}>
                             <span className={'shop__banner-title'}>{params.id}</span>

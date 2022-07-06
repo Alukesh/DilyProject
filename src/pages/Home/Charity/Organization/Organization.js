@@ -17,7 +17,7 @@ const Organization = () => {
                     <div className="organization__card">
                         <img src={img} alt="" className="organization__img"/>
                         <p className="organization__text">Детские дома</p>
-                        <button className="organization__btn greenBtn" onClick={() => navigate('../orphanage')}>Помочь</button>
+                        <button className="organization__btn greenBtn" onClick={() =>{window.scrollTo('pageYOffset', 0); navigate('../orphanage')}}>Помочь</button>
                     </div>
                     <div className="organization__card">
                         <img src={img2} alt="" className="organization__img"/>
@@ -25,12 +25,12 @@ const Organization = () => {
                             Благотворительные <br/>
                             организации
                         </p>
-                        <button className="organization__btn greenBtn" onClick={() => navigate('../organizations')}>Помочь</button>
+                        <button className="organization__btn greenBtn" onClick={() =>{window.scrollTo('pageYOffset', 0); navigate('../organizations')}}>Помочь</button>
                     </div>
                     <div className="organization__card">
                         <img src={img3} alt="" className="organization__img"/>
                         <p className="organization__text">Церковные  приходы</p>
-                        <button className="organization__btn greenBtn" onClick={() => navigate("../parishes")}>Помочь</button>
+                        <button className="organization__btn greenBtn" onClick={() =>{window.scrollTo('pageYOffset', 0); navigate("../parishes")}}>Помочь</button>
                     </div>
                 </div>
                 <button className="organization__button blackBtn">Все организации

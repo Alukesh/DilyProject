@@ -60,7 +60,7 @@ const CardCart = ({image, title, price, id}) => {
                 <div className="cart__amount">
                     <button className="cart__amount-btn"
                     onClick={decrCount}>-</button>
-                    <input type="number" readOnly={true} className={'cart__amount-num'} value={
+                    <input type="text" readOnly={true} className={'cart__amount-num'} value={
                         user.cart.filter(item => item.id === id)[0] ?
                             user?.cart?.filter(item => item.id === id)[0].count :
                             1

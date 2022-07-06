@@ -23,7 +23,7 @@ const TopShops = () => {
                 <Link className={'shops__top-card'} to={'/shop/КОТ-ОБОРМОТ'} style={{backgroundColor: '#FC9024'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop2} name={'КОТ-ОБОРМОТ'} />
                 </Link>
-                <Link className={'shops__top-card'} to={'/shop/XIAOMI'} style={{backgroundColor: '#00C65E'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
+                <Link className={'shops__top-card'} to={'/shop/Xiaomi'} style={{backgroundColor: '#00C65E'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop3} name={'XIAOMI'} />
                 </Link>
                 <Link className={'shops__top-card'} to={'/shop/Диваны тут'} style={{backgroundColor: '#1EAE8B'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
