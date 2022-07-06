@@ -21,7 +21,7 @@ const Sell = () => {
     //     await reset()
     // };
      const addProductHandler = async (data) =>{
-       await createProduct(data.image[0], setProgress, {...data, creator : data.creator, comments: ''}, dispatch, user);
+       await createProduct(data.image[0], setProgress, {...data, creator : data.creator, comments: []}, dispatch, user);
 
         await reset()
     };

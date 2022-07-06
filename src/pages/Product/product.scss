@@ -312,6 +312,65 @@
           font-size: 16px;
           line-height: 152%;
         }
+        &__popup{
+          &-title{
+            text-align: center;
+
+          }
+          &-top{
+            display: flex;
+            margin-bottom: 30px;
+            gap: 30px;
+          }
+          &-labels{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+          }
+          &-form{
+            font-family: 'TT Norms',sans-serif;
+            font-style: normal;
+            font-size: 12px;
+
+          }
+          &-stars{
+            margin: 20px 0 30px;
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            & svg{
+              cursor: pointer;
+            }
+          }
+          &-textarea{
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+          }
+          &-input{
+            line-height: 130%;
+            font-weight: 400;
+            color: grey;
+            border: 1px solid #DADCDC;
+            border-radius: 10px;
+            padding: 12px 15px;
+
+          }
+          &-text{
+            line-height: 130%;
+            font-weight: 400;
+            color: grey;
+            resize: none;
+            border: 1px solid #DADCDC;
+            border-radius: 10px;
+            padding: 15px;
+          }
+          &-btn{
+            padding: 12px 55px;
+          }
+        }
+
       }
 
     }

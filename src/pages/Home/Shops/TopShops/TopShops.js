@@ -17,19 +17,19 @@ const TopShops = () => {
 
             <div className="shops__top-row">
 
-                <Link className={'shops__top-card'} to={'/shop/par'} style={{backgroundColor: '#F5253A'}}>
+                <Link className={'shops__top-card'} to={'/shop/М-ВИДЕО'} style={{backgroundColor: '#F5253A'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop1} name={'М-ВИДЕО'}/>
                 </Link>
-                <Link className={'shops__top-card'} to={'/shop/par'} style={{backgroundColor: '#FC9024'}}>
+                <Link className={'shops__top-card'} to={'/shop/КОТ-ОБОРМОТ'} style={{backgroundColor: '#FC9024'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop2} name={'КОТ-ОБОРМОТ'} />
                 </Link>
-                <Link className={'shops__top-card'} to={'/shop/3'} style={{backgroundColor: '#00C65E'}}>
+                <Link className={'shops__top-card'} to={'/shop/XIAOMI'} style={{backgroundColor: '#00C65E'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop3} name={'XIAOMI'} />
                 </Link>
-                <Link className={'shops__top-card'} to={'/shop/4'} style={{backgroundColor: '#1EAE8B'}}>
+                <Link className={'shops__top-card'} to={'/shop/Диваны тут'} style={{backgroundColor: '#1EAE8B'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop4} name={'ДИВАНЫ ТУТ'} />
                 </Link>
-                <Link className={'shops__top-card'} to={'/shop/par'} style={{backgroundColor: '#01C1FB'}}>
+                <Link className={'shops__top-card'} to={'/shop/ДЕТСКИЙ МИР'} style={{backgroundColor: '#01C1FB'}} onClick={() => {window.scrollTo('pageYOffset', 0)}}>
                     <ShopCard img={shop5} name={'ДЕТСКИЙ МИР'} />
                 </Link>
 
