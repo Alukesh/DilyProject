@@ -2,10 +2,26 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import addPh from './addPhoto.png'
 import Map from "./Map/Map";
+import {useForm} from "react-hook-form";
+import {useDispatch, useSelector} from "react-redux";
+import {createProduct} from "../../firebase/firebaseFunction";
 
 const Advertisement = () => {
     const [textLength, setTextLength] = useState(0);
+    const user = useSelector(s => s.user.user);
+    const {register, handleSubmit, reset} = useForm();
+    const dispatch = useDispatch();
+    const [progress, setProgress] = useState(0);
+
     const [date, setDate] = useState(false);
+
+
+
+    const addProductHandler = async (data) => {
+        // await console.log({...data, creator: data.creator, comments: []})
+      await createProduct(data.image[0], setProgress, {...data, creator: data.creator, description: data.description, comments: []}, dispatch, user);
+      await reset()
+    };
     return (
         <div className={'advertisement'}>
             <div className="container">
@@ -19,40 +35,40 @@ const Advertisement = () => {
                         </h2>
 
 
-                        <form className={'shadow-box advertisement__form'}>
+                        <form className={'shadow-box advertisement__form'} onSubmit={handleSubmit(addProductHandler)}>
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'}>Категория</h3>
-                                <select className={'advertisement__form-input advertisement__form-select'} name="select">
-                                    <option value="value2">Телефоны и планшеты</option>
-                                    <option value="value1"> Личные вещи</option>
-                                    <option value="value3">Электроника</option>
-                                    <option value="value4">Бытовая техника</option>
-                                    <option value="value5">Дом и сад</option>
-                                    <option value="value6">Товары для детей</option>
-                                    <option value="value7">Животные</option>
-                                    <option value="value8">Хобби и отдых</option>
-                                    <option value="value9">Транспорт</option>
-                                    <option value="value10">Автотовары</option>
-                                    <option value="value11">Недвижимость</option>
-                                    <option value="value12">Работа</option>
-                                    <option value="value13">Услуги</option>
-                                    <option value="value14">Для бизнеса</option>
-                                    <option value="value15">Отдам даром</option>
+                                <select {...register('category')} className={'advertisement__form-input advertisement__form-select'} name="select">
+                                    <option value="Телефоны и планшеты">Телефоны и планшеты</option>
+                                    <option value=" Личные вещи"> Личные вещи</option>
+                                    <option value="Электроника">Электроника</option>
+                                    <option value="Бытовая техник">Бытовая техника</option>
+                                    <option value="Дом и сад">Дом и сад</option>
+                                    <option value="Товары для детей">Товары для детей</option>
+                                    <option value="Животные">Животные</option>
+                                    <option value="Хобби и отдых">Хобби и отдых</option>
+                                    <option value="Транспорт">Транспорт</option>
+                                    <option value="Автотовары">Автотовары</option>
+                                    <option value="Недвижимость">Недвижимость</option>
+                                    <option value="Работа">Работа</option>
+                                    <option value="Услуги">Услуги</option>
+                                    <option value="Для бизнеса">Для бизнеса</option>
+                                    <option value="Отдам даром">Отдам даром</option>
                                 </select>
-                                 <select className={'advertisement__form-input advertisement__form-select'} name="select">
-                                    <option style={{display:'none'}} value="value2">Выберите подкатегорию</option>
-                                    <option value="value3">Смартфоны</option>
-                                    <option value="value4">Мобильные телефоны</option>
-                                    <option value="value5">Кнопочные телефоны</option>
-                                    <option value="value6">Запчасти  для мобильных  телефонов</option>
-                                    <option value="value7">Наушники и гарнитуры</option>
-                                    <option value="value8">Зарядные устройста</option>
-                                    <option value="value9">Кабели и адаптеры</option>
-                                    <option value="value10">Внешние аккумуляторы</option>
-                                    <option value="value11">Чехлы </option>
-                                    <option value="value12">Держатели</option>
-                                    <option value="value13">Стилусы</option>
-                                    <option value="value14">Пленки</option>
+                                 <select {...register('subCategory')}  className={'advertisement__form-input advertisement__form-select'} name="select">
+                                    <option style={{display:'none'}} value="Выберите подкатегорию">Выберите подкатегорию</option>
+                                    <option value="Смартфоны">Смартфоны</option>
+                                    <option value="Мобильные телефоны">Мобильные телефоны</option>
+                                    <option value="Кнопочные телефоны">Кнопочные телефоны</option>
+                                    <option value="Запчасти для мобильных телефонов">Запчасти  для мобильных  телефонов</option>
+                                    <option value="Наушники и гарнитуры">Наушники и гарнитуры</option>
+                                    <option value="Зарядные устройста">Зарядные устройста</option>
+                                    <option value="Кабели и адаптеры">Кабели и адаптеры</option>
+                                    <option value="Внешние аккумуляторы">Внешние аккумуляторы</option>
+                                    <option value="Чехлы">Чехлы </option>
+                                    <option value="Держатели">Держатели</option>
+                                    <option value="Стилусы">Стилусы</option>
+                                    <option value="Пленки">Пленки</option>
                                 </select>
 
                             </div>
@@ -60,7 +76,7 @@ const Advertisement = () => {
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'} style={{marginBottom:'25px'}}>Название товара</h3>
                                 <div style={{width:'100%'}}>
-                                    <input className={'advertisement__form-input'} placeholder={'Введите название'} type="text"/>
+                                    <input  {...register('title')} required={true}  className={'advertisement__form-input'} placeholder={'Введите название'} type="text"/>
                                     <p className={'advertisement__form-prompt'}>Не более 50 символов</p>
                                 </div>
                             </div>
@@ -68,7 +84,7 @@ const Advertisement = () => {
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'}>Цена</h3>
                                 <div>
-                                    <input className={'advertisement__form-input'} placeholder={'1000'} type="text"/>
+                                    <input  {...register('price')} required={true} className={'advertisement__form-input'} placeholder={'1000'} type="text"/>
                                 </div>
                                 <span>₽</span>
                             </div>
@@ -76,18 +92,23 @@ const Advertisement = () => {
 
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'}>Тип объявления</h3>
-                                 <select className={'advertisement__form-input advertisement__form-select'} name="select">
-                                    <option style={{display:'none'}} value="value2">Не выбрано</option>
-                                    <option value="value3">Продаю свое</option>
-                                    <option value="value7">Приобрел на продажу</option>
-                                    <option value="value9">Магазин</option>
+                                 <select  {...register('creator')} required={true}  className={'advertisement__form-input advertisement__form-select'}>
+                                    <option style={{display:'none'}} value="">Не выбрано</option>
+                                    <option value="Продаю свое">Продаю свое</option>
+                                    <option value="Приобрел на продажу">Приобрел на продажу</option>
+                                    <option value="Магазин">Магазин</option>
+                                     <option value="Диваны тут">Диваны тут</option>
+                                     <option value="Xiaomi">Xiaomi</option>
+                                     <option value="М-ВИДЕО">М-ВИДЕО</option>
+                                     <option value="ДЕТСКИЙ МИР">ДЕТСКИЙ МИР</option>
+                                     <option value="Apple">Apple</option>
                                 </select>
                             </div>
 
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title'} style={{marginBottom:'25px'}}>Описание</h3>
                                 <div style={{width:'100%'}}>
-                                    <textarea className={'advertisement__form-input advertisement__form-textarea'} maxLength={3000} onChange={(e) => setTextLength(e.target.value.length)} name="discr" id="area" />
+                                    <textarea  {...register('description')}  className={'advertisement__form-input advertisement__form-textarea'} maxLength={3000} onChange={(e) => setTextLength(e.target.value.length)} id="area" />
                                     <p className={'advertisement__form-prompt'}>Не более 3000 символов <span>{textLength}/ 3000</span></p>
                                 </div>
                             </div>
@@ -96,7 +117,7 @@ const Advertisement = () => {
                                 <h3 className={'advertisement__form-title important'} style={{marginBottom:'25px'}}>Фотографии</h3>
                                 <div style={{width:'100%'}}>
                                     <p className={'advertisement__form-addPhoto_top'}>Перетащите фото или <label htmlFor={'file'} className={'advertisement__form-addPhoto_link'} >выберите их на своем компьютере</label></p>
-                                    <input style={{display:'none'}} type="file" id={'file'}/>
+                                    <input  {...register('image')}  style={{display:'none'}} type="file" id={'file'}/>
                                     <div className={'advertisement__form-addPhoto_row'}>
                                         <div className={'shadow-box advertisement__form-addPhoto'}>
                                             <img src={addPh} alt=""/>
@@ -122,7 +143,7 @@ const Advertisement = () => {
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'} >Местоположение</h3>
                                 <div style={{width:'100%'}}>
-                                    <input className={'advertisement__form-input'} placeholder={'Москва'} type="text"/>
+                                    <input  {...register('city')}  className={'advertisement__form-input'} placeholder={'Москва'} type="text"/>
                                     {/*<Map/>*/}
                                     <div className="advertisement__map-block" >
                                         <iframe className={'advertisement__map'}
@@ -134,10 +155,10 @@ const Advertisement = () => {
 
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'}>Тип размещения</h3>
-                                <select className={'advertisement__form-input advertisement__form-select'} name="select">
-                                    <option style={{display:'none'}} value="value2">Не выбрано</option>
-                                    <option value="value3">Аукцион</option>
-                                    <option value="value9">Фиксированная цена</option>
+                                <select  {...register('auction')}  className={'advertisement__form-input advertisement__form-select'} name="select">
+                                    <option style={{display:'none'}} value="Не выбрано">Не выбрано</option>
+                                    <option value="true">Аукцион</option>
+                                    <option value="false">Фиксированная цена</option>
                                 </select>
                             </div>
 
@@ -148,10 +169,10 @@ const Advertisement = () => {
                                             style={{marginBottom:'30px'}} name="select"
                                     >
                                         <option style={{display:'none'}} value="value2">Не выбрано</option>
-                                        <option value="value3">3 дня</option>
-                                        <option value="value9">5 дней</option>
-                                        <option value="value9">7 дней</option>
-                                        <option value="value9">10 дней</option>
+                                        <option value="3 дня">3 дня</option>
+                                        <option value="5 дня">5 дней</option>
+                                        <option value="7 дня">7 дней</option>
+                                        <option value="10 дня">10 дней</option>
                                     </select>
                                     <div style={{marginBottom:'20px'}} className={'phones__aside-form-block'}>
                                         <input  onClick={(e) => setDate(false)} type="radio" id='format1' defaultChecked={true} name='format'/>
@@ -220,6 +241,7 @@ const Advertisement = () => {
                             </div>
 
 
+                            {progress} <button className="cart__figuration greenBtn" type='submit' onClick={() => {}}> Опубликовать объявление</button>
 
 
                         </form>

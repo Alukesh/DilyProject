@@ -82,7 +82,12 @@ const Header = () => {
                                 </div>
                                 <select className='header__nav-select'>
                                     <option>Москва</option>
-                                    <option>Не россия</option>
+                                    <option>Нарын</option>
+                                    <option>Талас</option>
+                                    <option>Бишкек</option>
+                                    <option>Баткен</option>
+                                    <option>Ош</option>
+                                    <option>Иссык Куль</option>
                                 </select>
                             </div>
                         </div>
