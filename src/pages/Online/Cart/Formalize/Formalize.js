@@ -5,8 +5,12 @@ import {useSelector} from "react-redux";
 
 const Formalize = () => {
 
+
     const [overlay, setOverlay] = useState(false);
     const user = useSelector(s => s.user.user);
+    const [page, setPage] = useState(1);
+
+    console.log(user?.email || user.phoneNumber)
 
     const navigate = useNavigate();
 
@@ -42,7 +46,7 @@ const Formalize = () => {
                        <p className="formalize__result">70 000 ₽</p>
                    </div>
                </div>
-               <div className="formalize__content">
+               <div className="formalize__content" >
                    <p className="formalize__orders">Способ получения в Москве</p>
                    <div className="formalize__btns">
                        <button className="formalize__btn">Доставка </button>
@@ -95,8 +99,8 @@ const Formalize = () => {
                        <input placeholder="Домофон" type="text" className="formalize__comment"/>
                    </div>
                </div>
-               <button className="formalize__btn-white">Далее</button>
-               <div className="formalize__content">
+               <button className="formalize__btn-white" onClick={() => setPage(3)}>Далее</button>
+               <div style={{display: page === 3 ? "block" : "none"}} className="formalize__content">
                    <h3 className="formalize__way">Способ оплаты</h3>
                    <div className="formalize__cards">
                        <div className="formalize__card">
@@ -144,8 +148,7 @@ const Formalize = () => {
                        </div>
                    </div>
                </div>
-               <button className="formalize__btn-white">Далее</button>
-               <div className="formalize__content">
+               <div style={{ display: page === 3 ? "block" : "none"}} className="formalize__content">
                    <h3 className="formalize__information">Данные получателя</h3>
                    <div className="formalize__record">
                        <div className="formalize__facts">
@@ -167,11 +170,11 @@ const Formalize = () => {
                            <input placeholder="name@inbox.ru" type="email" className="formalize__name-input"/>
                        </div>
                    </div>
-               </div>
-               <div className="formalize__bottom">
-                   <button type='button' className="formalize__Btn greenBtn" onClick={() =>  {
+               </div >
+               <div className="formalize__bottom" style={{display: page === 3 ? "flex" : "none"}}>
+                   <button style={{ display: page === 3 ? "block" : "none"}} type='button' className="formalize__Btn greenBtn" onClick={() =>  {
                        navigate('/');
-                       user.email.length ? localStorage.setItem('order', true ) : navigate('/auth');
+                       user?.email?.length || user?.phoneNumber ? localStorage.setItem('order', true ) : navigate('/auth');
                        window.scrollTo('pageYOffset', 0);
                    } }>Оформить заказ</button>
 
