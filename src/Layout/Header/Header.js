@@ -8,6 +8,8 @@ import {logOutUser} from "../../redux/reducers/user";
 import {findUser} from "../../redux/reducers/user";
 import OnlineTopbar from "../../pages/Online/OnlineTopbar/OnlineTopbar";
 import {FaUserAlt} from "react-icons/fa";
+import {  ImArrowUp, } from 'react-icons/im';
+
 
 const Header = () => {
     const [section, setSection] = useState(1);
@@ -15,8 +17,21 @@ const Header = () => {
     const user = useSelector(s => s.user.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [y, setY] = useState(0);
+    const handleNavigation = (e) => {
+        const window = e.currentTarget;
+        if (200 < window.scrollY) {
+            setY(1)
+        } else {
+            setY(0)
+        }
+    };
+
     useEffect(() => {
-        setSection(JSON.parse(localStorage.getItem('section')))
+        setSection(JSON.parse(localStorage.getItem('section')));
+        setY(window.scrollY);
+        window.addEventListener("scroll", (e) => handleNavigation(e));
+
     },[]);
     useEffect(()=> {
         localStorage.setItem('section', section);
@@ -27,7 +42,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className='header__top'>
+            <div id={'header'} className='header__top'>
 
             </div>
             <div className='container'>
@@ -77,23 +92,22 @@ const Header = () => {
                                 <span style={{display:'flex', columnGap:'10px'}}>
                                     <Link to='user' className='header__nav-auth'>
                                          <Link to={'cart'} className={'header__nav-icon'}>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M0.78623 0.525391C0.565317 0.525391 0.38623 0.704477 0.38623 0.925391C0.38623 1.1463 0.565317 1.32539 0.78623 1.32539H1.29858C2.01646 1.32539 2.64647 1.80354 2.83959 2.49496L5.08182 10.5224C5.08647 10.5391 5.09211 10.5552 5.09866 10.5707L5.34967 11.4966C5.51507 12.1067 6.06878 12.5303 6.7009 12.5303H14.3658C14.9979 12.5303 15.5516 12.1067 15.717 11.4966L17.3047 5.64051C17.546 4.75039 16.8757 3.87418 15.9535 3.87418H4.05546L3.6101 2.27974C3.32041 1.24261 2.3754 0.525391 1.29858 0.525391H0.78623ZM6.1218 11.2873L4.32893 4.67418H15.9535C16.3487 4.67418 16.636 5.0497 16.5325 5.43118L14.9449 11.2873C14.874 11.5487 14.6367 11.7303 14.3658 11.7303H6.7009C6.42999 11.7303 6.19269 11.5487 6.1218 11.2873Z" fill="#00C65E"/>
-                            <path d="M9.06277 15.6763C9.06277 16.4622 8.42495 17.1 7.63739 17.1C6.84983 17.1 6.21201 16.4622 6.21201 15.6763C6.21201 14.8903 6.84983 14.2525 7.63739 14.2525C8.42495 14.2525 9.06277 14.8903 9.06277 15.6763Z" stroke="#00C65E" strokeWidth="0.8"/>
-                            <path d="M14.8553 15.6763C14.8553 16.4622 14.2174 17.1 13.4299 17.1C12.6423 17.1 12.0045 16.4622 12.0045 15.6763C12.0045 14.8903 12.6423 14.2525 13.4299 14.2525C14.2174 14.2525 14.8553 14.8903 14.8553 15.6763Z" stroke="#00C65E" strokeWidth="0.8"/></svg>
-                        </Link>
-                            <span>
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg"><path
-                                    d="M1.95703 12.0908C1.95703 12.0908 0.957031 12.0908 0.957031 11.0908C0.957031 10.0908 1.95703 7.09082 6.95703 7.09082C11.957 7.09082 12.957 10.0908 12.957 11.0908C12.957 12.0908 11.957 12.0908 11.957 12.0908H1.95703ZM6.95703 6.09082C7.75268 6.09082 8.51574 5.77475 9.07835 5.21214C9.64096 4.64953 9.95703 3.88647 9.95703 3.09082C9.95703 2.29517 9.64096 1.53211 9.07835 0.9695C8.51574 0.406891 7.75268 0.0908203 6.95703 0.0908203C6.16138 0.0908203 5.39832 0.406891 4.83571 0.9695C4.2731 1.53211 3.95703 2.29517 3.95703 3.09082C3.95703 3.88647 4.2731 4.64953 4.83571 5.21214C5.39832 5.77475 6.16138 6.09082 6.95703 6.09082Z"
-                                    fill="#00C65E"/>
-                        </svg>
-                        </span>  {user.email || user.phoneNumber}</Link> / <span className='header__nav-auth' onClick={() => {
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fillRule="evenodd" clipRule="evenodd" d="M0.78623 0.525391C0.565317 0.525391 0.38623 0.704477 0.38623 0.925391C0.38623 1.1463 0.565317 1.32539 0.78623 1.32539H1.29858C2.01646 1.32539 2.64647 1.80354 2.83959 2.49496L5.08182 10.5224C5.08647 10.5391 5.09211 10.5552 5.09866 10.5707L5.34967 11.4966C5.51507 12.1067 6.06878 12.5303 6.7009 12.5303H14.3658C14.9979 12.5303 15.5516 12.1067 15.717 11.4966L17.3047 5.64051C17.546 4.75039 16.8757 3.87418 15.9535 3.87418H4.05546L3.6101 2.27974C3.32041 1.24261 2.3754 0.525391 1.29858 0.525391H0.78623ZM6.1218 11.2873L4.32893 4.67418H15.9535C16.3487 4.67418 16.636 5.0497 16.5325 5.43118L14.9449 11.2873C14.874 11.5487 14.6367 11.7303 14.3658 11.7303H6.7009C6.42999 11.7303 6.19269 11.5487 6.1218 11.2873Z" fill="#00C65E"/>
+                                                <path d="M9.06277 15.6763C9.06277 16.4622 8.42495 17.1 7.63739 17.1C6.84983 17.1 6.21201 16.4622 6.21201 15.6763C6.21201 14.8903 6.84983 14.2525 7.63739 14.2525C8.42495 14.2525 9.06277 14.8903 9.06277 15.6763Z" stroke="#00C65E" strokeWidth="0.8"/>
+                                                <path d="M14.8553 15.6763C14.8553 16.4622 14.2174 17.1 13.4299 17.1C12.6423 17.1 12.0045 16.4622 12.0045 15.6763C12.0045 14.8903 12.6423 14.2525 13.4299 14.2525C14.2174 14.2525 14.8553 14.8903 14.8553 15.6763Z" stroke="#00C65E" strokeWidth="0.8"/></svg>
+                                             {
+                                                 user.cart.length
+                                             }
+                                         </Link>
+                                <span>
+                                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.95703 12.0908C1.95703 12.0908 0.957031 12.0908 0.957031 11.0908C0.957031 10.0908 1.95703 7.09082 6.95703 7.09082C11.957 7.09082 12.957 10.0908 12.957 11.0908C12.957 12.0908 11.957 12.0908 11.957 12.0908H1.95703ZM6.95703 6.09082C7.75268 6.09082 8.51574 5.77475 9.07835 5.21214C9.64096 4.64953 9.95703 3.88647 9.95703 3.09082C9.95703 2.29517 9.64096 1.53211 9.07835 0.9695C8.51574 0.406891 7.75268 0.0908203 6.95703 0.0908203C6.16138 0.0908203 5.39832 0.406891 4.83571 0.9695C4.2731 1.53211 3.95703 2.29517 3.95703 3.09082C3.95703 3.88647 4.2731 4.64953 4.83571 5.21214C5.39832 5.77475 6.16138 6.09082 6.95703 6.09082Z" fill="#00C65E"/></svg>
+                                </span>  {user.email || user.phoneNumber}</Link> / <span className='header__nav-auth' onClick={() => {
                                     if (window.confirm('log out?')) {
                                         dispatch(logOutUser());
                                         localStorage.removeItem('user');
                                         navigate('auth')
-                                    } return
+                                    }
                                 }}> Выйти</span>
                                 </span>
                                 :
@@ -135,6 +149,11 @@ const Header = () => {
                         }
                     </div>
                 </div>
+            </div>
+            <div>
+                <a href="#header" className={`goTop ${y ? 'goTop_active' : ''}`}>
+                    <ImArrowUp/>
+                </a>
             </div>
         </header>
     );

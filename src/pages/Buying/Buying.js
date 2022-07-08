@@ -13,7 +13,7 @@ import Sell from "./Sell/Sell";
 import TradeSteps from "./TradeSteps/TradeSteps";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import Options from "../Service/Options/Options";
+import Options from "../Service/FirstBanner/Options/Options";
 import Vend from "../Home/Charity/Vend/Vend";
 
 const Buying = () => {

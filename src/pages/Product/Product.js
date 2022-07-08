@@ -61,7 +61,7 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <ProductTabs productName={product.title}/>
+                    <ProductTabs productName={product?.title}/>
 
 
 

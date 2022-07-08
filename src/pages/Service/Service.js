@@ -1,14 +1,13 @@
 import React from 'react';
 import ServiceBanner from "./Banner/ServiceBanner";
-import Advantage from "./Advantage/Advantage";
-import Faults from "./Faults/Faults";
-import Price from "./Price/Price";
-import Jobs from "./Jobs/Jobs";
-import Confidence from "./Confidence/Сonfidence"
-import Question from "./ Question/Question";
+import Faults from "./FirstBanner/Faults/Faults";
+import Price from "./FirstBanner/Price/Price";
+import Jobs from "./FirstBanner/Jobs/Jobs";
+import Confidence from "./FirstBanner/Confidence/Сonfidence"
+import Question from "./FirstBanner/ Question/Question";
 import {useParams} from "react-router-dom";
-import Options from "./Options/Options";
 import Vend from "../Home/Charity/Vend/Vend";
+import ServiceIpad from "./Apple/ServiceIpad";
 
 const Service = () => {
     const params = useParams();
@@ -18,19 +17,12 @@ const Service = () => {
         <div className={'service'}>
             {
                 params.category === 'ipad' ?
-                    <div className={'container'}>
-                        ipad kjaksjd
-                    </div> :
+                    <ServiceIpad/>
+                    :
                     <ServiceBanner/>
 
             }
-            <Advantage/>
-            <div className={'container'}>
-                <div className={'service__options'}>
-                    <h2 className={'service__options-title'}>Мы ремонтируем</h2>
-                    <Options/>
-                </div>
-            </div>
+
             <Faults/>
             <Price/>
             <Jobs/>

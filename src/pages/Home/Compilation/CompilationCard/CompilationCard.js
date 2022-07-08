@@ -1,26 +1,34 @@
 import React from 'react';
 import {findUser} from "../../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const CompilationCard = ({title, img, price, city, sell, id, creatorImage, countInRow, rowType}) => {
+const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments = 2, creatorImage, countInRow, rowType}) => {
     const notify = () =>toast('Добавлено', {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        // theme: "colored",
         draggable: true,
         progress: undefined,
     });
+    let star = 0;
+    stars = stars?.length && stars.map(item => item.stars === undefined ? 0 : item.stars );
+    // console.log(stars)
+     star += stars?.length && stars.reduce((acc, rec) => +acc + +rec )  ;
+     star /= stars?.length;
+     star = Math.trunc(star)
+    console.log(star);
     const user = useSelector(s => s.user.user);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const products = useSelector(s => s.products.products);
+
+    // const product = products?.filter(item => item.id === params.id)[0];
 
     const addFav = () => {
         localStorage.setItem('user', JSON.stringify({
@@ -121,11 +129,11 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                                 sell &&
                                 <p className={'compilation__card-comments'}>
                                 <span>
-                                    4 <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
-                                           xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M5.62514 0.758498C5.83952 0.111751 6.77065 0.111751 6.98432 0.758498L7.74894 3.07022C7.79566 3.21101 7.88647 3.33368 8.00839 3.4207C8.13032 3.50772 8.27712 3.55464 8.42781 3.55475H10.9018C11.5942 3.55475 11.8815 4.42551 11.322 4.82578L9.32107 6.2541C9.19889 6.3412 9.10792 6.46407 9.06119 6.60511C9.01446 6.74614 9.01438 6.8981 9.06095 7.03919L9.82558 9.35091C10.04 9.99765 9.28605 10.5363 8.72509 10.136L6.7242 8.70767C6.60215 8.62059 6.45519 8.5737 6.30437 8.5737C6.15355 8.5737 6.00659 8.62059 5.88454 8.70767L3.88365 10.136C3.3234 10.5363 2.57021 9.99765 2.78388 9.35091L3.5485 7.03919C3.59508 6.8981 3.59499 6.74614 3.54826 6.60511C3.50154 6.46407 3.41056 6.3412 3.28839 6.2541L1.28821 4.82648C0.728678 4.42621 1.01666 3.55545 1.7084 3.55545H4.18164C4.33246 3.55549 4.47942 3.50864 4.60149 3.42161C4.72356 3.33458 4.81448 3.21182 4.86123 3.07092L5.62585 0.759201L5.62514 0.758498Z"
-                                            fill="#363A45"/>
+                                    {
+                                      star
+                                    }
+                                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+                                           xmlns="http://www.w3.org/2000/svg"><path d="M5.62514 0.758498C5.83952 0.111751 6.77065 0.111751 6.98432 0.758498L7.74894 3.07022C7.79566 3.21101 7.88647 3.33368 8.00839 3.4207C8.13032 3.50772 8.27712 3.55464 8.42781 3.55475H10.9018C11.5942 3.55475 11.8815 4.42551 11.322 4.82578L9.32107 6.2541C9.19889 6.3412 9.10792 6.46407 9.06119 6.60511C9.01446 6.74614 9.01438 6.8981 9.06095 7.03919L9.82558 9.35091C10.04 9.99765 9.28605 10.5363 8.72509 10.136L6.7242 8.70767C6.60215 8.62059 6.45519 8.5737 6.30437 8.5737C6.15355 8.5737 6.00659 8.62059 5.88454 8.70767L3.88365 10.136C3.3234 10.5363 2.57021 9.99765 2.78388 9.35091L3.5485 7.03919C3.59508 6.8981 3.59499 6.74614 3.54826 6.60511C3.50154 6.46407 3.41056 6.3412 3.28839 6.2541L1.28821 4.82648C0.728678 4.42621 1.01666 3.55545 1.7084 3.55545H4.18164C4.33246 3.55549 4.47942 3.50864 4.60149 3.42161C4.72356 3.33458 4.81448 3.21182 4.86123 3.07092L5.62585 0.759201L5.62514 0.758498Z" fill="#363A45"/>
                                     </svg>
                                 </span>
                                     <span>
@@ -134,7 +142,8 @@ const CompilationCard = ({title, img, price, city, sell, id, creatorImage, count
                                     <path
                                         d="M0.617188 4.27344C0.617188 2.06794 2.86019 0.273438 5.61719 0.273438C8.37419 0.273438 10.6172 2.06794 10.6172 4.27344C10.6172 6.43344 8.46569 8.19944 5.78719 8.27094L3.11719 10.2734V7.74044C1.56619 7.03144 0.617188 5.72744 0.617188 4.27344Z"
                                         fill="#363A45"/>
-                                </svg>  25
+                                </svg>
+                                        {comments}
                                 </span>
 
                                 </p>
