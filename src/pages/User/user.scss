@@ -1,0 +1,112 @@
+.user{
+  padding: 63px 0 121px;
+  &__date{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+  }
+  &__other{
+    padding-left: 30px;
+  }
+  &__btns{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+  }
+  &__btn{
+    background: #00C65E;
+    color: white;
+    transition: all .3s;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    //border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    cursor: pointer;
+    padding: 12px 50px;
+  }
+  &__name{
+    display: flex;
+    align-items: center;
+    column-gap: 116px;
+    padding: 0 0 30px;
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #363A45;
+  }
+  &__input{
+    width: 301px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #DADCDC;
+    border-radius: 10px;
+    padding-left: 15px;
+    position: relative;
+    &::placeholder{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #363A45;
+    }
+  }
+  &__change{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 12px;
+    padding: 30px 30px 0 0;
+  }
+  &__phone{
+    display: flex;
+    align-items: center;
+    column-gap: 149px;
+    padding-bottom: 30px;
+  }
+  &__email{
+    display: flex;
+    align-items: center;
+    column-gap: 179px;
+    padding-bottom: 30px;
+  }
+  &__login{
+    display: flex;
+    align-items: center;
+    column-gap: 179px;
+    padding-bottom: 30px;
+  }
+  &__city{
+    display: flex;
+    align-items: center;
+    column-gap: 175px;
+    padding-bottom: 30px;
+  }
+  &__password{
+    display: flex;
+    align-items: center;
+    column-gap: 120px;
+    padding-bottom: 30px;
+  }
+  &__span{
+    color: #00C65E;
+    padding-left: 5px;
+  }
+  //&__icon{
+  //  position: absolute;
+  //  color: #DADCDC;
+  //}
+}

@@ -33,7 +33,7 @@ import Parishes from "./pages/Home/Parishes/Parishes";
 import AboutUs from "./pages/Home/Orphanage/AboutUs/AboutUs";
 import Relations from "./pages/Home/Orphanage/Relations/Relations";
 import Social from "./pages/Home/Organizations/Social/Social";
-
+import User from "./pages/User/User";
 
 function App() {
   const dispatch = useDispatch();
@@ -73,6 +73,7 @@ function App() {
          <Route path='parishes' element={<Parishes/>}/>
          <Route path='aboutUs' element={<AboutUs/>}/>
          <Route path='social' element={<Social/>}/>
+         <Route path='user' element={<User/>}/>
        </Route>
        <Route path='data' element={<Data/>}/>
        <Route path='send' element={<Send/>}/>

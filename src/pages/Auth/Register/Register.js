@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {FiMail} from 'react-icons/fi'
 import {FaGithub} from 'react-icons/fa'
+import {BsTelephone} from 'react-icons/bs'
 import {  createUserWithEmailAndPassword } from "firebase/auth";
 import {auth, db} from "../../../firebase/firebase";
 import {useDispatch} from "react-redux";
@@ -170,6 +171,7 @@ const Register = () => {
                     <Google/>
                     <p className='auth__icon'><FiMail/></p>
                     <p className='auth__icon'><FaGithub/></p>
+                    <p className='auth__icon' onClick={() => navigate("../auth")}><BsTelephone/></p>
                 </div>
 
                 <button className='register__btn'>Зарегестрироваться</button>

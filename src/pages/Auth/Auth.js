@@ -142,13 +142,13 @@ const Auth = () => {
                     }}>Продолжить</button>
 
                 <div>
-                    <input value={otp} className='auth__input' onChange={  confirmOrLoginFromNumber} type="text"/>
+                    <input style={{marginTop: "30px"}} value={otp} className='auth__input' onChange={  confirmOrLoginFromNumber} type="text"/>
 
                     <button type="button" className='auth__cont' onClick={() => {
 
                     }}>Потвердить</button>
                     </div>
-                <div id="sign-in-button"/>
+                <div style={{margin: "20px 0 0 280px"}} id="sign-in-button"/>
 
 
                 <Link to='/register'>
