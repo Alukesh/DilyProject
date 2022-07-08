@@ -9,7 +9,7 @@ const User = () => {
 
     const [tab, setTab] = useState(false);
     const [userChange, setUserChange] = useState(false);
-    const {user, setUser} = useState('');
+    const {user, setUser} = useState();
 
 
     return (
@@ -37,7 +37,7 @@ const User = () => {
                         </div>
                         <div className="user__phone">
                             <p className="user__text">Телефоны</p>
-                            {userChange ? <InputMask   type="text" className="user__input"/> : ""}
+                            {userChange ? <InputMask   type="text" className="user__input"/> : ''}
                         </div>
                         <div className="user__email">
                             <p className="user__text">E-mail</p>
