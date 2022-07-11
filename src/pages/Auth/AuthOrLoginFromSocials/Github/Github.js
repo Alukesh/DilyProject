@@ -1,5 +1,5 @@
 import React from 'react';
-import {auth, db, providerGithub} from "../../../../firebase/firebase";
+import {auth, db, provider, providerGithub} from "../../../../firebase/firebase";
 import { signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
@@ -14,16 +14,26 @@ const Github = () => {
     const userCollectionRef = collection(db,'users');
 
     const createOrLoginUserGithub = () =>{
-            signInWithPopup(auth, providerGithub)
-                .then((result) => {
-                    const user = result.user;
-                    dispatch(findUser( {user} ));
-                    localStorage.setItem('user', JSON.stringify({...user}));
-                    navigate('/')
-                }).catch((error) => {
-                console.log(error)
-            });
+        signInWithPopup(auth, providerGithub)
+            .then(async (result) => {
+
+                const user = result.user;
+
+                user.orders = [];
+                user.gitl = [];
+                user.cart = [];
+                user.favourites = [];
+                user.phone = '';
+                console.log(user);
+                await addDoc(userCollectionRef, {email: user.email, orders: [], phone: '', cart: [], favourites: [], gitl: [], login: user.displayName, id: user.uid});
+                await dispatch(findUser( {user} ));
+                await localStorage.setItem('user', JSON.stringify({...user}));
+                await navigate('/')
+            }).catch((error) => {
+            console.log(error)
+        });
     };
+
 
 
     return (

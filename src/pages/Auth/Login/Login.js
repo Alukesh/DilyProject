@@ -22,15 +22,15 @@ const Login = () => {
 
     const loginUser = (data) =>{
         signInWithEmailAndPassword (auth, data.email, data.password)
-            .then((userCredential) => {
+            .then( async (userCredential) => {
                 // Signed in
                 const user = userCredential.user;
                 user.phoneNumber = data.phone;
                 user.displayName = data.login;
 
                 // console.log(userCredential);
-                dispatch(findUser( {user} ));
-                localStorage.setItem('user', JSON.stringify(user));
+                await dispatch(findUser( {...user, email: user.email, orders: [], phone: data.phone, gitl: [], cart: [], favourites: [], login: data.login,} ));
+                await localStorage.setItem('user', JSON.stringify({...user, email: user.email, orders: [], phone: data.phone, gitl: [], cart: [], favourites: [], login: data.login,} ));
                 reset();
                 navigate('/')
             })
