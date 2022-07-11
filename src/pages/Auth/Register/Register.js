@@ -169,7 +169,6 @@ const Register = () => {
 
                 <div className='auth__icons'>
                     <Google/>
-                    {/*<p className='auth__icon'><FiMail/></p>*/}
                     <p className='auth__icon'><FaGithub/></p>
                     <p className='auth__icon' onClick={() => navigate("../auth")}><BsTelephone/></p>
                 </div>
