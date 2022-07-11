@@ -27,7 +27,8 @@ const Product = () => {
 
                         <div className={'product__characteristics'}>
                             <div className="product__characteristics-first">
-                                <p className={'product__characteristics-first-title'}>Объем памяти</p>
+                                <p className={'product__characteristics-first-title'}>Объем памяти </p>
+                                <span className={'product__characteristics-first-btn shadow-box'}>32</span>
                                 <span className={'product__characteristics-first-btn shadow-box'}>64</span>
                                 <span className={'product__characteristics-first-btn shadow-box'}>128</span>
                                 <span className={'product__characteristics-first-btn shadow-box'}>256</span>
