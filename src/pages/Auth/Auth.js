@@ -161,7 +161,6 @@ const Auth = () => {
                 <p className='auth__text'>или продолжить через соцсети</p>
                 <div className='auth__icons'>
                     <Google/>
-                    <p className='auth__icon'><FiMail/></p>
                     <Github/>
                 </div>
 

@@ -34,6 +34,10 @@
     line-height: 120%;
     cursor: pointer;
     padding: 12px 50px;
+    &_active{
+      background: #6E9C9F;
+      color: #A5A5A5;
+    }
   }
   &__name{
     display: flex;
@@ -46,7 +50,7 @@
     font-size: 14px;
     line-height: 150%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     color: #363A45;
   }
   &__input{
