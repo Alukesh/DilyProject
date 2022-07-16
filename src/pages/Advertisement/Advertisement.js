@@ -5,6 +5,12 @@ import Map from "./Map/Map";
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {createProduct} from "../../firebase/firebaseFunction";
+import SubMenuPhone from "./SubMenuPhone/SubMenuPhone";
+import SubMenuOwn from "./SubMenuOwn/SubMenuOwn";
+import SubMenuElectro from "./SubMenuElectro/SubMenuElectro";
+import SubMenuHouseTech from "./SubMenuHouseTech/SubMenuHouseTech";
+import SubMenuHouseGard from "./SubMenuHouseGard/SubMenuHouseGard";
+import SubMenuChild from "./SubMenuChild/SubMenuChild";
 
 const Advertisement = () => {
     const [textLength, setTextLength] = useState(0);
@@ -12,10 +18,13 @@ const Advertisement = () => {
     const {register, handleSubmit, reset} = useForm();
     const dispatch = useDispatch();
     const [progress, setProgress] = useState(0);
-
+    const [subMenu, setSubMenu] = useState('Телефоны и планшеты');
     const [date, setDate] = useState(false);
 
 
+    const changeSubMenu = (value) =>{
+        setSubMenu(value)
+    };
 
     const addProductHandler = async (data) => {
         // await console.log({...data, creator: data.creator, comments: []})
@@ -38,11 +47,13 @@ const Advertisement = () => {
                         <form className={'shadow-box advertisement__form'} onSubmit={handleSubmit(addProductHandler)}>
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'}>Категория</h3>
-                                <select {...register('category')} className={'advertisement__form-input advertisement__form-select'} name="select">
+                                <select {...register('category')}
+                                        onChange={(e) => changeSubMenu(e.target.value)}
+                                        className={'advertisement__form-input advertisement__form-select'} name="select">
                                     <option value="Телефоны и планшеты">Телефоны и планшеты</option>
-                                    <option value=" Личные вещи"> Личные вещи</option>
+                                    <option value="Личные вещи"> Личные вещи</option>
                                     <option value="Электроника">Электроника</option>
-                                    <option value="Бытовая техник">Бытовая техника</option>
+                                    <option value="Бытовая техника">Бытовая техника</option>
                                     <option value="Дом и сад">Дом и сад</option>
                                     <option value="Товары для детей">Товары для детей</option>
                                     <option value="Животные">Животные</option>
@@ -55,21 +66,41 @@ const Advertisement = () => {
                                     <option value="Для бизнеса">Для бизнеса</option>
                                     <option value="Отдам даром">Отдам даром</option>
                                 </select>
-                                 <select {...register('subCategory')}  className={'advertisement__form-input advertisement__form-select'} name="select">
+                                 <select {...register('subCategory')} onChange={(e) => alert(e.target.value)}
+                                         className={'advertisement__form-input advertisement__form-select'} name="select">
                                     <option style={{display:'none'}} value="Выберите подкатегорию">Выберите подкатегорию</option>
-                                    <option value="Смартфоны">Смартфоны</option>
-                                    <option value="Мобильные телефоны">Мобильные телефоны</option>
-                                    <option value="Кнопочные телефоны">Кнопочные телефоны</option>
-                                    <option value="Запчасти для мобильных телефонов">Запчасти  для мобильных  телефонов</option>
-                                    <option value="Наушники и гарнитуры">Наушники и гарнитуры</option>
-                                    <option value="Зарядные устройста">Зарядные устройста</option>
-                                    <option value="Кабели и адаптеры">Кабели и адаптеры</option>
-                                    <option value="Внешние аккумуляторы">Внешние аккумуляторы</option>
-                                    <option value="Чехлы">Чехлы </option>
-                                    <option value="Держатели">Держатели</option>
-                                    <option value="Стилусы">Стилусы</option>
-                                    <option value="Пленки">Пленки</option>
+                                     {
+                                         subMenu === 'Телефоны и планшеты' ?
+                                            <SubMenuPhone/>
+                                             : subMenu === 'Личные вещи' ?
+                                             <SubMenuOwn/>
+                                             : subMenu === 'Электроника' ?
+                                             <SubMenuElectro/>
+                                             : subMenu === 'Бытовая техника' ?
+                                             <SubMenuHouseTech/>
+                                             : subMenu === 'Дом и сад' ?
+                                             <SubMenuHouseGard/>
+                                             : subMenu === 'Товары для детей' ?
+                                             <SubMenuChild/>
+                                             : ''
+                                     }
+
                                 </select>
+                                <div className="select">
+                                    <div className="select__header ">
+                                        <span className="select__current">val1 </span>
+                                        <div className="select__icon">
+                                            <img src="https://img.icons8.com/material-sharp/24/000000/expand-arrow--v1.png" alt='down'/>
+                                        </div>
+                                    </div>
+
+                                    <div className="select__body">
+                                        <div className="select__item"> val1</div>
+                                        <div className="select__item"> val2</div>
+                                        <div className="select__item"> val3</div>
+                                        <div className="select__item"> val4</div>
+                                    </div>
+                                </div>
 
                             </div>
 

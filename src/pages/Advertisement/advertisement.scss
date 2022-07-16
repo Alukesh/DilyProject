@@ -110,3 +110,61 @@
 
   }
 }
+.select{
+  width: 150px;
+  position: relative;
+  &__{
+
+    &header{
+      display: flex;
+      align-items: center;
+      z-index: 2;
+      cursor: pointer;
+      outline: none;
+      background: #ffffff;
+      border: 1px solid #DADCDC;
+      border-radius: 10px;
+      padding: 12px 15px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #363A45;
+    }
+    &current{}
+    &icon{
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-shrink: 0;
+      & img{
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &body{
+      z-index: 1;
+      border: 1px solid #DADCDC;
+      //border-top: 0;
+      border-radius: 10px;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 90%;
+    }
+    &item{
+      padding: 10px 15px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #363A45;
+      &:hover{
+        background-color: #00C65E;
+      }
+    }
+
+  }
+}

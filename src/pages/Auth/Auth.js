@@ -7,6 +7,7 @@ import {auth} from "../../firebase/firebase";
 import {findUser} from "../../redux/reducers/user";
 import {useDispatch} from "react-redux";
 import Github from "./AuthOrLoginFromSocials/Github/Github";
+import InputMask from "react-input-mask";
 
 const Auth = () => {
 
@@ -134,7 +135,8 @@ const Auth = () => {
                 <h2 className='auth__register'>Вход и регистрация</h2>
                 <p className='auth__phone'>Введите ваш номер телефона и мы вышлем
                     вам код  подтверждения для регистрации</p>
-                <input value={phone} className='auth__input' onChange={(e) => setPhone(e.target.value)} placeholder='+ 7 (123)-456-78-90' type="tel"/>
+
+                <InputMask mask={`+\\9\\96(999)99-99-99`} value={phone} className='auth__input' onChange={(e) => setPhone(e.target.value)} placeholder='+ 7 (123)-456-78-90' type="tel"/>
 
                     <button type="button" className='auth__cont' onClick={() => {
                         createOnLoginFromNumber();
