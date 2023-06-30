@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {FiMail} from 'react-icons/fi'
 import {Link, useNavigate} from "react-router-dom";
 import Google from "./AuthOrLoginFromSocials/Google/Google";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
@@ -150,7 +149,7 @@ const Auth = () => {
 
                     }}>Потвердить</button>
                     </div>
-                <div style={{margin: "20px 0 0 280px"}} id="sign-in-button"/>
+                <div style={{margin: "20px auto 0px"}} id="sign-in-button"/>
 
 
                 <Link to='/register'>

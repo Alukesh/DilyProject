@@ -96,9 +96,9 @@ const Advertisement = () => {
 
                                     <div className="select__body">
                                         <div className="select__item"> val1</div>
-                                        <div className="select__item"> val2</div>
+                                        {/* <div className="select__item"> val2</div>
                                         <div className="select__item"> val3</div>
-                                        <div className="select__item"> val4</div>
+                                        <div className="select__item"> val4</div> */}
                                     </div>
                                 </div>
 
@@ -174,12 +174,14 @@ const Advertisement = () => {
                             <div className={'advertisement__form-row'}>
                                 <h3 className={'advertisement__form-title important'} >Местоположение</h3>
                                 <div style={{width:'100%'}}>
-                                    <input  {...register('city')}  className={'advertisement__form-input'} placeholder={'Москва'} type="text"/>
-                                    {/*<Map/>*/}
+                                    <input  {...register('city')}  className={'advertisement__form-input'} placeholder={'Введите адрес'} id='map-search' type="text"/>
+                                    <br/>
+                                    <br/>
+                                    <Map/>
                                     <div className="advertisement__map-block" >
-                                        <iframe className={'advertisement__map'}
+                                        {/* <iframe className={'advertisement__map'}
                                                 src="https://yandex.ru/map-widget/v1/?um=constructor%3A2a7db89ad20c176deff8474ee3a110c428fa53be89670cd16695fdc0ad761a5f&amp;source=constructor"
-                                                width="1070" height="480" frameBorder="0"> </iframe>
+                                                width="1070" height="480" frameBorder="0"> </iframe> */}
                                     </div>
                                 </div>
                             </div>

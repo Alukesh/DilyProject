@@ -134,3 +134,26 @@
     color: #262626;
   }
   }
+
+
+  
+  @media (max-width: 886px) {
+    .auth__left{
+      display: none;
+    }
+    .auth__right{
+      width: 100%;
+    }
+  }
+  @media (max-width: 766px) {
+    .auth__right{
+      padding-top: 120px;
+    }
+  }
+  @media (max-width: 326px) {
+    .auth__right{
+      & button, input{
+        width: 90%;
+      }
+    }
+  }

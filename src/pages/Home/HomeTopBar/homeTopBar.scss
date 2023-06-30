@@ -40,6 +40,8 @@
       flex-direction: column;
       gap: 25px;
       position: absolute;
+      height: 400px;
+      overflow-y: auto;
     }
     &-card{
       gap: 20px;

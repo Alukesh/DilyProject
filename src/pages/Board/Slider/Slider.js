@@ -21,11 +21,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import {withRouter } from 'react-router-dom'
 
-import {Navigation, Pagination, Mousewheel, Keyboard, Autoplay} from "swiper";
+import {Navigation, Mousewheel, Keyboard, Autoplay} from "swiper";
 
 const Slider = () => {
     const navigate = useNavigate();
-    // const history = withRouter();
 
     return (
         <div className='slider'>
@@ -35,6 +34,23 @@ const Slider = () => {
                     slidesPerView={8}
                     spaceBetween={30}
                     centeredSlides={true}
+                    breakpoints={{
+                        300: {
+                            slidesPerView: 1
+                        },
+                        400: {
+                            slidesPerView: 2
+                        },
+                        700: {
+                            slidesPerView: 4
+                        },
+                        960: {
+                            slidesPerView: 6
+                        },
+                        1100: {
+                            slidesPerView: 8
+                        },
+                    }}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
@@ -47,7 +63,7 @@ const Slider = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide><div><img src={img1} alt="img"/><p className='slider__category'>Личные вещи</p></div></SwiperSlide>
-                    <SwiperSlide><div onClick={() => {navigate('../phone')}}><img src={img2} alt="img"/><p className='slider__category'>Телефоны и аксессуары</p></div></SwiperSlide>
+                    <SwiperSlide><div><img src={img2} alt="img"/><p className='slider__category'>Телефоны и аксессуары</p></div></SwiperSlide>
                     <SwiperSlide><div><img src={img3} alt="img"/><p className='slider__category'>Электроника</p></div></SwiperSlide>
                     <SwiperSlide><div><img src={img4} alt="img"/><p className='slider__category'>Бытовая техника</p></div></SwiperSlide>
                     <SwiperSlide><div><img src={img5} alt="img"/><p className='slider__category'>Дом и сад</p></div></SwiperSlide>

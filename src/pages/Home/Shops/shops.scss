@@ -1,46 +1,63 @@
-.shops{
+.shops {
   padding: 57px 0 100px;
   display: flex;
   flex-direction: column;
-  &__{
 
-    &banner{
-        display: flex;
-      margin-left: -20px;
+  &__ {
+
+    &banner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       margin-bottom: 80px;
+      // flex-wrap: wrap;
+      & img{
+        width: 100%;
+      }
+      @media (max-width: 786px) {
+        grid-template-columns: 1fr;
+      }
     }
-    &top-row{
+
+    &top-row {
       margin-top: 30px;
       display: flex;
-      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    &top-card{
+
+    &top-card {
       cursor: pointer;
-          padding: 15px 15px 20px;
-          width: calc(20% - 20px);
-          box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
-          border-radius: 10px;
-          transition: all .3s;
-          &:hover{
-            background-color: #5777c6!important;
-          }
-          &-icon{
-            display: flex;
-            align-items: center;
-            column-gap: 8px;
-            font-family: 'TT Norms', sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 150%;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-          }
-          &-info{
-            display: flex;
-            justify-content: space-between;
-          }
-      &-btn{
+      flex-grow: 1;
+      padding: 15px 15px 20px;
+      width: calc(20% - 20px);
+      min-width: 190px;
+      box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+      border-radius: 10px;
+      transition: all .3s;
+
+      &:hover {
+        background-color: #5777c6 !important;
+      }
+
+      &-icon {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        font-family: 'TT Norms', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin-bottom: 20px;
+      }
+
+      &-info {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &-btn {
         z-index: 10;
         height: 40px;
         display: flex;
@@ -48,17 +65,20 @@
         background-color: #fff;
         border-radius: 10px;
       }
-      &-rate{
+
+      &-rate {
         padding: 10px;
       }
-      &-stars{
+
+      &-stars {
         column-gap: 3px;
         display: inline-flex;
         margin-left: 5px;
       }
-      &-city{
+
+      &-city {
         padding: 0 16px;
-        font-family: 'TT Norms',sans-serif;
+        font-family: 'TT Norms', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -75,43 +95,48 @@
   }
 }
 
-.shop{
-  &__{
-    &main{
+.shop {
+  &__ {
+    &main {
       display: flex;
 
     }
 
-    &banner{
+    &banner {
       margin: 50px 0 20px;
       //background-color: #00C65E;
       border-radius: 10px;
       color: white;
       padding: 30px;
       display: flex;
-      &-img{
+
+      &-img {
         width: 140px;
       }
-      &-left{
+
+      &-left {
         display: flex;
         column-gap: 30px;
         align-items: center;
       }
-      &-descr{
+
+      &-descr {
         display: flex;
         row-gap: 20px;
         flex-direction: column;
       }
-      &-title{
-        font-family: 'TT Norms',sans-serif;
+
+      &-title {
+        font-family: 'TT Norms', sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 28px;
         line-height: 150%;
         letter-spacing: 0.5px;
       }
-      &-subtitle{
-        font-family: 'TT Norms',sans-serif;
+
+      &-subtitle {
+        font-family: 'TT Norms', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;

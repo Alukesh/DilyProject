@@ -36,7 +36,7 @@
       color: #363A45;
       height: 62px;
       padding: 20px;
-      &-active{
+      &.active{
         background-color: rgba(0, 198, 94, .3);
         border-bottom: 2px solid rgba(0, 198, 94, 1);
       }
@@ -69,11 +69,20 @@
     }
     &-icon{
     padding-right: 5px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
     }
   }
   &-under{
     padding: 16px 0;
     background: #F7F7F7;
+   
+    overflow-y: visible;
+    // overflow-x: clip;
+    // white-space: nowrap;
+    // padding-bottom: 500px;
+    // margin-bottom: -500px;
     &__menu{
       &1{
         left: 230px;

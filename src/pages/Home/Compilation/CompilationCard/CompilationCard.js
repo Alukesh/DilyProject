@@ -1,14 +1,15 @@
 import React from 'react';
 import {findUser} from "../../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments = 2, creatorImage, countInRow, rowType}) => {
-    const notify = () =>toast('Добавлено', {
+    const navigate = useNavigate()
+    const notify = (text) =>toast( text, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -19,11 +20,10 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
     });
     let star = 0;
     stars = stars?.length && stars.map(item => item.stars === undefined ? 0 : item.stars );
-    // console.log(stars)
      star += stars?.length && stars.reduce((acc, rec) => +acc + +rec )  ;
      star /= stars?.length;
      star = Math.trunc(star)
-    console.log(star);
+    
     const user = useSelector(s => s.user.user);
     const dispatch = useDispatch();
     const products = useSelector(s => s.products.products);
@@ -31,6 +31,8 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
     // const product = products?.filter(item => item.id === params.id)[0];
 
     const addFav = () => {
+        if ( !user?.favourites) return navigate('/auth')
+
         localStorage.setItem('user', JSON.stringify({
             ...user, favourites:
                 user.favourites.findIndex(el => el.id === id) >= 0 ?
@@ -42,7 +44,6 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
                         price,
                     }]
         }));
-
         dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
     };
 
@@ -63,20 +64,6 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
                     }]
              } ));
         dispatch(findUser({user: JSON.parse(localStorage.getItem('user'))}));
-
-
-        // dispatch(findUser({user: JSON.parse(localStorage.getItem('user')) }));
-        // dispatch(findUser({
-        //     user: {
-        //         ...user, cart:
-        //             [...user.cart, {
-        //                 image: img,
-        //                 id,
-        //                 title,
-        //                 price,
-        //             }]
-        //     }
-        // }));
     };
 
 
@@ -86,7 +73,6 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
                              addFav()
                          }}>
                              {
-                                 // console.log(user)
                                  user?.favourites?.filter(el => el.id === id ).length ?
                                      <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                          <path d="M8.03 3.09733L8.66451 4.10748L9.29987 3.09786C9.8688 2.19379 10.5294 1.69113 11.1634 1.46275C11.7973 1.23439 12.4552 1.26123 13.0617 1.50137C14.2792 1.98342 15.3308 3.35645 15.3308 5.29086C15.3308 5.90049 15.0098 6.70073 14.3879 7.63753C13.7801 8.55309 12.9499 9.50359 12.0788 10.3932C11.2107 11.2796 10.3195 12.0879 9.6002 12.7209C9.34182 12.9483 9.10813 13.1508 8.90427 13.3275C8.82359 13.3975 8.74758 13.4634 8.67656 13.5251C8.67057 13.5303 8.6646 13.5355 8.65864 13.5407C8.64895 13.5326 8.63923 13.5244 8.62948 13.5163C8.52575 13.4293 8.41384 13.3361 8.29316 13.2357C8.10561 13.0795 7.89688 12.9057 7.66481 12.7103C6.91217 12.0764 5.97713 11.2675 5.06524 10.3803C4.15002 9.48994 3.27704 8.53888 2.6378 7.62307C1.98227 6.68394 1.64941 5.88913 1.64941 5.29086C1.64941 3.36814 2.76258 1.98439 4.0806 1.49436C5.35678 1.01988 6.92862 1.34392 8.03 3.09733Z" fill="#00C65E" stroke="#00C65E" strokeWidth="1.5"/>
@@ -155,7 +141,7 @@ const CompilationCard = ({title, img, price, city, sell, stars = 5, id, comments
                                 :
                                 <button className={'compilation__card-btn shadow-box'} onClick={() => {
                                     addCart();
-                                    notify();
+                                    notify('Добавлено');
                                 }}>Купить
                                     <span>
                                         <svg width="17" height="18" viewBox="0 0 17 18" fill="none"

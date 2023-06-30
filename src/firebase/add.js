@@ -48,7 +48,7 @@ const Home = () => {
                     <input {...register("image")} type="file"/>
                     <button type='submit'>add</button>
                 </form>
-                <p>upload done {progress } %</p>
+                <p>upload done {progress }e %</p>
             </div>
         </section>
     );

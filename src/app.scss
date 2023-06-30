@@ -8,6 +8,22 @@
   font-style: normal;
   scroll-behavior: smooth;
 }
+#sign-in-button{
+  display: flex;
+  justify-content: center;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(159, 157, 157, 1);
+  // border-radius: 6px;
+  width: 20px;
+  height: 10px;
+}
+
+::-webkit-scrollbar {
+  background: rgba(238, 238, 238, 1);
+  width: 5px;
+}
+
 
 
 .container {
@@ -81,6 +97,6 @@
 @import "pages/Service/FirstBanner/Price/price";
 @import "pages/Service/FirstBanner/Jobs/jobs";
 @import "pages/Service/FirstBanner/Confidence/confidence";
-@import "pages/Service/FirstBanner/ Question/question";
+@import "pages/Service/FirstBanner/Question/question";
 @import "pages/Product/product";
 @import "pages/User/user";

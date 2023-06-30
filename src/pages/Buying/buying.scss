@@ -7,7 +7,7 @@
       margin-top: 50px;
       background: url("images/buingstartpage.png") right/cover no-repeat;
 
-      &-info{}
+      // &-info{}
       &-title{
         max-width: 800px;
         margin-bottom: 46px;
@@ -55,13 +55,18 @@
       }
       &-wrapper{
         display: flex;
+        flex-wrap: wrap;
         column-gap: 10px;
-        justify-content: space-between;
+        // justify-content: space-between;
       }
       &-card{
+        max-width: 100px;
         display: flex;
+        margin: 0 auto;
         align-items: center;
         column-gap: 20px;
+        width: calc(20% - 20px);
+        min-width: 320px;
       }
       &-num{
         font-style: normal;
@@ -101,7 +106,7 @@
         &1{
           margin-top: 80px;
         }
-        &2{}
+        // &2{}
         &3{
           margin-top: 97px;
         }

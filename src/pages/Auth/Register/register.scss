@@ -79,3 +79,13 @@
 //  color: #00C65E;
 //  text-decoration: underline;
 //}
+
+
+@media (max-width: 886px) {
+  .register__form{
+    width: 100%;
+  }
+  .register__btn{
+    width: 100%;
+  }
+}

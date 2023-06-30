@@ -48,7 +48,9 @@
     }
     &-descr{
       display: flex;
+      flex-wrap: wrap;
       column-gap: 85px;
+      row-gap: 22px;
       padding-top: 28px;
     }
     &-header{
@@ -78,6 +80,7 @@
     }
     &__list{
       display: flex;
+      flex-wrap: wrap;
       column-gap: 48px;
       font-weight: 400;
       font-size: 12px;
