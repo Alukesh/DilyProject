@@ -2,6 +2,7 @@ import React from 'react';
 import card1 from "../images/card1.png";
 import card2 from "../images/card2.png";
 import card3 from "../images/card3.png";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const TradeSteps = ({shadow}) => {
     return (
@@ -16,17 +17,17 @@ const TradeSteps = ({shadow}) => {
                                     <div className={'buying__row-card'}>
                                         <p className={'buying__row-num'}>1</p>
                                         <p className={'buying__row-text'}>Бесплатная онлайн-оценка</p>
-                                        <img loading={"lazy"} className={'buying__row-img'} src={card1} alt="icon"/>
+                                        <LazyLoadImage loading={"lazy"} className={'buying__row-img'} src={card1} alt="icon" effect='blur'/>
                                     </div>
                                     <div className={'buying__row-card'}>
                                         <p className={'buying__row-num'}>2</p>
                                         <p className={'buying__row-text'}>Привозите нам или вызовите специалиста</p>
-                                        <img loading={"lazy"} className={'buying__row-img'} src={card2} alt="icon"/>
+                                        <LazyLoadImage loading={"lazy"} className={'buying__row-img'} src={card2} alt="icon" effect='blur'/>
                                     </div>
                                     <div className={'buying__row-card'}>
                                         <p className={'buying__row-num'}>3</p>
                                         <p className={'buying__row-text'}>Подпишите договор и получите деньги</p>
-                                        <img loading={"lazy"} className={'buying__row-img'} src={card3} alt="icon"/>
+                                        <LazyLoadImage loading={"lazy"} className={'buying__row-img'} src={card3} alt="icon" effect='blur'/>
                                     </div>
 
                                 </div>
@@ -40,17 +41,17 @@ const TradeSteps = ({shadow}) => {
                                 <div className={'buying__row-card'}>
                                     <p className={'buying__row-num'}>1</p>
                                     <p className={'buying__row-text'}>Бесплатная онлайн-оценка</p>
-                                    <img className={'buying__row-img'} src={card1} alt="icon"/>
+                                    <LazyLoadImage className={'buying__row-img'} src={card1} alt="icon" effect='blur'/>
                                 </div>
                                 <div className={'buying__row-card'}>
                                     <p className={'buying__row-num'}>2</p>
                                     <p className={'buying__row-text'}>Привозите нам или вызовите специалиста</p>
-                                    <img className={'buying__row-img'} src={card2} alt="icon"/>
+                                    <LazyLoadImage className={'buying__row-img'} src={card2} alt="icon" effect='blur'/>
                                 </div>
                                 <div className={'buying__row-card'}>
                                     <p className={'buying__row-num'}>3</p>
                                     <p className={'buying__row-text'}>Подпишите договор и получите деньги</p>
-                                    <img className={'buying__row-img'} src={card3} alt="icon"/>
+                                    <LazyLoadImage className={'buying__row-img'} src={card3} alt="icon" effect='blur'/>
                                 </div>
 
                             </div>

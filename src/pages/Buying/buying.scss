@@ -60,13 +60,16 @@
         // justify-content: space-between;
       }
       &-card{
-        max-width: 100px;
+        max-width: 100%;
         display: flex;
         margin: 0 auto;
         align-items: center;
         column-gap: 20px;
         width: calc(20% - 20px);
-        min-width: 320px;
+        min-width: 200px;
+        @media (max-width: 380px) {
+          flex-direction: column;
+        }
       }
       &-num{
         font-style: normal;

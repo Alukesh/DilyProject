@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {AiOutlineSearch} from 'react-icons/ai'
 import {Link, useLocation} from "react-router-dom";
-import TopbarSearch from "../../Home/HomeTopBar/TopbarSearch/TopbarSearch";
+import TopbarSearch from '../../../components/HomeTopBar/TopbarSearch/TopbarSearch';
 import {useSelector} from "react-redux";
 
 
@@ -199,19 +198,19 @@ const OnlineTopbar = () => {
             }
             <ul className={'header-under__list'}>
 
-                <li className={'header-under__item'} style={{cursor:'pointer', padding:'5px'}} onClick={() => setMenu(!menu)}>
-                    <span>
+                <li className={'header-under__item'} style={{cursor:'pointer'}} onClick={() => setMenu(!menu)}>
+                    <span >
                          {
                              !menu ?
-                        <span>
+                        <>
                             <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M0.000270024 1.87812C0.000270024 1.16015 0.5823 0.578125 1.30027 0.578125H12.7003C13.4182 0.578125 14.0003 1.16015 14.0003 1.87812C14.0003 2.59609 13.4182 3.17812 12.7003 3.17812H1.30027C0.582299 3.17812 0.000270024 2.59609 0.000270024 1.87812ZM0 8.07539C0 7.35742 0.58203 6.77539 1.3 6.77539H12.7C13.418 6.77539 14 7.35742 14 8.07539C14 8.79336 13.418 9.37539 12.7 9.37539H1.3C0.582029 9.37539 0 8.79336 0 8.07539ZM1.3 12.9727C0.58203 12.9727 0 13.5547 0 14.2727C0 14.9906 0.58203 15.5727 1.3 15.5727H6.7C7.41797 15.5727 8 14.9906 8 14.2727C8 13.5547 7.41797 12.9727 6.7 12.9727H1.3Z" fill="#363A45"/>
                             </svg>
-                        </span> : <span>
+                        </> : <>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M14.6838 12.648C15.2491 13.2535 15.2491 14.2352 14.6838 14.8407L14.3168 15.2337C13.7515 15.8393 12.8348 15.8393 12.2694 15.2337L8.00019 10.6613L3.73094 15.2337C3.16557 15.8393 2.24893 15.8393 1.68357 15.2337L1.31662 14.8407C0.75125 14.2352 0.751249 13.2535 1.31662 12.648L5.58587 8.07552L1.3166 3.50306C0.751236 2.89754 0.751237 1.9158 1.3166 1.31028L1.68355 0.917274C2.24892 0.311756 3.16556 0.311755 3.73093 0.917272L8.00019 5.48973L12.2695 0.917272C12.8348 0.311755 13.7515 0.311756 14.3168 0.917274L14.6838 1.31028C15.2492 1.9158 15.2492 2.89754 14.6838 3.50306L10.4145 8.07552L14.6838 12.648Z" fill="#00C65E"/>
                                 </svg>
-                            </span>
+                            </>
                          }
 
                     </span> Каталог товаров

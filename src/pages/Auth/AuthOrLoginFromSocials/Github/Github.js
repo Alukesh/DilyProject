@@ -1,6 +1,6 @@
 import React from 'react';
-import {auth, db, provider, providerGithub} from "../../../../firebase/firebase";
-import { signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import {auth, db, providerGithub} from "../../../../firebase/firebase";
+import { signInWithPopup, } from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {findUser} from "../../../../redux/reducers/user";

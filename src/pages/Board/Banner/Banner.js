@@ -9,12 +9,12 @@ import img4 from "./1.svg";
 import img6 from "./4.svg";
 import img7 from "./5.svg";
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Banner = () => {
     return (
         <section className='banner'>
             <Swiper
-                slidesPerView={2.3}
                 spaceBetween={30}
                 centeredSlides={false}
                 breakpoints={{
@@ -43,25 +43,25 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <Link to={'../service'} className='banner__content'><img width={'100%'} src={img} alt="img" /></Link>
+                    <Link to={'../service'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img} alt="img" /></Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to={'../shops'} className='banner__content'><img width={'100%'} src={img2} alt="img" /></Link>
+                    <Link to={'../shops'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img2} alt="img" /></Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to={'../shops'} className='banner__content'><img width={'100%'} src={img3} alt="img" /></Link>
+                    <Link to={'../shops'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img3} alt="img" /></Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to={'../shops'} className='banner__content'><img width={'100%'} src={img4} alt="img" /></Link>
+                    <Link to={'../shops'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img4} alt="img" /></Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to={'../buying'} className='banner__content'><img width={'100%'} src={img5} alt="img" /></Link>
+                    <Link to={'../buying'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img5} alt="img" /></Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to={'../shops'} className='banner__content'><img width={'100%'} src={img6} alt="img" /></Link>
+                    <Link to={'../shops'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img6} alt="img" /></Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to={'../shops'} className='banner__content'><img width={'100%'} src={img7} alt="img" /></Link>
+                    <Link to={'../shops'} className='banner__content'><LazyLoadImage effect='blur' width={'100%'} height={220} src={img7} alt="img" /></Link>
                 </SwiperSlide>
             </Swiper>
         </section>

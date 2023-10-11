@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import empty from './empty.png'
 import {useSelector} from "react-redux";
-import CompilationCard from "../../Home/Compilation/CompilationCard/CompilationCard";
-import CompilationCardRowType from "../../Home/Compilation/CompilationCard/CompilationCardRowType";
+import CompilationCard from '../../../components/ProductCompilation/CompilationCard/CompilationCard'; 
+import CompilationCardRowType from '../../../components/ProductCompilation/CompilationCard/CompilationCardRowType';
 import Vend from "../../Home/Charity/Vend/Vend";
 
 const Favourites = () => {
@@ -16,7 +16,7 @@ console.log( user);
             <div className="favourites">
                 <div className="phones__main-links">
                     <Link to={'/'} className="phones__main-link" >  Главная страница   </Link>
-                    <p className="phones__main-link phones__main-link_active" > <span> ></span> Избранное </p>
+                    <p className="phones__main-link phones__main-link_active" > <span> </span> Избранное </p>
                 </div>
 
                 <div className={'shadow-box favourites__main'}>

@@ -1,8 +1,8 @@
 import {useEffect} from "react";
-import {db, storage} from "./firebase/firebase";
+import {db} from "./firebase/firebase";
 import {collection, getDocs} from "@firebase/firestore";
 import {getAllProducts} from "./redux/reducers/products";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home/Home";
 import Shops from "./pages/Home/Shops/Shops";
@@ -31,14 +31,13 @@ import Formalize from "./pages/Online/Cart/Formalize/Formalize";
 import Organizations from "./pages/Home/Organizations/Organizations";
 import Parishes from "./pages/Home/Parishes/Parishes";
 import AboutUs from "./pages/Home/Orphanage/AboutUs/AboutUs";
-import Relations from "./pages/Home/Orphanage/Relations/Relations";
 import Social from "./pages/Home/Organizations/Social/Social";
 import User from "./pages/User/User";
 
 function App() {
   const dispatch = useDispatch();
+  // const products = useSelector((s) => s.products.products);
 
-  const products = useSelector((s) => s.products.products);
 
   useEffect(() => {
     getDocs(collection(db, 'products'))
@@ -46,7 +45,7 @@ function App() {
 
    localStorage.getItem('user')?
     dispatch(findUser({user: JSON.parse(localStorage.getItem('user')) })) : console.log('empty local')
-  }, []);
+  }, [dispatch]);
 
 
   return (

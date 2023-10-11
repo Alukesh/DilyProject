@@ -1,8 +1,14 @@
+@import "src/pages/Service/ServiceTopBar/serviceTopBar";
+@import "src/components/HomeTopBar/homeTopBar";
 .header {
   position: relative;
   &__top {
     height: 6px;
-    background: linear-gradient(90deg, #00C65E 26.28%, rgba(0, 198, 94, 0) 101.66%);
+    background: linear-gradient(
+      90deg,
+      #00c65e 26.28%,
+      rgba(0, 198, 94, 0) 101.66%
+    );
   }
   &__nav {
     display: flex;
@@ -33,11 +39,11 @@
       line-height: 120%;
       display: flex;
       align-items: center;
-      color: #363A45;
+      color: #363a45;
       height: 62px;
       padding: 20px;
-      &.active{
-        background-color: rgba(0, 198, 94, .3);
+      &.active {
+        background-color: rgba(0, 198, 94, 0.3);
         border-bottom: 2px solid rgba(0, 198, 94, 1);
       }
     }
@@ -53,7 +59,7 @@
       font-size: 14px;
       line-height: 150%;
       align-items: center;
-      color: #363A45;
+      color: #363a45;
       opacity: 0.6;
       cursor: pointer;
     }
@@ -66,33 +72,44 @@
       align-items: center;
       color: #000;
       cursor: pointer;
+      & .loginName {
+        text-overflow: ellipsis;
+        max-width: 120px;
+        overflow: hidden;
+        white-space: no-wrap;
+      }
     }
-    &-icon{
-    padding-right: 5px;
-    display: flex;
-    align-items: flex-start;
-    font-size: 18px;
+    &-burger {
+      font-size: 26px;
+      color: #00c65e;
+      display: none;
+    }
+    &-icon {
+      padding-right: 5px;
+      display: flex;
+      align-items: flex-start;
+      font-size: 18px;
     }
   }
-  &-under{
+  &-under {
     padding: 16px 0;
-    background: #F7F7F7;
-   
+    background: #f7f7f7;
+
     overflow-y: visible;
     // overflow-x: clip;
     // white-space: nowrap;
     // padding-bottom: 500px;
     // margin-bottom: -500px;
-    &__menu{
-      &1{
+    &__menu {
+      &1 {
         left: 230px;
       }
-      &-link{
+      &-link {
         display: flex;
         align-items: center;
         column-gap: 15px;
       }
-      &-text{
+      &-text {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -125,7 +142,7 @@
       align-items: center;
 
       column-gap: 10px;
-      color: #363A45;
+      color: #363a45;
     }
     &__cont {
       position: relative;
@@ -142,20 +159,47 @@
       width: 300px;
       height: 28px;
       padding-left: 40px;
-      background: #FFFFFF;
+      background: #ffffff;
       border-radius: 18px;
       outline: none;
       border: none;
       margin-left: auto;
       justify-self: flex-end;
     }
-
+    &__fullSearch {
+      width: 0;
+      // overflow: hidden;
+      visibility: hidden;
+      position: absolute;
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.4s ease;
+      // background-color: #fff000;
+      background-color: #f7f7f7;
+      input {
+        width: 95%;
+        height: 28px;
+        padding-left: 40px;
+        background: #ffffff;
+        border-radius: 18px;
+        outline: none;
+        border: none;
+      }
+      &.isShown {
+        width: 100%;
+        visibility: initial;
+      }
+    }
     &__btn {
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      background: #DADCDC;
+      background: #dadcdc;
       border-radius: 0 18px 18px 0;
       border: none;
       height: 28px;
@@ -163,12 +207,12 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 120%;
-      color: #363A45;
+      color: #363a45;
     }
     &__add {
       padding: 7px 25px;
       height: 30px;
-      background: #00C65E;
+      background: #00c65e;
       border-radius: 18px;
       border: none;
       font-weight: 400;
@@ -177,9 +221,9 @@
       display: flex;
       align-items: center;
       column-gap: 16px;
-      color: #FFFFFF;
+      color: #ffffff;
       justify-content: center;
-      span{
+      span {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -191,19 +235,117 @@
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background: #00C65E;
-  opacity: .5;
-  color: #FFFFFF;
+  background: #00c65e;
+  opacity: 0.5;
+  color: #ffffff;
   padding: 15px 20px;
   display: none;
   z-index: 900;
-  &:hover{
-    opacity: .8;
+  &:hover {
+    opacity: 0.8;
   }
   &_active {
     display: block;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
-@import "src/pages/Service/ServiceTopBar/serviceTopBar";
-@import "src/pages/Home/HomeTopBar/homeTopBar";
+
+@media (max-width: 1130px) {
+  .header {
+    &-under {
+      &__search {
+        display: none;
+      }
+      &__btn {
+        display: none;
+      }
+    }
+    &__nav {
+      &-left {
+        column-gap: 10px;
+      }
+      &-auth span {
+        display: none;
+      }
+      &-left {
+      }
+    }
+  }
+}
+@media (max-width: 865px) {
+  .header {
+    &__nav {
+      height: 62px;
+      &-left {
+        // gap: 20px;
+      }
+      &-burger {
+        display: block;
+      }
+      &-list {
+        position: absolute;
+        display: block;
+        background: white;
+        z-index: 20;
+        top: 65px;
+        border: 2px solid transparent;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        &.active {
+          border: 2px solid linen;
+          padding-bottom: 30px;
+          display: block;
+          height: auto;
+          transition-delay: 3s;
+          transition: all 0.4s ease;
+        }
+      }
+    }
+
+    &-under {
+      &__item {
+        flex-direction: column;
+      }
+      &__add {
+        width: 160px;
+        height: 35px;
+      }
+    }
+  }
+}
+@media (max-width: 635px) {
+  .header-under {
+    &__list {
+      column-gap: 12px;
+    }
+  }
+}
+@media (max-width: 535px) {
+  .header__nav-city {
+    display: none;
+  }
+  .header-under {
+    &__list {
+      // column-gap: 0;
+    }
+    &__item {
+      height: 20px;
+      overflow: hidden;
+      transition: all 0.4s;
+      max-width: min(108px, 20%);
+      // &:hover{
+      //   height: 38px;
+      // }
+    }
+
+    &__add {
+      display: none;
+    }
+    &__cont {
+      display: none;
+    }
+  }
+}

@@ -9,15 +9,20 @@
     &top{
       display: flex;
       padding: 30px 0;
+      flex-flow: row wrap;
       column-gap: 40px;
+      width: 100%;
     }
     &slider{
+
       color: #c62d4e;
       //background-color: purple;
       width: 320px;
+      max-width: 100%;
       height: 400px;
       &-miniImg{
-        max-width: 40px;
+        // max-width: 40px;
+        max-height: 54px;
       }
       &-Img{
         padding: 10px;
@@ -27,6 +32,7 @@
       }
       &-box{
         height: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -39,6 +45,7 @@
     }
 
     &characteristics{
+      flex-grow: 1;
       width: 228px;
       &-first{
         margin-bottom: 30px;
@@ -101,6 +108,7 @@
 
     &price{
       padding: 25px 22px;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       row-gap: 20px;
@@ -128,7 +136,9 @@
       }
       &-secRow{
         display: flex;
-        column-gap: 50px;
+        // column-gap: 50px;
+        flex-flow: row wrap;
+        justify-content: space-between;
         align-items: center;
         span{
           display: flex;
@@ -143,7 +153,8 @@
       }
       &-thiRow{
         display: flex;
-        column-gap: 20px;
+        // column-gap: 20px;
+        justify-content: space-between;
         align-items: center;
         &-delivery{
           font-family: 'TT Norms',sans-serif;
@@ -168,6 +179,9 @@
       font-family: 'TT Norms',sans-serif;
       font-weight: 400;
       margin-bottom: 80px;
+      & .tabs-select {
+        display: none ;
+      }
       &-top{
         display: flex;
         justify-content: space-between;
@@ -282,6 +296,9 @@
           font-weight: 500;
           font-size: 14px;
           line-height: 120%;
+          @media (max-width: 879px) {
+            padding: 8px 20px;
+          }
         }
         &-rate{
           font-family: 'TT Norms',sans-serif;
@@ -386,5 +403,61 @@
     img{
       height: 100%;
     }
+  }
+}
+
+
+@media (max-width: 700px) {
+  .product{
+    &__tabs-info-row {
+      flex-direction: column;
+      width: 100%;
+    }
+    &__tabs-bot{
+      padding: 20px 30px 45px;
+    }
+    &__tabs-comment{
+      &-bot{
+        flex-direction: column-reverse;
+        gap: 20px;
+      }
+      &-left{
+        width: 100%;
+        max-width: 100%;
+      }
+      
+    }
+  }
+}
+@media (max-width: 660px) {
+  .product__price {
+    margin-top: 20px;
+    &-btn{
+      padding: 12px 40px;
+    }
+    &-column-btn{
+      padding: 14px;
+      width: 100%;
+      gap: 12px;
+    }
+  }
+  .product__tabs-top {
+    display: none;
+  }
+  .product__tabs .tabs-select{
+    display: block;
+  }
+}
+
+@media (max-width: 470px) {
+  .css-1ktijle-MuiFormControl-root {
+    width: 100% !important;
+  }
+  
+  .product__tabs-bot {
+    padding: 25px 1px;
+  }
+  .product__info{
+    padding: 30px 10px 10px;
   }
 }

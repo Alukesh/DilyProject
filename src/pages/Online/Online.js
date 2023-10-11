@@ -11,7 +11,7 @@ import brand6 from './tefal.png'
 import slide1 from './slide1.png'
 
 import OnlineBanner from "./OnlineBanner/OnlineBanner";
-import CompilationRow from "../Home/Compilation/CompilationRow/CompilationRow";
+import CompilationRow from '../../components/ProductCompilation/CompilationRow/CompilationRow';
 import {useSelector} from "react-redux";
 import {Autoplay, Keyboard, Mousewheel, Navigation} from "swiper";
 import "swiper/css/navigation";

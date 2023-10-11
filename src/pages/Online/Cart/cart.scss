@@ -1,5 +1,6 @@
 .cart{
-  padding: 54px 152px 258px 125px;
+  // padding: 54px 152px 258px 125px;
+  padding: 54px 0 258px;
   &__title{
     font-weight: 700;
     font-size: 30px;
@@ -8,6 +9,7 @@
     align-items: center;
     color: #363A45;
     padding-bottom: 32px;
+    margin-left: min(152px, 20%);
   }
   &__img{
     max-height: 110px;
@@ -18,18 +20,20 @@
   &__content{
     display: flex;
     align-items: flex-start;
+    flex-flow: row wrap;
+    gap: 22px;
+    justify-content: center;
     width: 100%;
     &-column{
-      width: 100%;
       display: flex;
       flex-direction: column;
-      margin-bottom: 60px;
     }
   }
   &__card{
     width: 100%;
     display: flex;
     column-gap: 40px;
+    justify-content: space-between;
     align-items: center;
   &-link{
     display: flex;
@@ -42,7 +46,8 @@
       justify-content: space-between;
       display: flex;
       align-items: center;
-      width: 40%;
+      // width: 40%;
+      width: 50%;
     }
   }
   &__phone{
@@ -100,16 +105,21 @@
     font-size: 16px;
     line-height: 150%;
     display: flex;
+    margin-left: 10px;
+    margin: 10px;
     align-items: center;
     text-align: center;
     letter-spacing: 0.5px;
     color: #363A45;
+    &::after{
+      content: ' ₽';
+    }
   }
   &__total{
     box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
     border-radius: 10px;
     padding: 25px 30px 35px;
-    margin-left: 93px;
+    // margin-left: 93px;
     &-content{
       display: flex;
       flex-direction: column;
@@ -119,7 +129,6 @@
     }
   }
   &__input{
-    width: 256px;
     height: 45px;
     border: 1px solid #DADCDC;
     border-radius: 10px;
@@ -128,7 +137,7 @@
   }
   &__sale{
     display: flex;
-    column-gap: 80px;
+    justify-content: space-between;
     padding: 20px 0 24px;
     border-bottom: 1px solid #EFEFEF;
     &-num{
@@ -150,7 +159,7 @@
   }
   &__result{
     display: flex;
-    column-gap: 106px;
+    justify-content: space-between;
     padding-top: 20px ;
   }
   &__only{
@@ -166,5 +175,42 @@
   }
   &__figuration{
     padding: 7px 54px;
+    margin-top: 60px;
+    margin-left: min(152px, 15%);
+  }
+}
+
+
+@media (max-width: 628px) {
+  .cart__card{
+    column-gap: 22px;
+    justify-content: space-between;
+    &-info{
+      flex-direction: column;
+    }
+    .cart__device{
+      font-size: 14px;
+    }
+    .cart__sum{
+      font-size: 14px;
+    }
+    .cart__amount-num {
+      padding: 0;
+      width: 30px;
+    }
+  }
+}
+@media (max-width: 428px) {
+  .cart__card{
+    column-gap: 0px;
+    &-link{
+      width: 60%;
+    }
+  }
+  .cart__total {
+    padding: 15px;
+    &-btn{
+      padding: 12px 0;
+    }
   }
 }

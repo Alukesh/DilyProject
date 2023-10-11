@@ -1,8 +1,7 @@
-import React, {useContext, useEffect, useRef} from 'react';
+import React, { useRef} from 'react';
 import InputMask from 'react-input-mask';
 import {Link, useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
-import {FiMail} from 'react-icons/fi'
 import {FaGithub} from 'react-icons/fa'
 import {BsTelephone} from 'react-icons/bs'
 import {  createUserWithEmailAndPassword } from "firebase/auth";

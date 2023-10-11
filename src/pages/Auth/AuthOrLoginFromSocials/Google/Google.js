@@ -1,6 +1,6 @@
 import React from 'react';
 import {auth, db, provider} from "../../../../firebase/firebase";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 import {AiFillGoogleCircle} from 'react-icons/ai'
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";

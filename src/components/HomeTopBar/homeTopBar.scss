@@ -35,12 +35,13 @@
       transform: translateY(100%);
       z-index: 10;
       background-color: #fff;
+      width: 100%;
       bottom: -30px;
+      max-height: 400px;
       display: flex;
       flex-direction: column;
       gap: 25px;
       position: absolute;
-      height: 400px;
       overflow-y: auto;
     }
     &-card{

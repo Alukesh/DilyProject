@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import img from "./iphone11.png"
 import {useNavigate} from "react-router-dom";
 import CardCart from "./CartCard/CardCart";
 import {useSelector} from "react-redux";
-import Sell from "../../Buying/Sell/Sell";
-import Vend from "../../Home/Charity/Vend/Vend";
+// import Sell from "../../Buying/Sell/Sell";
+// import Vend from "../../Home/Charity/Vend/Vend";
 
 const Cart = () => {
     const user = useSelector(s => s.user.user);

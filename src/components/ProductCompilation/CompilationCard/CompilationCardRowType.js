@@ -1,5 +1,5 @@
 import React from 'react';
-import {findUser} from "../../../../redux/reducers/user";
+import {findUser} from "../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";

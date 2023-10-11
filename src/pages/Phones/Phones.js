@@ -1,7 +1,7 @@
 import React from 'react';
-import CompilationRow from "../Home/Compilation/CompilationRow/CompilationRow";
-import Format from "./Format/Format";
-import Period from "./Period/Period";
+import CompilationRow from '../../components/ProductCompilation/CompilationRow/CompilationRow';
+// import Format from "./Format/Format";
+// import Period from "./Period/Period";
 import {useSelector} from "react-redux";
 import SideMenu from "./SideMenu/SideMenu";
 
@@ -20,8 +20,8 @@ const Phones = () => {
 
                     <div className={'phones__main'}>
                         <div className="phones__main-links">
-                            <p className="phones__main-link" >  Главная страница   <span> ></span></p>
-                            <p className="phones__main-link" > Категории <span> > </span> </p>
+                            <p className="phones__main-link" >  Главная страница   <span> {'>'}</span></p>
+                            <p className="phones__main-link" > Категории <span> {'>'} </span> </p>
                             <p className="phones__main-link phones__main-link_active" > Телефоны и аксессуары </p>
                         </div>
                         <h2 className="phones__main-title"> Телефоны и аксессуары</h2>

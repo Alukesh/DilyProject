@@ -1,7 +1,7 @@
 /* global google */
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-// import { load } from '@2gis/mapgl';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLoadScript, GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
+// import { load } from '@2gis/mapgl';
 
 const Map = () => {
     const libraries = ['places']
@@ -13,7 +13,7 @@ const Map = () => {
     const [mapRef, setMapRef] = useState();
     const [isOpen, setIsOpen] = useState(false);
     const [infoWindowData, setInfoWindowData] = useState();
-    const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), [])
+    // const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), [])
     const addressEl = document.getElementById('map-search')
 
     useEffect(() => {
@@ -50,9 +50,8 @@ const Map = () => {
                 bounds = new google.maps.LatLngBounds(),
                 i, place;
 
-            for (i = 0; place = places[i]; i++) {
+            for (i = 0; place === places[i]; i++) {
                 bounds.extend(place.geometry.location)
-                // console.log(place.geometry.location.lat());
                 setLocate(
                     {
                         lat: place.geometry.location.lat(),
@@ -74,9 +73,9 @@ const Map = () => {
         setIsOpen(true)
     }
 
+    // console.log(event.latLng.lat(), event.latLng.lng())
     const mapClicked = (event) => {
         setIsOpen(false)
-        // console.log(event.latLng.lat(), event.latLng.lng())
     }
     const markerDragEnd = async (event, index) => {
         const [lat, long] = [event.latLng.lat(), event.latLng.lng()]
@@ -131,15 +130,3 @@ const Map = () => {
 };
 
 export default Map;
-// useEffect(() =>{
-//     let map;
-//     load().then((mapglAPI) =>{
-//         map = new mapglAPI.Map('map-container', {
-//             center: [55.31878, 25.23584],
-//             zoom: 13,
-//             key: 'Your API access key',
-//         });
-//     });
-
-//     return () => map && map.destroy();
-// },[]);

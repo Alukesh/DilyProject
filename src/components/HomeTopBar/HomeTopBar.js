@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import TopbarSearch from "./TopbarSearch/TopbarSearch";
+import shop from '../../assets/homeLinkShop.svg'
+import { AiFillCloseCircle, AiOutlineSearch } from 'react-icons/ai';
 
 const HomeTopBar = () => {
     const [menu, setMenu] = useState(false);
+    const fullSearch = useRef(null)
+    const handleTaggleFullSearch = () => {
+        fullSearch.current.classList.toggle('isShown')
+    }
+    useEffect(() => {
+        const handleEsc = ({ key }) => {
+            if (key === 'Escape') {
+                fullSearch.current.classList.remove('isShown')
+            }
+        }
+        window.addEventListener('keydown', handleEsc)
+        return () =>  window.removeEventListener('keydown', handleEsc)
+    }, [])
+
     return (
         <>
             {
@@ -193,7 +209,7 @@ const HomeTopBar = () => {
                 <div className='header-under__item' style={{ cursor: 'pointer', padding: '5px' }} onClick={() => setMenu(!menu)}>
                     {
                         !menu ? <span>
-                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="16" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M0.000270024 1.87812C0.000270024 1.16015 0.5823 0.578125 1.30027 0.578125H12.7003C13.4182 0.578125 14.0003 1.16015 14.0003 1.87812C14.0003 2.59609 13.4182 3.17812 12.7003 3.17812H1.30027C0.582299 3.17812 0.000270024 2.59609 0.000270024 1.87812ZM0 8.07539C0 7.35742 0.58203 6.77539 1.3 6.77539H12.7C13.418 6.77539 14 7.35742 14 8.07539C14 8.79336 13.418 9.37539 12.7 9.37539H1.3C0.582029 9.37539 0 8.79336 0 8.07539ZM1.3 12.9727C0.58203 12.9727 0 13.5547 0 14.2727C0 14.9906 0.58203 15.5727 1.3 15.5727H6.7C7.41797 15.5727 8 14.9906 8 14.2727C8 13.5547 7.41797 12.9727 6.7 12.9727H1.3Z" fill="#363A45" />
                             </svg>
                         </span> : <span>
@@ -222,31 +238,7 @@ const HomeTopBar = () => {
 
                 <NavLink to={'shops'} className='header-under__item'>
                     <span>
-                        <svg width="17" height="18" viewBox="0 0 17 18"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M11.3602 15.3984C11.5944 15.7615 11.9692 16.1745 12.2893 16.5001C12.4943 16.7086 12.3486 17.0781 12.0563 17.0781H4.94651C4.65411 17.0781 4.50844 16.7086 4.71343 16.5001C5.03351 16.1745 5.40836 15.7615 5.64255 15.3984C6.11792 14.6615 6.27952 13.5068 6.27952 13.5068H10.7232C10.7232 13.5068 10.8848 14.6615 11.3602 15.3984Z"
-                                fill="white" stroke="#363A45" />
-                            <mask id="path-2-inside-1_5137_28583" fill="white">
-                                <rect x="1.44629" y="3.17383" width="14.1103" height="11.2227" rx="0.636856" />
-                            </mask>
-                            <rect x="1.44629" y="3.17383" width="14.1103" height="11.2227" rx="0.636856" fill="white" stroke="#363A45"
-                                mask="url(#path-2-inside-1_5137_28583)" />
-                            <path
-                                d="M3.84431 12.8185C2.97644 12.6006 2.72021 11.6533 2.72021 10.8355C2.72021 7.87035 3.63216 8.11981 3.60185 6.54726C3.56053 4.43473 4.58543 4.24526 4.96289 4.33684C9.24435 5.41363 11.6523 4.65261 11.6523 4.65261C13.3054 4.28 9.99925 7.71562 11.6523 11.2207C12.567 13.1975 5.28248 13.1785 3.84431 12.8185Z"
-                                fill="#00C65E" />
-                            <mask id="path-4-inside-2_5137_28583" fill="white">
-                                <rect x="1.44629" y="0.578125" width="14.1103" height="3.02122" rx="0.636856" />
-                            </mask>
-                            <rect x="1.44629" y="0.578125" width="14.1103" height="3.02122" rx="0.636856" fill="white" stroke="#363A45"
-                                mask="url(#path-4-inside-2_5137_28583)" />
-                            <path
-                                d="M1.63691 3.11356C1.67495 2.99479 1.78538 2.91421 1.91009 2.91421H15.0909C15.2156 2.91421 15.326 2.99479 15.3641 3.11356L16.4009 6.3506C16.4602 6.53571 16.3221 6.72496 16.1278 6.72496H0.873213C0.678835 6.72496 0.540735 6.53571 0.60003 6.3506L1.63691 3.11356Z"
-                                fill="white" stroke="#363A45" />
-                            <rect x="8.13916" y="2.66064" width="0.722434" height="4.16762" fill="#363A45" />
-                            <path d="M11.9565 2.66064H12.679L13.4014 6.82826H12.679L11.9565 2.66064Z" fill="#363A45" />
-                            <path d="M5.04297 2.66064H4.32053L3.5981 6.82826H4.32053L5.04297 2.66064Z" fill="#363A45" />
-                        </svg>
+                        <img src={shop} width={15} alt='shop' />
                     </span>Магазины
                 </NavLink>
                 <NavLink to={'charity'} className='header-under__item'>
@@ -264,15 +256,23 @@ const HomeTopBar = () => {
                                 fill="#00C65E" stroke="white" /></svg>
                     </span>Благотворительность
                 </NavLink>
+                <span className='header-under__cont' onClick={handleTaggleFullSearch}><AiOutlineSearch /> Поиск</span>
             </div>
-            <TopbarSearch />
-            <Link to={'/advertisement'} style={{ color: "white" }} className='header-under__add'>Подать объявление <span><svg width="19" height="19"
-                viewBox="0 0 19 19" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <circle cx="9.95703" cy="9.5" r="8.11678" fill="white" stroke="white" />
-                <path d="M9.95677 4.89722C9.6461 4.89722 9.39426 5.14906 9.39426 5.45972V8.93745H5.91602C5.60536 8.93745 5.35352 9.18929 5.35352 9.49995C5.35352 9.81061 5.60536 10.0624 5.91602 10.0624H9.39426V13.5404C9.39426 13.8511 9.6461 14.1029 9.95677 14.1029C10.2674 14.1029 10.5193 13.8511 10.5193 13.5404V10.0624H13.9967C14.3074 10.0624 14.5592 9.81061 14.5592 9.49995C14.5592 9.18929 14.3074 8.93745 13.9967 8.93745H10.5193V5.45972C10.5193 5.14906 10.2674 4.89722 9.95677 4.89722Z"
-                    fill="#00C65E" /></svg>
-            </span>
+            <div ref={fullSearch} className='header-under__fullSearch '>
+                <span className='header-under__icon'><AiOutlineSearch /></span>
+                <TopbarSearch />
+                <AiFillCloseCircle onClick={handleTaggleFullSearch} />
+            </div>
+
+            <Link to={'/advertisement'} style={{ color: "white" }} className='header-under__add'>
+                Подать объявление
+                <span><svg width="19" height="19"
+                    viewBox="0 0 19 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9.95703" cy="9.5" r="8.11678" fill="white" stroke="white" />
+                    <path d="M9.95677 4.89722C9.6461 4.89722 9.39426 5.14906 9.39426 5.45972V8.93745H5.91602C5.60536 8.93745 5.35352 9.18929 5.35352 9.49995C5.35352 9.81061 5.60536 10.0624 5.91602 10.0624H9.39426V13.5404C9.39426 13.8511 9.6461 14.1029 9.95677 14.1029C10.2674 14.1029 10.5193 13.8511 10.5193 13.5404V10.0624H13.9967C14.3074 10.0624 14.5592 9.81061 14.5592 9.49995C14.5592 9.18929 14.3074 8.93745 13.9967 8.93745H10.5193V5.45972C10.5193 5.14906 10.2674 4.89722 9.95677 4.89722Z"
+                        fill="#00C65E" /></svg>
+                </span>
             </Link>
         </>
     );

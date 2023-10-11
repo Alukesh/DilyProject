@@ -3,7 +3,7 @@ import shopIcon1 from './shop.png'
 import shopIcon2 from '../AllShops/shopДЕТСКИЙ.png'
 
 import SideMenu from "../../../Phones/SideMenu/SideMenu";
-import CompilationRow from "../../Compilation/CompilationRow/CompilationRow";
+import CompilationRow from '../../../../components/ProductCompilation/CompilationRow/CompilationRow'; 
 import {useSelector} from "react-redux";
 import {Link, useParams} from 'react-router-dom'
 import Vend from "../../Charity/Vend/Vend";
@@ -43,8 +43,8 @@ const Shop = ({back = 'grey'}) => {
 
                     <div className={'phones__main'}>
                         <div className="phones__main-links">
-                            <Link to={'/'} className="phones__main-link" >  Главная страница   <span> ></span></Link>
-                            <Link to={'/shops'} className="phones__main-link" > Магазины <span> > </span> </Link>
+                            <Link to={'/'} className="phones__main-link" >  Главная страница   <span> {'>'}</span></Link>
+                            <Link to={'/shops'} className="phones__main-link" > Магазины <span> {'>'} </span> </Link>
                             <p className="phones__main-link phones__main-link_active" >{params.id} </p>
                         </div>
 

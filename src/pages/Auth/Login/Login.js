@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link, useNavigate} from "react-router-dom"
 import {useForm} from "react-hook-form";
 import { signInWithEmailAndPassword  } from "firebase/auth";
@@ -19,7 +19,9 @@ const Login = () => {
         },
         reset
     } = useForm();
-
+    useEffect(() => {
+        console.error(errors);
+    }, [errors])
     const loginUser = (data) =>{
         signInWithEmailAndPassword (auth, data.email, data.password)
             .then( async (userCredential) => {

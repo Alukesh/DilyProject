@@ -5,6 +5,7 @@
     &-content{
       display: flex;
       justify-content: space-between;
+      flex-flow: row wrap;
       padding-bottom: 13px;
       border-bottom: 1px solid #DADCDC;
     }
@@ -99,3 +100,5 @@
     }
   }
 }
+
+

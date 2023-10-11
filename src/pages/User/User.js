@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {CgArrowsExchange} from "react-icons/cg";
-import {IoMdEye} from "react-icons/io";
 import {Link} from "react-router-dom";
 import InputMask from "react-input-mask"
 import {useForm} from "react-hook-form";
@@ -32,6 +31,7 @@ const User = () => {
         }
 
     );
+    console.log(watch, setPasswordChange);
     const changeUser = (data) => {
         updateDoc(doc(db, "users", user.id), {
             ...user

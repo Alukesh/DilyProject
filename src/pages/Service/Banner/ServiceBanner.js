@@ -1,5 +1,4 @@
 import React from 'react';
-import bg from '../bg.png'
 import Advantage from "../FirstBanner/Advantage/Advantage";
 import Options from "../FirstBanner/Options/Options";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../iphone11.png";
+// import img from "../iphone11.png";
 import {findUser} from "../../../../redux/reducers/user";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
@@ -68,7 +68,7 @@ const CardCart = ({image, title, price, id}) => {
                     <button className="cart__amount-btn"
                     onClick={addCount}>+</button>
                 </div>
-                <p className="cart__sum">{price} ₽</p>
+                <p className="cart__sum">{price}</p>
                 <span className="cart__basket" onClick={deleteCard}>
                     <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-inside-1_5828_4867" fill="white"><rect x="1.61035" y="4" width="12" height="13" rx="1"/></mask>

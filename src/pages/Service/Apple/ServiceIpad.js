@@ -3,7 +3,7 @@ import ipad from '../Apple/ipad.png'
 import img1 from "../Apple/pro.jpg";
 import img2 from "../Apple/air.png";
 import img3 from "../Apple/mini.jpg";
-import Options from "../FirstBanner/Options/Options";
+// import Options from "../FirstBanner/Options/Options";
 
 const ServiceIpad = () => {
     return (
@@ -20,7 +20,7 @@ const ServiceIpad = () => {
                                         <button className={'serviceBanner__slide-btn greenBtn'}>Оставить заявку</button>
                                     </div>
                                 </div>
-                                <img src={ipad} alt=""/>
+                                <img src={ipad} alt="Ipad" loading='lazy'/>
                             </div>
                         </div>
 

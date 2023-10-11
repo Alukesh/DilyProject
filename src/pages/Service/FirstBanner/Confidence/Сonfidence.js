@@ -9,7 +9,7 @@ import img3 from './3.png';
 import img4 from './4.png';
 import img5 from './5.png';
 
-import {Navigation, Pagination, Mousewheel, Keyboard, Autoplay} from "swiper";
+import {Navigation, Mousewheel, Keyboard, Autoplay} from "swiper";
 
 const Confidence = () => {
     return (

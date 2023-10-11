@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import CompilationRow from "../../../Home/Compilation/CompilationRow/CompilationRow";
+import CompilationRow from '../../../../components/ProductCompilation/CompilationRow/CompilationRow';
 
 const ProductTabsAccessories = () => {
     const products = useSelector(s => s.products.products);

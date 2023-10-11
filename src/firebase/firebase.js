@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore'
 import {getStorage} from 'firebase/storage'
 import {getAuth, GoogleAuthProvider, GithubAuthProvider} from 'firebase/auth'
-import Github from "../pages/Auth/AuthOrLoginFromSocials/Github/Github";
+// import Github from "../pages/Auth/AuthOrLoginFromSocials/Github/Github";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
